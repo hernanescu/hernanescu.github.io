@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/2018/11/boleto-estudiantil/</loc>
+    <lastmod>2018-11-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/11/bano-seco/</loc>
+    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/11/eph-pobreza/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/11/mirada-erogacion-obras-publicas/</loc>
+    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2018-11-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/ba-data/</loc>
+    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/eph/</loc>
+    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/ggplot2/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/ggthemes/</loc>
+    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/openxlsx/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/portal-datos-argentina/</loc>
+    <lastmod>2018-11-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2018-11-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/sf/</loc>
+    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2018-11-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/tidyverse/</loc>
+    <lastmod>2018-11-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/treemap/</loc>
+    <lastmod>2018-11-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

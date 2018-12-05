@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Treemap on #atR://Hernán Escudero</title>
+    <link>/categories/treemap/</link>
+    <description>Recent content in Treemap on #atR://Hernán Escudero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/treemap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Formas de saneamiento en los aglomerados de la EPH: dos formas de ver una misma problemática</title>
+      <link>/2018/11/bano-seco/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/bano-seco/</guid>
+      <description>Siempre me pareció simpático el paquete treemap: es súper interesante para representar proporciones de distintos segmentos y sub-segmentos de una forma muy clara e interesante. En este punto, vale decir que por mucho tiempo trabajé en investigación y desarrollo de políticas para un hábitat sustentable, principalmente en dos puntos: calefacción y saneamiento.
+Eso fue lo que me inspiró a tomar la EPH para buscar algo que siempre había querido saber y no había podido: cómo se reparte el uso de las alternativas de saneamiento a nivel general en el país.</description>
+    </item>
+    
+  </channel>
+</rss>

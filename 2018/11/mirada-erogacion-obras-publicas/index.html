@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Hernán Escudero">
+<meta name="keywords" content="">
+<meta name="description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
+
+
+<meta property="og:description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Una mirada a la erogación en obras públicas">
+<meta name="twitter:title" content="Una mirada a la erogación en obras públicas">
+<meta property="og:url" content="/2018/11/mirada-erogacion-obras-publicas/">
+<meta property="twitter:url" content="/2018/11/mirada-erogacion-obras-publicas/">
+<meta property="og:site_name" content="#atR://Hernán Escudero">
+<meta property="og:description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
+<meta name="twitter:description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
+<meta property="og:locale" content="es-es">
+
+  
+    <meta property="article:published_time" content="2018-11-10T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-11-10T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="tidyverse">
+    
+      <meta property="article:section" content="sf">
+    
+      <meta property="article:section" content="ggplot2">
+    
+      <meta property="article:section" content="ggthemes">
+    
+  
+  
+    
+      <meta property="article:tag" content="BA Data">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="/img/foto.jpg">
+  <meta property="twitter:image" content="/img/foto.jpg">
+
+
+    <title>Una mirada a la erogación en obras públicas</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2018/11/mirada-erogacion-obras-publicas/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">#atR://Hernán Escudero</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/img/foto.jpg" alt="Foto de autor" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/img/foto.jpg" alt="Foto de autor" />
+        </a>
+        <h4 class="sidebar-profile-name">Hernán Escudero</h4>
+        
+          <h5 class="sidebar-profile-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Inicio</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categorías</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Etiquetas</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archivos</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Acerca de</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/hernanescudero/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Una mirada a la erogación en obras públicas
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-11-10T00:00:00Z">
+        
+  Noviembre 10, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>en</span>
+    
+      <a class="category-link" href="/categories/tidyverse">tidyverse</a>, 
+    
+      <a class="category-link" href="/categories/sf">sf</a>, 
+    
+      <a class="category-link" href="/categories/ggplot2">ggplot2</a>, 
+    
+      <a class="category-link" href="/categories/ggthemes">ggthemes</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<p>El portal Buenos Aires Open Data (<a href="https://data.buenosaires.gob.ar" class="uri">https://data.buenosaires.gob.ar</a>) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.</p>
+<div id="manos-a-la-obra" class="section level1">
+<h1>Manos a la obra</h1>
+<p>Para empezar, cargo las librerías <em>tidyverse</em>, <em>sf</em> y <em>ggthemes</em>. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora <em>ggplot2</em>. Con el paquete SF tomo la base de los radios censales de la Ciudad Autónoma de Buenos Aires, usando el .geojson alojado en la página de Antonio Vázquez Brust (<a href="https://bitsandbricks.github.io/" class="uri">https://bitsandbricks.github.io/</a>).</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages ------------------------------------------------- tidyverse 1.2.1 --</code></pre>
+<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.1     v stringr 1.3.1
+## v readr   1.1.1     v forcats 0.3.0</code></pre>
+<pre><code>## -- Conflicts ---------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.6.1, GDAL 2.2.3, proj.4 4.9.3</code></pre>
+<pre class="r"><code>library(ggthemes)
+radios &lt;- st_read(&quot;https://bitsandbricks.github.io/data/CABA_rc.geojson&quot;)</code></pre>
+<pre><code>## Reading layer `CABA_rc&#39; from data source `https://bitsandbricks.github.io/data/CABA_rc.geojson&#39; using driver `GeoJSON&#39;
+## Simple feature collection with 3554 features and 8 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+<p>Como lo que estoy buscando es una organización por comunas y no por radios censales, hay que hacer un pequeño reordenamiento:</p>
+<pre class="r"><code>comunas &lt;- radios %&gt;% 
+  group_by(COMUNA) %&gt;% 
+  summarise(poblacion=sum(POBLACION),
+            viviendas=sum(VIVIENDAS),
+            hogares=sum(HOGARES),
+            hogares_nbi=sum(HOGARES_NBI),
+            area_km2=sum(AREA_KM2))</code></pre>
+<p>Ahora toca levantar la base y hacer una agrupación para totalizar el monto de los contratos.</p>
+<pre class="r"><code>obras &lt;- read.delim(&quot;~/Big Data/datasets/observatorio-de-obras-urbanas.csv&quot;, encoding = &quot;UTF-8&quot;)
+obrasencomuna &lt;- obras %&gt;% 
+  mutate(monto_contrato=as.numeric(as.character(monto_contrato))) %&gt;% 
+  filter(monto_contrato!=&quot;NA&quot;) %&gt;% 
+  group_by(comuna) %&gt;% 
+  summarise(monto=sum(monto_contrato))</code></pre>
+<pre><code>## Warning in evalq(as.numeric(as.character(monto_contrato)), &lt;environment&gt;):
+## NAs introducidos por coerción</code></pre>
+<p>Como siempre, gran parte del trabajo consiste en ordenar los datos para que queden de una forma manipulable: que las variables coincidan en mayúsculas y minúsculas y que las necesarias sean tomadas como un factor y no como una variable categórica. Una vez que eso está listo, podemos combinar ambas tablas por su elemento común Entonces:</p>
+<pre class="r"><code>comunas_2 &lt;- comunas %&gt;% 
+  mutate(comuna=COMUNA) %&gt;% 
+  select(-COMUNA)
+obrasencomuna &lt;- obrasencomuna %&gt;% 
+  mutate(comuna=as.factor(comuna))
+base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
+<pre><code>## Joining, by = &quot;comuna&quot;</code></pre>
+<pre><code>## Warning: Column `comuna` joining factors with different levels, coercing to
+## character vector</code></pre>
+<pre class="r"><code>head(base_final)</code></pre>
+<pre><code>## Simple feature collection with 6 features and 7 fields
+## geometry type:  POLYGON
+## dimension:      XY
+## bbox:           xmin: -58.53092 ymin: -34.64626 xmax: -58.33925 ymax: -34.528
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs
+## # A tibble: 6 x 8
+##   poblacion viviendas hogares hogares_nbi area_km2 comuna   monto
+##       &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
+## 1    205886    131382   84468       13429     17.8 1      1.35e10
+## 2    166022     71664   61453        2149     12.6 10     6.22e 8
+## 3    189832     84734   71460        1444     14.1 11     4.38e 8
+## 4    200116     93502   78547        1335     15.6 12     8.26e 8
+## 5    230767    129482  100257        1879     14.4 13     2.46e 9
+## 6    226534    141710  103167        2425     16.0 14     4.47e 8
+## # ... with 1 more variable: geometry &lt;POLYGON [Â°]&gt;</code></pre>
+<p>Ahora que tengo la base lista, es momento de graficar. Acá se me ocurrió también incorporar el trazado de la línea de subtes de la ciudad al esquema a graficar porque me imaginaba que iba a arrojar datos interesantes.</p>
+<pre class="r"><code>subte_lineas &lt;- st_read(&quot;http://bitsandbricks.github.io/data/subte_lineas.geojson&quot;)</code></pre>
+<pre><code>## Reading layer `subte_lineas&#39; from data source `http://bitsandbricks.github.io/data/subte_lineas.geojson&#39; using driver `GeoJSON&#39;
+## Simple feature collection with 80 features and 2 fields
+## geometry type:  MULTILINESTRING
+## dimension:      XY
+## bbox:           xmin: -58.48639 ymin: -34.64331 xmax: -58.36993 ymax: -34.55564
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+<pre class="r"><code>subte_estaciones &lt;- st_read(&quot;http://bitsandbricks.github.io/data/subte_estaciones.geojson&quot;)</code></pre>
+<pre><code>## Reading layer `subte_estaciones&#39; from data source `http://bitsandbricks.github.io/data/subte_estaciones.geojson&#39; using driver `GeoJSON&#39;
+## Simple feature collection with 86 features and 3 fields
+## geometry type:  POINT
+## dimension:      XY
+## bbox:           xmin: -58.48639 ymin: -34.64331 xmax: -58.36993 ymax: -34.55564
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+<pre class="r"><code>ggplot()+geom_sf(data=base_final, aes(fill=monto))+
+  scale_fill_viridis_c(direction=-1, option = &quot;A&quot;, name=&quot;Millones de pesos&quot;, breaks=c(174215685, 3513493136, 6852770588, 10192048039, 13531325491), labels=c(&quot;174&quot;, &quot;3.500&quot;, &quot;6.800&quot;,&quot;10.000&quot;, &quot;13.500&quot;))+
+  geom_sf(data = subte_lineas, color=&quot;red&quot;)+
+  geom_sf(data = subte_estaciones, color=&quot;grey&quot;)+
+  labs(title=&quot;Erogación en obra pública por Comunas en la Ciudad de Buenos Aires&quot;,
+       subtitle=&quot;Año 2018&quot;,
+       caption=&quot;Fuente: Portal Buenos Aires Data, data.buenosaires.gob.ar&quot;)</code></pre>
+<p><img src="/post/2018-12-04-obras-publicas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Como se observa en este gráfico, aún hay muchísimo que hacer en materia de descentralización para que las obras públicas lleguen a toda la ciudad. Hay una gran concentración en la zona más céntrica, así como también un presupuesto relativamente alto en la zona sur. Mucho también tiene que ver con la ejecución de las obras para los Juegos Olímpicos de la Juventud 2018.</p>
+</div>
+<div id="profundizando" class="section level1">
+<h1>Profundizando</h1>
+<p>Esta imagen la había posteado originalmente en mi LinkedIn. Ahí alguien la vio (es impresionante como estas cosas llegan a ojos de profesionales que uno no conoce) y me hizo una pregunta técnica y otra de visión general: qué tipos de obras eran y por qué yo creía que descentralizar es importante. Así que me puse manos a la obra: primero, reorganizando la base original en función del tipo de erogación y luego graficando.</p>
+<pre class="r"><code>erogacion_tipo &lt;- obras %&gt;% 
+  mutate(monto_contrato=as.numeric(as.character(monto_contrato))) %&gt;% 
+  filter(monto_contrato!=&quot;NA&quot;) %&gt;% 
+  group_by(tipo) %&gt;% 
+  summarise(monto=sum(monto_contrato))</code></pre>
+<pre><code>## Warning in evalq(as.numeric(as.character(monto_contrato)), &lt;environment&gt;):
+## NAs introducidos por coerción</code></pre>
+<pre class="r"><code>ggplot(data=erogacion_tipo, aes(x=tipo, weight=monto, fill=tipo))+ 
+  geom_bar()+
+  labs(title=&quot;Erogación en obra pública según tipo en la Ciudad de Buenos Aires&quot;,
+       subtitle=&quot;Año 2018&quot;,
+       caption=&quot;Fuente: Portal Buenos Aires Data, data.buenosaires.gob.ar&quot;,
+       x=&quot;Tipo de obra&quot;,
+       y=&quot;Monto erogado en millones de pesos&quot;,
+       fill=&quot;Tipo&quot;)+
+  scale_y_continuous(breaks=c(5000000000, 10000000000, 15000000000),
+                      labels=c(&quot;5000&quot;, &quot;10.000&quot;, &quot;15.000&quot;))+
+  scale_fill_gdocs()</code></pre>
+<p><img src="/post/2018-12-04-obras-publicas_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Este gráfico reafirma -a mi criterio- aún más la importancia de descentralizar. Como se puede observar, la amplia mayoría de los gastos están vinculados a Transporte, gastos que representan prácticamente la suma de Vivienda, Escuelas y Salud. En este punto, también es importante considerar que la inversión en las obras para los JJ.OO sumaron más de 3.600 millones de pesos.</p>
+<p>Si complementamos este gráfico con el primero, podemos inferir que la gran parte de la obra pública está destinada principalmente a facilitar la movilidad entre algunos puntos neurálgicos de acceso a la Capital. Hay mucho que puede hacerse aún, observando estos datos, para mejorar la inversión y ayudar a mejorar la calidad de vida de todos los porteñxs.</p>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">ETIQUETADO EN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/ba-data/">BA Data</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/eph-pobreza/" data-tooltip="La línea de pobreza en el segundo trimestre: analizando la EPH">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/11/mirada-erogacion-obras-publicas/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/11/mirada-erogacion-obras-publicas/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/11/mirada-erogacion-obras-publicas/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Hernán Escudero. Todos los derechos reservados
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/eph-pobreza/" data-tooltip="La línea de pobreza en el segundo trimestre: analizando la EPH">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/11/mirada-erogacion-obras-publicas/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/11/mirada-erogacion-obras-publicas/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/11/mirada-erogacion-obras-publicas/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2018%2F11%2Fmirada-erogacion-obras-publicas%2F">
+          <i class="fa fa-facebook-official"></i><span>Compartir en Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2018%2F11%2Fmirada-erogacion-obras-publicas%2F">
+          <i class="fa fa-twitter"></i><span>Compartir en Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2018%2F11%2Fmirada-erogacion-obras-publicas%2F">
+          <i class="fa fa-google-plus"></i><span>Compartir en Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/img/foto.jpg" alt="Foto de autor" />
+    
+    <h4 id="about-card-name">Hernán Escudero</h4>
+    
+      <div id="about-card-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Del Big Data al desarrollo local endógeno: todo es una cuestión de enfoque.
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Buenos Aires, Argentina
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Buscar" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no se encontraron artículos</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/boleto-estudiantil/">
+                <h3 class="media-heading">Uso del Boleto Estudiantil en la Ciudad de Buenos Aires</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/bano-seco/">
+                <h3 class="media-heading">Formas de saneamiento en los aglomerados de la EPH: dos formas de ver una misma problemática</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Siempre me pareció simpático el paquete treemap: es súper interesante para representar proporciones de distintos segmentos y sub-segmentos de una forma muy clara e interesante. En este punto, vale decir que por mucho tiempo trabajé en investigación y desarrollo de políticas para un hábitat sustentable, principalmente en dos puntos: calefacción y saneamiento.
+Eso fue lo que me inspiró a tomar la EPH para buscar algo que siempre había querido saber y no había podido: cómo se reparte el uso de las alternativas de saneamiento a nivel general en el país.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/eph-pobreza/">
+                <h3 class="media-heading">La línea de pobreza en el segundo trimestre: analizando la EPH</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Hace unas semanas tuve la suerte de poder asistir a un curso organizado por INDEC-CEPED, brindado por auténticos referentes en all things R: Natsumi Shokida, Diego Kozlowski y Guido Weksler. Ahí se trabjó la aplicación de R para el análisis de la Encuesta Permanente de Hogares (EPH), una de las herramientas más valiosas que tiene el Instituto.
+Esta herramienta releva información de 31 aglomerados del país de manera trimestral y es fundamental para observar cómo evolucionan indicadores de pobreza, trabajo y hábitat de una manera mucho más periódica que el censo.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/mirada-erogacion-obras-publicas/">
+                <h3 class="media-heading">Una mirada a la erogación en obras públicas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no se encontraron artículos"
+         data-message-one="1 artículo encontrado"
+         data-message-other="{n} artículos encontrados">
+         4 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/fondo.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2018\/11\/mirada-erogacion-obras-publicas\/';
+          
+            this.page.identifier = '\/2018\/11\/mirada-erogacion-obras-publicas\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

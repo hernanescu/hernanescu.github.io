@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sf on #atR://Hernán Escudero</title>
+    <link>/categories/sf/</link>
+    <description>Recent content in Sf on #atR://Hernán Escudero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/sf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>La línea de pobreza en el segundo trimestre: analizando la EPH</title>
+      <link>/2018/11/eph-pobreza/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/eph-pobreza/</guid>
+      <description>Hace unas semanas tuve la suerte de poder asistir a un curso organizado por INDEC-CEPED, brindado por auténticos referentes en all things R: Natsumi Shokida, Diego Kozlowski y Guido Weksler. Ahí se trabjó la aplicación de R para el análisis de la Encuesta Permanente de Hogares (EPH), una de las herramientas más valiosas que tiene el Instituto.
+Esta herramienta releva información de 31 aglomerados del país de manera trimestral y es fundamental para observar cómo evolucionan indicadores de pobreza, trabajo y hábitat de una manera mucho más periódica que el censo.</description>
+    </item>
+    
+    <item>
+      <title>Una mirada a la erogación en obras públicas</title>
+      <link>/2018/11/mirada-erogacion-obras-publicas/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/mirada-erogacion-obras-publicas/</guid>
+      <description>El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.</description>
+    </item>
+    
+  </channel>
+</rss>

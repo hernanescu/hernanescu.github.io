@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Hernán Escudero">
+<meta name="keywords" content="">
+<meta name="description" content="Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.">
+
+
+<meta property="og:description" content="Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bano">
+<meta name="twitter:title" content="bano">
+<meta property="og:url" content="/2018/12/bano/">
+<meta property="twitter:url" content="/2018/12/bano/">
+<meta property="og:site_name" content="Blog de Herno">
+<meta property="og:description" content="Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.">
+<meta name="twitter:description" content="Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.">
+<meta property="og:locale" content="es-es">
+
+  
+    <meta property="article:published_time" content="2018-12-04T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-12-04T00:00:00">
+  
+  
+  
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="/img/profile.jpeg">
+  <meta property="twitter:image" content="/img/profile.jpeg">
+
+
+    <title>bano</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2018/12/bano/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">Blog de Herno</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/img/profile.jpeg" alt="Foto de autor" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/img/profile.jpeg" alt="Foto de autor" />
+        </a>
+        <h4 class="sidebar-profile-name">Hernán Escudero</h4>
+        
+          <h5 class="sidebar-profile-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Inicio</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categorías</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Etiquetas</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archivos</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Acerca de</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ajugarconhugo">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/hernanescudero/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      bano
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-12-04T00:00:00Z">
+        
+  Diciembre 4, 2018
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<p>Encontré un dataset en el Portal Datos Argentina (<a href="https://datos.gob.ar" class="uri">https://datos.gob.ar</a>) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.</p>
+<div id="manos-a-la-obra" class="section level1">
+<h1>Manos a la obra</h1>
+<p>Arrancamos como siempre con cargar las librerías y la base. Este va a ser un gráfico relativamente sencillo, pero no por eso menos interesante.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages ------------------------------------------------- tidyverse 1.2.1 --</code></pre>
+<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.1     v stringr 1.3.1
+## v readr   1.1.1     v forcats 0.3.0</code></pre>
+<pre><code>## -- Conflicts ---------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>base_pasajes &lt;- read.csv(file = &quot;../../../datasets/cancelaciones_mes_mtipo.csv&quot;, sep=&quot;;&quot;)</code></pre>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/boleto-estudiantil/" data-tooltip="Uso del Boleto Estudiantil en la Ciudad de Buenos Aires">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/12/bano/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/12/bano/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/12/bano/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Hernán Escudero. Todos los derechos reservados
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/11/boleto-estudiantil/" data-tooltip="Uso del Boleto Estudiantil en la Ciudad de Buenos Aires">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/12/bano/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/12/bano/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/12/bano/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2018%2F12%2Fbano%2F">
+          <i class="fa fa-facebook-official"></i><span>Compartir en Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2018%2F12%2Fbano%2F">
+          <i class="fa fa-twitter"></i><span>Compartir en Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2018%2F12%2Fbano%2F">
+          <i class="fa fa-google-plus"></i><span>Compartir en Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/img/profile.jpeg" alt="Foto de autor" />
+    
+    <h4 id="about-card-name">Hernán Escudero</h4>
+    
+      <div id="about-card-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Del Big Data al desarrollo local endógeno: todo es una cuestión de enfoque.
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Buenos Aires, Argentina
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Buscar" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no se encontraron artículos</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/12/bano/">
+                <h3 class="media-heading">bano</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/boleto-estudiantil/">
+                <h3 class="media-heading">Uso del Boleto Estudiantil en la Ciudad de Buenos Aires</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/bano-seco/">
+                <h3 class="media-heading">Formas de saneamiento en los aglomerados de la EPH: dos formas de ver una misma problemática</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Siempre me pareció simpático el paquete treemap: es súper interesante para representar proporciones de distintos segmentos y sub-segmentos de una forma muy clara e interesante. En este punto, vale decir que por mucho tiempo trabajé en investigación y desarrollo de políticas para un hábitat sustentable, principalmente en dos puntos: calefacción y saneamiento.
+Eso fue lo que me inspiró a tomar la EPH para buscar algo que siempre había querido saber y no había podido: cómo se reparte el uso de las alternativas de saneamiento a nivel general en el país.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/eph-pobreza/">
+                <h3 class="media-heading">La línea de pobreza en el segundo trimestre: analizando la EPH</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Hace unas semanas tuve la suerte de poder asistir a un curso brindado por auténticos referentes en all things R: Natsumi Shokida, Diego Kozlowski y [VER EL QUE FALTA], donde estuvimos viendo la aplicación de R para el análisis de la Encuesta Permanente de Hogares (EPH), una de las herramientas más valiosas que tiene el Instituto Nacional de Estadísticas y Censos (INDEC).
+Esta herramienta releva información de 31 aglomerados del país de manera trimestral y es fundamental para observar cómo evolucionan indicadores de pobreza, trabajo y hábitat de una manera mucho más periódica que el censo.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/mirada-erogacion-obras-publicas/">
+                <h3 class="media-heading">Una mirada a la erogación en obras públicas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Arrancando por lo básicoPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2. Con el paquete SF tomo la base de los radios censales de la Ciudad Autónoma de Buenos Aires, usando el .geojson alojado en la página de Antonio Vázquez Brust (https://bitsandbricks.github.io/).
+library(tidyverse)## -- Attaching packages ------------------------------------------------- tidyverse 1.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/mirada-erogacion-obras-publicas/">
+                <h3 class="media-heading">Una mirada a la erogación en obras públicas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Arrancando por lo básicoPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2. Con el paquete SF tomo la base de los radios censales de la Ciudad Autónoma de Buenos Aires, usando el .geojson alojado en la página de Antonio Vázquez Brust (https://bitsandbricks.github.io/).
+library(tidyverse)## -- Attaching packages ------------------------------------------------- tidyverse 1.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no se encontraron artículos"
+         data-message-one="1 artículo encontrado"
+         data-message-other="{n} artículos encontrados">
+         6 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/fondo.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2018\/12\/bano\/';
+          
+            this.page.identifier = '\/2018\/12\/bano\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

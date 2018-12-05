@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>#atR://Hernán Escudero</title>
+    <link>/</link>
+    <description>Recent content on #atR://Hernán Escudero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Wed, 28 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uso del Boleto Estudiantil en la Ciudad de Buenos Aires</title>
+      <link>/2018/11/boleto-estudiantil/</link>
+      <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/boleto-estudiantil/</guid>
+      <description>Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.</description>
+    </item>
+    
+    <item>
+      <title>Formas de saneamiento en los aglomerados de la EPH: dos formas de ver una misma problemática</title>
+      <link>/2018/11/bano-seco/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/bano-seco/</guid>
+      <description>Siempre me pareció simpático el paquete treemap: es súper interesante para representar proporciones de distintos segmentos y sub-segmentos de una forma muy clara e interesante. En este punto, vale decir que por mucho tiempo trabajé en investigación y desarrollo de políticas para un hábitat sustentable, principalmente en dos puntos: calefacción y saneamiento.
+Eso fue lo que me inspiró a tomar la EPH para buscar algo que siempre había querido saber y no había podido: cómo se reparte el uso de las alternativas de saneamiento a nivel general en el país.</description>
+    </item>
+    
+    <item>
+      <title>La línea de pobreza en el segundo trimestre: analizando la EPH</title>
+      <link>/2018/11/eph-pobreza/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/eph-pobreza/</guid>
+      <description>Hace unas semanas tuve la suerte de poder asistir a un curso organizado por INDEC-CEPED, brindado por auténticos referentes en all things R: Natsumi Shokida, Diego Kozlowski y Guido Weksler. Ahí se trabjó la aplicación de R para el análisis de la Encuesta Permanente de Hogares (EPH), una de las herramientas más valiosas que tiene el Instituto.
+Esta herramienta releva información de 31 aglomerados del país de manera trimestral y es fundamental para observar cómo evolucionan indicadores de pobreza, trabajo y hábitat de una manera mucho más periódica que el censo.</description>
+    </item>
+    
+    <item>
+      <title>Una mirada a la erogación en obras públicas</title>
+      <link>/2018/11/mirada-erogacion-obras-publicas/</link>
+      <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/11/mirada-erogacion-obras-publicas/</guid>
+      <description>El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.</description>
+    </item>
+    
+  </channel>
+</rss>
