@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Hernán Escudero">
+<meta name="keywords" content="">
+<meta name="description" content="Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.">
+
+
+<meta property="og:description" content="Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Test de Relaciones Violentas: se encienden las alarmas">
+<meta name="twitter:title" content="Test de Relaciones Violentas: se encienden las alarmas">
+<meta property="og:url" content="/2018/12/test-relaciones/">
+<meta property="twitter:url" content="/2018/12/test-relaciones/">
+<meta property="og:site_name" content="#atR://Hernán Escudero">
+<meta property="og:description" content="Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.">
+<meta name="twitter:description" content="Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.">
+<meta property="og:locale" content="es-es">
+
+  
+    <meta property="article:published_time" content="2018-12-11T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-12-11T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="tidyverse">
+    
+      <meta property="article:section" content="sf">
+    
+  
+  
+    
+      <meta property="article:tag" content="BA Data">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="/img/foto.jpg">
+  <meta property="twitter:image" content="/img/foto.jpg">
+
+
+    <title>Test de Relaciones Violentas: se encienden las alarmas</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2018/12/test-relaciones/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">#atR://Hernán Escudero</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="/img/foto.jpg" alt="Foto de autor" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="/img/foto.jpg" alt="Foto de autor" />
+        </a>
+        <h4 class="sidebar-profile-name">Hernán Escudero</h4>
+        
+          <h5 class="sidebar-profile-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Inicio</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categorías</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Etiquetas</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archivos</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Acerca de</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/hernanescudero/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Test de Relaciones Violentas: se encienden las alarmas
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-12-11T00:00:00Z">
+        
+  Diciembre 11, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>en</span>
+    
+      <a class="category-link" href="/categories/tidyverse">tidyverse</a>, 
+    
+      <a class="category-link" href="/categories/sf">sf</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<p>Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.</p>
+<p>El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta. En definitiva, si impide una vida digna e independiente haciendo ejercicio de una violencia simbólica.</p>
+<p>Ante ese cuestionario autoadministrado que presenta situaciones hipotéticas, quien responde debe contestar con A (siempre), B (a veces) o C (nunca). De acuerdo al Ministerio de Desarrollo Humano y Hábitat, una mayoría de A indica una relación violenta, una primacía de B evidencia señales de alarma y si predomina la C se trata de un noviazgo saludable. Esta base cuenta con casi 4.000 respuestas y son datos que comprenden resultados entre febrero y octubre de este año.</p>
+<p>Lo que vamos a hacer es desagregar los resultados por barrio y observaremos cuántas relaciones tienen mayoría de A o B, detectando así las relaciones que, al menos, presentan señales de alarma de violencia. Luego haremos dos gráficos: el primero mostrará los resultados por barrios, y vamos a agregarle la ubicación geográfica de los Centros Integrales de la Mujer, espacios donde busca darse contención a aquellas que sean violentadas por sus parejas. El segundo será un reparto por edad de los resultados.</p>
+<div id="manos-a-la-obra" class="section level1">
+<h1>Manos a la obra</h1>
+<p>Como siempre, cargamos <em>tidyverse</em> para manipular y ordenar los datos, y <em>sf</em> para trabajar con datos georeferenciados y luego levantamos la base.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages ------------------------------------------------- tidyverse 1.2.1 --</code></pre>
+<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.1     v stringr 1.3.1
+## v readr   1.1.1     v forcats 0.3.0</code></pre>
+<pre><code>## -- Conflicts ---------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(sf)</code></pre>
+<pre><code>## Linking to GEOS 3.6.1, GDAL 2.2.3, proj.4 4.9.3</code></pre>
+<pre class="r"><code>test_alerta &lt;- read.csv(&#39;../../../datasets/resultados-del-test-febrero-octubre-2018.csv&#39;, encoding = &quot;UTF-8&quot;)
+str(test_alerta)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    3910 obs. of  18 variables:
+##  $ fecha      : Factor w/ 240 levels &quot;2018-02-14&quot;,&quot;2018-02-15&quot;,..: 240 240 239 239 239 239 239 239 238 238 ...
+##  $ hora       : Factor w/ 1251 levels &quot;00:00:00&quot;,&quot;00:01:00&quot;,..: 609 50 1240 791 790 646 526 452 993 982 ...
+##  $ edad       : int  19 21 16 17 32 35 22 28 21 24 ...
+##  $ genero     : Factor w/ 3 levels &quot;Hombre&quot;,&quot;Mujer&quot;,..: 2 1 2 2 2 2 2 2 2 2 ...
+##  $ barrio     : Factor w/ 48 levels &quot;Agronomia&quot;,&quot;Almagro&quot;,..: 22 22 22 22 32 6 2 25 20 3 ...
+##  $ pregunta_1 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 2 2 1 2 3 2 3 1 3 ...
+##  $ pregunta_2 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 3 1 2 3 3 3 2 3 ...
+##  $ pregunta_3 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 2 1 1 3 2 3 2 3 ...
+##  $ pregunta_4 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 1 1 1 2 3 3 1 3 ...
+##  $ pregunta_5 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 3 2 1 3 3 2 2 3 ...
+##  $ pregunta_6 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 2 2 1 3 3 3 3 3 ...
+##  $ pregunta_7 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 2 1 2 2 3 3 3 2 3 ...
+##  $ pregunta_8 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 2 3 2 3 3 3 3 3 ...
+##  $ pregunta_9 : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 3 3 2 3 3 3 3 3 ...
+##  $ pregunta_10: Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 3 2 3 3 3 3 3 3 ...
+##  $ pregunta_11: Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 1 1 2 3 3 3 1 3 ...
+##  $ pregunta_12: Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 1 2 2 3 2 3 1 3 ...
+##  $ pregunta_13: Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 3 3 1 3 1 3 3 3 2 3 ...</code></pre>
+<p>Podemos ver que la base tiene datos demográficos de barrio, edad y género, entre otros. Al igual que en el post de la erogación en obras públicas, tomamos el radio censal que hostea Antonio Vázquez Brust en su blog Bits and Bricks, y usamos esos datos georeferenciados para hacer el recorte, esta vez por barrios.</p>
+<pre class="r"><code>radios &lt;- st_read(&quot;https://bitsandbricks.github.io/data/CABA_rc.geojson&quot;)</code></pre>
+<pre><code>## Reading layer `CABA_rc&#39; from data source `https://bitsandbricks.github.io/data/CABA_rc.geojson&#39; using driver `GeoJSON&#39;
+## Simple feature collection with 3554 features and 8 fields
+## geometry type:  MULTIPOLYGON
+## dimension:      XY
+## bbox:           xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+<pre class="r"><code>barrios &lt;- radios %&gt;% 
+  group_by(BARRIO) %&gt;% 
+  summarise(poblacion=sum(POBLACION),
+            viviendas=sum(VIVIENDAS),
+            hogares=sum(HOGARES),
+            hogares_nbi=sum(HOGARES_NBI),
+            area_km2=sum(AREA_KM2))
+
+str(barrios)</code></pre>
+<pre><code>## Classes &#39;sf&#39;, &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:  48 obs. of  7 variables:
+##  $ BARRIO     : Factor w/ 48 levels &quot;AGRONOMIA&quot;,&quot;ALMAGRO&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ poblacion  : num  13912 131699 138926 89452 126267 ...
+##  $ viviendas  : num  6262 71216 77981 33058 71363 ...
+##  $ hogares    : num  5284 58327 60387 31249 54666 ...
+##  $ hogares_nbi: num  70 3404 7122 3850 542 ...
+##  $ area_km2   : num  2.12 4.05 4.34 7.96 7.73 ...
+##  $ geometry   :sfc_GEOMETRY of length 48; first list element: List of 1
+##   ..$ : num [1:107, 1:2] -58.5 -58.5 -58.5 -58.5 -58.5 ...
+##   ..- attr(*, &quot;class&quot;)= chr  &quot;XY&quot; &quot;POLYGON&quot; &quot;sfg&quot;
+##  - attr(*, &quot;sf_column&quot;)= chr &quot;geometry&quot;
+##  - attr(*, &quot;agr&quot;)= Factor w/ 3 levels &quot;constant&quot;,&quot;aggregate&quot;,..: NA NA NA NA NA NA
+##   ..- attr(*, &quot;names&quot;)= chr  &quot;BARRIO&quot; &quot;poblacion&quot; &quot;viviendas&quot; &quot;hogares&quot; ...</code></pre>
+<p>En la base vimos que las preguntas están cada una en una columna separada. A efectos de agrupar las respuestas, necesitamos aplicar un <em>gather</em>: tener en una columna qué numero de pregunta es y en otra el valor que asignó quien respondió.</p>
+<pre class="r"><code>test_gather &lt;- test_alerta %&gt;% 
+  gather(pregunta, valor, c(pregunta_1:pregunta_13))
+
+head(test_gather)</code></pre>
+<pre><code>##        fecha     hora edad genero        barrio   pregunta valor
+## 1 2018-10-11 12:58:00   19  Mujer          Otro pregunta_1     C
+## 2 2018-10-11 00:51:00   21 Hombre          Otro pregunta_1     B
+## 3 2018-10-10 23:48:00   16  Mujer          Otro pregunta_1     B
+## 4 2018-10-10 16:03:00   17  Mujer          Otro pregunta_1     A
+## 5 2018-10-10 16:02:00   32  Mujer San Cristóbal pregunta_1     B
+## 6 2018-10-10 13:35:00   35  Mujer         Boedo pregunta_1     C</code></pre>
+<p>Ahora que tenemos los datos juntos, el paso que sigue es hacer las tasas de respuestas por barrio.</p>
+<pre class="r"><code>test_tasa &lt;- test_gather %&gt;% 
+  group_by(barrio) %&gt;% 
+  summarise(preguntasa=sum(valor==&quot;A&quot;)/sum(valor%in%c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)),
+            preguntasb=sum(valor==&quot;B&quot;)/sum(valor%in%c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)),
+            preguntasc=sum(valor==&quot;C&quot;)/sum(valor%in%c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)))
+
+head(test_tasa)</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##   barrio    preguntasa preguntasb preguntasc
+##   &lt;fct&gt;          &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+## 1 Agronomia      0.256      0.286      0.459
+## 2 Almagro        0.256      0.299      0.445
+## 3 Balvanera      0.222      0.266      0.512
+## 4 Barracas       0.212      0.312      0.476
+## 5 Belgrano       0.195      0.283      0.521
+## 6 Boedo          0.175      0.326      0.499</code></pre>
+</div>
+<div id="el-fino-arte-del-data-wrangling" class="section level1">
+<h1>El fino arte del data wrangling</h1>
+<p>Ya empieza a asomar el primer problema: las bases que contienen los nombres de los barrios están en distinto formato. Por eso primero hay que pasar todo a minúscula, tanto lo que contiene la variable “barrio” como el nombre en sí. Una vez que está listo, unimos ambas bases.</p>
+<pre class="r"><code>test_tasa &lt;- test_tasa %&gt;% 
+  mutate(barrio=tolower(barrio))
+
+barrios &lt;- barrios %&gt;% 
+  mutate(BARRIO=tolower(BARRIO)) %&gt;% 
+  rename(barrio=BARRIO)
+
+tasa_barrios &lt;- left_join(barrios, test_tasa, by=&quot;barrio&quot;)
+head(tasa_barrios)</code></pre>
+<pre><code>## Simple feature collection with 6 features and 9 fields
+## geometry type:  GEOMETRY
+## dimension:      XY
+## bbox:           xmin: -58.50294 ymin: -34.66295 xmax: -58.33455 ymax: -34.53199
+## epsg (SRID):    4326
+## proj4string:    +proj=longlat +datum=WGS84 +no_defs
+## # A tibble: 6 x 10
+##   barrio poblacion viviendas hogares hogares_nbi area_km2 preguntasa
+##   &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+## 1 agron~     13912      6262    5284          70     2.12      0.256
+## 2 almag~    131699     71216   58327        3404     4.05      0.256
+## 3 balva~    138926     77981   60387        7122     4.34      0.222
+## 4 barra~     89452     33058   31249        3850     7.96      0.212
+## 5 belgr~    126267     71363   54666         542     7.73      0.195
+## 6 boca       45113     18133   16287        3460     5.02     NA    
+## # ... with 3 more variables: preguntasb &lt;dbl&gt;, preguntasc &lt;dbl&gt;,
+## #   geometry &lt;GEOMETRY [Â°]&gt;</code></pre>
+<p>¡No tan rápido! Resulta que los mismos nombres de los barrios también están escritos de distinta manera: con y sin tilde, con y sin artículos, e inclusive en el caso del barrio de Santa Rita, en la base de las tasas figura como “otro”. Así que a unificar criterios se ha dicho.</p>
+<pre class="r"><code>test_tasa2 &lt;- test_tasa %&gt;% 
+  mutate(barrio=case_when(barrio==&quot;agronomia&quot;~&quot;agronomía&quot;,
+                          barrio==&quot;boca&quot;~ &quot;la boca&quot;,
+                          barrio==&quot;nuñez&quot;~&quot;núñez&quot;,
+                          barrio==&quot;villa general mitre&quot;~&quot;villa gral. mitre&quot;,
+                          barrio==&quot;la paternal&quot;~ &quot;paternal&quot;,
+                          barrio==&quot;otro&quot;~ &quot;villa santa rita&quot;,
+                          barrio==&quot;montserrat&quot;~ &quot;monserrat&quot;,
+                          TRUE~ barrio))
+
+barrios2 &lt;- barrios %&gt;% 
+  mutate(barrio=case_when(barrio==&quot;agronomia&quot;~&quot;agronomía&quot;,
+                          barrio==&quot;boca&quot;~ &quot;la boca&quot;,
+                          barrio==&quot;san cristobal&quot;~ &quot;san cristóbal&quot;,
+                          barrio==&quot;san nicolas&quot;~ &quot;san nicolás&quot;,
+                          barrio==&quot;villa ortuzar&quot;~ &quot;villa ortúzar&quot;,
+                          barrio==&quot;villa pueyrredon&quot;~ &quot;villa pueyrredón&quot;,
+                          barrio==&quot;constitucion&quot;~ &quot;constitución&quot;,
+                          barrio==&quot;nuñez&quot;~ &quot;núñez&quot;,
+                          barrio==&quot;velez sarsfield&quot;~ &quot;vélez sarsfield&quot;,
+                          TRUE~ barrio))
+
+tasa_barrios2 &lt;- left_join(test_tasa2, barrios2, by=&quot;barrio&quot;)
+
+base_final &lt;- tasa_barrios2 %&gt;% 
+  mutate(preguntasab=preguntasa+preguntasb)</code></pre>
+<p>El último paso que hice fue sumar los resultados de las tasas de A y B, para tener la línea sobre la cual graficar. Ahora que ya está todo listo, sólo resta levantar la base que contiene los puntos geográficos de los Centros Integrales de la Mujer y colocar esa como la segunda capa del gráfico.</p>
+<pre class="r"><code>centros_mujer &lt;- read.csv(&#39;../../../datasets/centros-integrales-de-la-mujer.csv&#39;)
+
+ggplot()+
+  geom_sf(data=base_final, aes(fill=preguntasab))+
+  scale_fill_continuous(low = &quot;#34a853&quot;, high = &quot;#ea4335&quot;, name=&quot;Porcentaje&quot;,
+                        breaks=c(0.33, 0.47, 0.61),
+                        labels=c(&quot;33%&quot;, &quot;47%&quot;, &quot;61%&quot;))+
+  labs(title=&quot;Porcentaje de relaciones violentas o con señales de alarma&quot;,
+       subtitle=&quot;Año 2018&quot;,
+       caption=&quot;Fuente: Portal Buenos Aires Data, data.buenosaires.gob.ar&quot;)+
+  geom_point(data = centros_mujer, aes(x=X, y=Y), color=&quot;white&quot;)+
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        rect = element_blank())</code></pre>
+<p><img src="/post/2018-12-10-test-relaciones_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>El resultado sin duda es alarmante: hay elevadísimos promedios de relaciones con indicios de violencia en la Ciudad de Buenos Aires, donde predomina Paternal (61,8%), Pompeya (61,5%) y Villa General Mitre (59,6%). Es escalofriante tomar dimensión de estos números: en estos barrios, tres de cada cinco parejas presenta estos signos. Si miramos los barrios que tienen mayorías de A, el podio lo encabeza nuevamente Paternal (28,6%), seguido de San Nicolás (28,4%) y Pompeya (27,3%).</p>
+<p>El reparto de los Centros Integrales de la Mujer muestra que están ubicados mayoritariamente en barrios de “violencia media”, por ponerle un nombre. Sería interesante saber si la presencia de estos Centros hizo caer ese porcentaje en los barrios: de todos modos, el gráfico evidencia dónde tendría que haber una mayor contención estatal para colaborar con la erradicación de la violencia.</p>
+<p>Para el gráfico por edad, tenemos que reacomodar toda la base de acuerdo a los nuevos criterios. Al observar lo que sucede dentro de esa variable encontramos que hay resultados que llaman la atención: edades que parecieran malas respuestas (nos cuesta creer que haya respondido una persona de 4 años, por ejemplo), pero para datos que podríamos calificar como “inverosímiles”, creamos una categoría “otros”. Metamos quinta a fondo y veamos qué pasa:</p>
+<pre class="r"><code>base_franja &lt;- test_gather %&gt;%
+  mutate(barrio=tolower(barrio)) %&gt;% 
+  mutate(barrio=case_when(barrio==&quot;agronomia&quot;~&quot;agronomía&quot;,
+                          barrio==&quot;boca&quot;~ &quot;la boca&quot;,
+                          barrio==&quot;nuñez&quot;~&quot;núñez&quot;,
+                          barrio==&quot;villa general mitre&quot;~&quot;villa gral. mitre&quot;,
+                          barrio==&quot;la paternal&quot;~ &quot;paternal&quot;,
+                          barrio==&quot;otro&quot;~ &quot;villa santa rita&quot;,
+                          barrio==&quot;montserrat&quot;~ &quot;monserrat&quot;,
+                          TRUE~ barrio)) %&gt;% 
+  mutate(franja=case_when(edad%in%c(12:18)~&quot;12 a 18&quot;,
+                          edad%in%c(19:25)~&quot;19 a 25&quot;,
+                          edad%in%c(26:35)~&quot;26 a 35&quot;,
+                          edad%in%c(36:45)~&quot;36 a 45&quot;,
+                          edad%in%c(46:55)~&quot;46 a 55&quot;,
+                          edad%in%c(56:76)~&quot;56 a 76&quot;,
+                          TRUE~ &quot;otros&quot;)) %&gt;% 
+  group_by(franja) %&gt;% 
+  summarise(preguntasa=sum(valor==&quot;A&quot;)/sum(valor%in%c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)),
+            preguntasb=sum(valor==&quot;B&quot;)/sum(valor%in%c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)),
+            preguntasc=sum(valor==&quot;C&quot;)/sum(valor%in%c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)))
+
+base_franja_graf &lt;- base_franja %&gt;% 
+  gather(pregunta, valor, c(2:4))
+
+ggplot(base_franja_graf, aes(franja, valor, fill=pregunta))+
+  geom_col()+
+  scale_fill_brewer(palette=&quot;Set1&quot;, name=&quot;Respuestas&quot;,
+                    labels=c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;))+
+  labs(title=&quot;Porcentaje de respuestas al Test de Relaciones Violentas según edad&quot;,
+       subtitle=&quot;Año 2018&quot;,
+       caption=&quot;Fuente: Portal Buenos Aires Data, data.buenosaires.gob.ar&quot;)+
+  theme(axis.title.x = element_blank(),
+        axis.title.y = element_blank(),
+        rect = element_blank())</code></pre>
+<p><img src="/post/2018-12-10-test-relaciones_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>Los resultados muestran que quienes tienen entre 26 y 35 años tienen relaciones más saludables, con una minoría de respuestas A (16,6%) y mayoría de C (50,1%). Por otro lado es alarmante lo que se observa en la franja preadolescente: ostenta la mayor proporción de respuestas con alarmas (57,9%), con lo que sólo cuatro de cada diez relaciones en esa edad tienen características saludables. Esto refuerza la importancia de que haya políticas sociales como la ley de Educación Sexual Integral (ESI), que hacen posible la detección de estas señales de violencia simbólica desde una temprana edad.</p>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">ETIQUETADO EN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/ba-data/">BA Data</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/12/maquina-scrapear/" data-tooltip="La máquina de scrapear: Twitter">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/12/test-relaciones/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/12/test-relaciones/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/12/test-relaciones/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Hernán Escudero. Todos los derechos reservados
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/12/maquina-scrapear/" data-tooltip="La máquina de scrapear: Twitter">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=/2018/12/test-relaciones/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=/2018/12/test-relaciones/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=/2018/12/test-relaciones/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=%2F2018%2F12%2Ftest-relaciones%2F">
+          <i class="fa fa-facebook-official"></i><span>Compartir en Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=%2F2018%2F12%2Ftest-relaciones%2F">
+          <i class="fa fa-twitter"></i><span>Compartir en Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=%2F2018%2F12%2Ftest-relaciones%2F">
+          <i class="fa fa-google-plus"></i><span>Compartir en Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="/img/foto.jpg" alt="Foto de autor" />
+    
+    <h4 id="about-card-name">Hernán Escudero</h4>
+    
+      <div id="about-card-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Del Big Data al desarrollo local endógeno: todo es una cuestión de enfoque.
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Buenos Aires, Argentina
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Buscar" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no se encontraron artículos</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/12/test-relaciones/">
+                <h3 class="media-heading">Test de Relaciones Violentas: se encienden las alarmas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/12/maquina-scrapear/">
+                <h3 class="media-heading">La máquina de scrapear: Twitter</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.
+Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/boleto-estudiantil/">
+                <h3 class="media-heading">Uso del Boleto Estudiantil en la Ciudad de Buenos Aires</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/bano-seco/">
+                <h3 class="media-heading">Formas de saneamiento en los aglomerados de la EPH: dos formas de ver una misma problemática</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Siempre me pareció simpático el paquete treemap: es súper interesante para representar proporciones de distintos segmentos y sub-segmentos de una forma muy clara e interesante. En este punto, vale decir que por mucho tiempo trabajé en investigación y desarrollo de políticas para un hábitat sustentable, principalmente en dos puntos: calefacción y saneamiento.
+Eso fue lo que me inspiró a tomar la EPH para buscar algo que siempre había querido saber y no había podido: cómo se reparte el uso de las alternativas de saneamiento a nivel general en el país.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/eph-pobreza/">
+                <h3 class="media-heading">La línea de pobreza en el segundo trimestre: analizando la EPH</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Hace unas semanas tuve la suerte de poder asistir a un curso organizado por INDEC-CEPED, brindado por auténticos referentes en all things R: Natsumi Shokida, Diego Kozlowski y Guido Weksler. Ahí se trabjó la aplicación de R para el análisis de la Encuesta Permanente de Hogares (EPH), una de las herramientas más valiosas que tiene el Instituto.
+Esta herramienta releva información de 31 aglomerados del país de manera trimestral y es fundamental para observar cómo evolucionan indicadores de pobreza, trabajo y hábitat de una manera mucho más periódica que el censo.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/mirada-erogacion-obras-publicas/">
+                <h3 class="media-heading">Una mirada a la erogación en obras públicas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/1/01/">
+                <h3 class="media-heading"></h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">wordcloud2{"x":{"word":["encuesta","argentina","hoy","nacional","ccdelaciencia","ahora","mujeres","cultural","debate","realizó","sincalic","entender","jornada","música","cuerpo","culturales","gente","pienso","resultados","presentamos","consumo","tiempo","ve","atención","tema","viernes","debaten","personas","redes","leen","muere","mujeresenlacultura","futuro","historias","instagram","laburo","medio","miles","nuevo","podcast","quedo","toda","dónde","mayor","representan","va","van","existe","financiamiento","hacia","presentación","análisis","baratas","darle","encuentro","entradas","equipo","parte","proporción","reírte","teatro","aspectos","diarios","dimensión","gran","libro","papel","saben","según","varones","acerca","aporta","bueno","comienza","comunidad","cosa","datos","desmitificar","dice","domingo","especialistas","estadística","herramienta","ho","importante","información","jóvenes","lectores","libros","menos","netflix","ocurre","país","realizada","sectores","sinca","sistema","temporada","ven","activa","analizar","bajaba","cambiarla","cambios","canciones","cine","compra","conocé","construyendo","contará","cuántos","decisiones","dialogar","distintos","empezaron","encontrás","formas","hombres","idea","indus","larga","leo","leyendo","matando","nace","nichos","nota","nuevas","participación","poca","portal","portales","pregunta","prejuicio","producción","protagonistas","sino","transforma","viene","abre","alguna","asociarse","cada","cama","cargos","chicos","consumos","cuánta","cuestión","culpa","deciden","despierta","día","directivos","encontró","escuchocongo","extendido","generamos","inscribite","jerárquicos","mano","mmuguruza","mostró","ocupan","ofrecer","pensamos","problema","qu","sabés","sector","sentirse","smartphones","tener","tiempos","trabajo","uso","valga","valor","adultos","boom","charla","colectivo","conocer","cosas","desafío","empleo","encontré","enter","estructuras","financi","financiar","forma","grandes","hice","hor","industria","informarnos","llevando","lógi","mañana","marcas","maría","mesa","niñxs","nombre","nunca","obligacion","ocupaciones","pa","pasando","pensar","pudo","puedan","reconvertirse","series","transformación","web","apue","audiencia","buen","buena","cabo","captar","consecuencia","contexto","creo","cruz","cuentan","cultura","diseñar","encues","esperamos","godoy","gracias","hora","invitarme","llevara","mariela_reiman","mesas","moderar","nego","negocio","obrar","oferta","participar","politicas","radio","resultan","segmentación","sentido","similar","sirvan","tiende","acercate","argentinos","ayer","buscar","cambiar","casi","comunitarios","consumimos","contaron","contenidos","cree","deba","demanda","derechos","desconectados","embargo","empiezan","espacios","figueras","generalizada","género","gigante","identificación","libre","lugares","martinpiro","microteatroba","miniserie","minorías","minutos","modo","mundo","nsclauzero","nuevos","participan","partir","perdido","públic","público","realizador","sebakatz","social","solo","alberto","amendezb","andresgribnicow","arrancar","avengersendgame","c7lyhskyam","cc","centroculturaldelaciencia","charlas","compite","congo","costos","crecimiento","cznlvqnppp","director","ej","elena","encontr","enterate","escuchamos","escuchan","específico","expone","flacsoargentina","fragmentada","gobierno","gqia","imagen","infantil","lamelga","luis","marturua","mientras","miramos","mismo","modelo","murió","museoroca","negocios","notipositivas","ocup","ofert","organizada","permitieron","pescador","pipo","play","quevedo","radios","reino","repertorio","seguimos","simplificados","sostuvo","sueño","tele","walsh","wattpad","acostumbrados","afirmamos","agua","antigua","años","aprender","armó","atenció","audiencias","auspiciadas","b9sgob2hwi","ba","bajó","basura","brutalidades","bsa45vgton","buenviernes","buscan","bxilnzdxkp","ca","camb","canales","capítulo","cargan","cautivas","censura","censurar","centrocultur","cifras","cisfn9pzii","co","confundidos","consu","consumoscul","consumoscult","correc","corriente","cozqo35ouc","cpn5wnk2so","crisis","ct5gby9psj","cu","cuantas","cubrir","cultu","cultur","d7imdsezzy","desarmarlos","desconocemos","destruye","devenir","digitales","dijo","dón","dormir","dos","duej9vpzip","dxyhlvaaqb","editorial","empleados","empy6mvxnt","enc","encont","equi","escuela","española","ex9knxay3e","facilidades","fcbsw8zxnu","fgycvrrksp","fhbwgnmoge","fina","fuddx2wudm","fut","gejce6dcay","generación","gqiakhizrr","gramelgar","hablar","hjsxhcnfbo","hqtva8ypni","in","influencers","jóven","judaskwygu","kccabellovotes","kgika3wenv","kglkxcwqom","kguhjaiskp","kk1alknw6q","krcbhacqdj","lectura","leer","li","llevan","lnsad1euzl","luego","main","manera","materia","medios","mercancía","mito","mujer","muñecotes","navidad","nbeczuwvo6","ofrec","ojwgfja2ct","p1uljzztpn","par","periodistas","preguntamos","preparando","presentamo","presentó","primaria","pu7binaoy4","púb","pueblo","puede","qb8eudifxo","qechpygkpf","reportepub","revolución","rompe","rosa","salvar","scjccxe6e2","sentarnos","shelovescabeeyo","simbólica","sincal","sn63ks8qm8","sociales","street","tecnologia","tehcbqovv7","temyrtg8do","tradicionales","u8ycjfnmwx","ukeidd2mrl","uo4dbuhvgf","varón","vby0uuaaal","vec","ver","vgqhvekvxw","vh5dbrbmlr"],"freq":[57,40,33,33,31,27,27,26,26,26,24,22,22,22,20,20,20,20,19,18,17,17,17,16,16,16,15,15,15,14,14,14,13,13,13,13,13,13,13,13,13,13,12,12,12,12,12,11,11,11,11,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.57894736842105,"backgroundColor":"white","gridSize":8,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n console.log(123);\n if(!iii){\n window.location.reload();\n iii = False;\n\n }\n }","data":null}]}}{"viewer":{"width":450,"height":350,"padding":0,"fill":true},"browser":{"width":960,"height":500,"padding":0,"fill":true}}</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no se encontraron artículos"
+         data-message-one="1 artículo encontrado"
+         data-message-other="{n} artículos encontrados">
+         7 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('/images/fondo.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = '\/2018\/12\/test-relaciones\/';
+          
+            this.page.identifier = '\/2018\/12\/test-relaciones\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
