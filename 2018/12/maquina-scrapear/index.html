@@ -334,22 +334,22 @@ tw_search_timelines &lt;- function(x, cant) {#es el mismo principio que la anter
 <pre class="r"><code>tw_search(ConsumosCulturales, 1500)</code></pre>
 <pre><code>## Warning in doRppAPICall(&quot;search/tweets&quot;, n, params = params,
 ## retryOnRateLimit = retryOnRateLimit, : 1500 tweets were requested but the
-## API can only return 276</code></pre>
+## API can only return 299</code></pre>
 <pre class="r"><code>str(ConsumosCulturales)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    276 obs. of  16 variables:
-##  $ text         : chr  &quot;RT @mariela_reiman: “Como adultos tenemos la obligacion de informarnos y conocer para entender los #ConsumosCul&quot;| __truncated__ &quot;RT @CulturaNacionAR: &lt;U+0001F4FB&gt;\&quot;Nosotros pensamos en un financiamiento colectivo. El desafío es pensar que l&quot;| __truncated__ &quot;RT @CulturaNacionAR: \&quot;Los aspectos culturales tienen más consumo de lo que se ve. Hoy se leen más diarios &lt;U+0&quot;| __truncated__ &quot;RT @CulturaNacionAR: \&quot;Hay una cosa que está bueno desmitificar: se dice que hay menos atención pero un domingo&quot;| __truncated__ ...
+<pre><code>## &#39;data.frame&#39;:    299 obs. of  16 variables:
+##  $ text         : chr  &quot;RT @CulturaNacionAR: El equipo de @sincalic realizó una encuesta del modo en el que los argentinos consumimos l&quot;| __truncated__ &quot;RT @CulturaNacionAR: \&quot;Ahora hay nichos de miles de personas en las redes. Los #ConsumosCulturales, las decisio&quot;| __truncated__ &quot;RT @CulturaNacionAR: “El público de 12 a 17 está casi perdido, pero a partir de los 17 ya empiezan a buscar lug&quot;| __truncated__ &quot;RT @CulturaNacionAR: \&quot;Ahora hay nichos de miles de personas en las redes. Los #ConsumosCulturales, las decisio&quot;| __truncated__ ...
 ##  $ favorited    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ favoriteCount: num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ favoriteCount: num  0 0 0 0 2 0 0 0 0 0 ...
 ##  $ replyToSN    : chr  NA NA NA NA ...
-##  $ created      : POSIXct, format: &quot;2018-12-07 20:31:29&quot; &quot;2018-12-07 20:28:49&quot; ...
-##  $ truncated    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
+##  $ created      : POSIXct, format: &quot;2018-12-10 21:02:24&quot; &quot;2018-12-10 21:01:16&quot; ...
+##  $ truncated    : logi  FALSE FALSE FALSE FALSE TRUE FALSE ...
 ##  $ replyToSID   : chr  NA NA NA NA ...
-##  $ id           : chr  &quot;1071140159641534466&quot; &quot;1071139487646924800&quot; &quot;1071139178690297857&quot; &quot;1071138879011459073&quot; ...
+##  $ id           : chr  &quot;1072235101562593280&quot; &quot;1072234819529203712&quot; &quot;1072233161046802432&quot; &quot;1072233075944407041&quot; ...
 ##  $ replyToUID   : chr  NA NA NA NA ...
-##  $ statusSource : chr  &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot; ...
-##  $ screenName   : chr  &quot;alonsovirgi3112&quot; &quot;achduschlampe&quot; &quot;achduschlampe&quot; &quot;achduschlampe&quot; ...
-##  $ retweetCount : num  5 4 5 7 4 4 7 5 4 3 ...
-##  $ isRetweet    : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
+##  $ statusSource : chr  &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/iphone\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for iPhone&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot; ...
+##  $ screenName   : chr  &quot;egiordanino&quot; &quot;pabloavelluto&quot; &quot;AsirArteyLetras&quot; &quot;AlfaBD5&quot; ...
+##  $ retweetCount : num  3 2 2 2 2 3 2 1 1 1 ...
+##  $ isRetweet    : logi  TRUE TRUE TRUE TRUE FALSE TRUE ...
 ##  $ retweeted    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
 ##  $ longitude    : logi  NA NA NA NA NA NA ...
 ##  $ latitude     : logi  NA NA NA NA NA NA ...</code></pre>
@@ -358,26 +358,26 @@ tw_search_timelines &lt;- function(x, cant) {#es el mismo principio que la anter
   filter(screenName==&quot;CulturaNacionAR&quot;) %&gt;% 
   head()</code></pre>
 <pre><code>##                                                                                                                                           text
-## 1 &quot;El sentido de los datos de la encuesta del Sistema de Información Cultural de la Argentina es que sirvan para camb… https://t.co/fHBWgnmoge
-## 2 &quot;El SinCA es una herramienta importante que aporta una dimensión estadística al análisis de lo que ocurre en las in… https://t.co/4PJuOsgKlv
-## 3  &quot;Hoy no existe un valor mayor que el tiempo, no hay nada que valga más que el tiempo ¿cuántos debaten en la cama 1… https://t.co/CPN5wnk2so
-## 4 &quot;La industria del libro esta llevando toda esta transformación. La música pudo de alguna forma reconvertirse. El li… https://t.co/KrcbhaCQDJ
-## 5 &quot;Tenemos un gran prejuicio con las nuevas formas de consumo cultural ¿Qué culpa tienen los chicos de tener la ofert… https://t.co/ZJ2sxeO8th
-## 6 &quot;Cuando leo una nota larga en un portal, ¿pienso qué estoy leyendo? Los portales lo saben y ahora empezaron a ofrec… https://t.co/UkEIDd2MRL
-##   favorited favoriteCount replyToSN             created truncated
-## 1     FALSE             5      &lt;NA&gt; 2018-12-07 17:06:15      TRUE
-## 2     FALSE             9      &lt;NA&gt; 2018-12-07 17:04:04      TRUE
-## 3     FALSE             5      &lt;NA&gt; 2018-12-07 16:57:06      TRUE
-## 4     FALSE             4      &lt;NA&gt; 2018-12-07 16:40:15      TRUE
-## 5     FALSE             7      &lt;NA&gt; 2018-12-07 16:30:42      TRUE
-## 6     FALSE             8      &lt;NA&gt; 2018-12-07 16:20:34      TRUE
-##   replyToSID                  id replyToUID
-## 1       &lt;NA&gt; 1071088510738800640       &lt;NA&gt;
-## 2       &lt;NA&gt; 1071087962748801025       &lt;NA&gt;
-## 3       &lt;NA&gt; 1071086207881412608       &lt;NA&gt;
-## 4       &lt;NA&gt; 1071081967964352513       &lt;NA&gt;
-## 5       &lt;NA&gt; 1071079565395681282       &lt;NA&gt;
-## 6       &lt;NA&gt; 1071077015682457600       &lt;NA&gt;
+## 1 &quot;Ahora hay nichos de miles de personas en las redes. Los #ConsumosCulturales, las decisiones de compra, de atención… https://t.co/Ex9kNxay3E
+## 2 “El público de 12 a 17 está casi perdido, pero a partir de los 17 ya empiezan a buscar lugares de identificación. L… https://t.co/8OccGd3tyc
+## 3 “El tema del encuentro cuerpo a cuerpo y reírte con el otro, no hay con que darle. Son entradas baratas, te encontr… https://t.co/1HD0stu1Ml
+## 4 “El tema del encuentro cuerpo a cuerpo y reírte con el otro, no hay con que darle. Son entradas baratas, te encontr… https://t.co/x3DnWj4k38
+## 5 &quot;Tenemos un gran prejuicio con las nuevas formas de consumo cultural ¿Qué culpa tienen los chicos de tener la ofert… https://t.co/85RYd0oyKc
+## 6            “La atención de las personas está fragmentada” sostuvo @marturua en la presentación de la encuesta sobre… https://t.co/gEJCe6dcAY
+##   favorited favoriteCount       replyToSN             created truncated
+## 1     FALSE             2 CulturaNacionAR 2018-12-10 20:46:04      TRUE
+## 2     FALSE             1 CulturaNacionAR 2018-12-10 20:10:23      TRUE
+## 3     FALSE             0 CulturaNacionAR 2018-12-10 20:06:00      TRUE
+## 4     FALSE             0 CulturaNacionAR 2018-12-10 20:04:42      TRUE
+## 5     FALSE             0 CulturaNacionAR 2018-12-10 20:02:58      TRUE
+## 6     FALSE             1 CulturaNacionAR 2018-12-10 19:56:44      TRUE
+##            replyToSID                  id replyToUID
+## 1 1072222013329211392 1072230991174033408  216106179
+## 2 1072220911883948032 1072222013329211392  216106179
+## 3 1072220583042125824 1072220911883948032  216106179
+## 4 1072220148654882816 1072220583042125824  216106179
+## 5 1072218578508759041 1072220148654882816  216106179
+## 6 1072218577032351744 1072218578508759041  216106179
 ##                                                         statusSource
 ## 1 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
 ## 2 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
@@ -387,31 +387,31 @@ tw_search_timelines &lt;- function(x, cant) {#es el mismo principio que la anter
 ## 6 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
 ##        screenName retweetCount isRetweet retweeted longitude latitude
 ## 1 CulturaNacionAR            2     FALSE     FALSE        NA       NA
-## 2 CulturaNacionAR            5     FALSE     FALSE        NA       NA
-## 3 CulturaNacionAR            4     FALSE     FALSE        NA       NA
-## 4 CulturaNacionAR            3     FALSE     FALSE        NA       NA
-## 5 CulturaNacionAR            4     FALSE     FALSE        NA       NA
-## 6 CulturaNacionAR            6     FALSE     FALSE        NA       NA</code></pre>
+## 2 CulturaNacionAR            2     FALSE     FALSE        NA       NA
+## 3 CulturaNacionAR            1     FALSE     FALSE        NA       NA
+## 4 CulturaNacionAR            1     FALSE     FALSE        NA       NA
+## 5 CulturaNacionAR            1     FALSE     FALSE        NA       NA
+## 6 CulturaNacionAR            2     FALSE     FALSE        NA       NA</code></pre>
 <p>Sabiendo cuál es el nombre de la cuenta de la Secretaría de Cultura, podemos buscar cuáles salieron de su cuenta… o podemos ver qué encontramos directamente en su timeline:</p>
 <pre class="r"><code>tw_search_timelines(CulturaNacionAR, 1000)
 str(CulturaNacionAR)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    212 obs. of  16 variables:
-##  $ text         : chr  &quot;\&quot;Me agrada mucho que existan estos intercambios culturales y que nuestras instituciones culturales lo fomenten&quot;| __truncated__ &quot;#Ahora ensayo del Coro Nacional de Niños para el concierto del lunes 10/12, a las 19 h. en la Catedral Metropol&quot;| __truncated__ &quot;Últimos 3 días para visitar la muestra \&quot;La vida es dura pero no tanto\&quot; de Grupo Bondi en el @MuseoDecorativo.&quot;| __truncated__ &quot;Todos los viernes de diciembre a las &lt;U+23F0&gt; 21h. vení a bailar tango &lt;U+0001F57A&gt; y milonga &lt;U+0001F460&gt; en l&quot;| __truncated__ ...
+<pre><code>## &#39;data.frame&#39;:    260 obs. of  16 variables:
+##  $ text         : chr  &quot;&lt;U+26EA&gt;&lt;U+FE0F&gt; Hoy a las 19 h. te esperamos en la Basílica de Luján para la presentación de la Misa Criolla a&quot;| __truncated__ &quot;El jueves 13/12, a las 19 h. te esperamos en la Comunidad Amijai (Arribeños 2355 #CABA) para el concierto por e&quot;| __truncated__ &quot;Enterate en este video por qué hoy celebramos el #DíaNacionalDelTango y conocé el orígen negro del 2x4 en esta &quot;| __truncated__ &quot;&lt;U+0001F3BC&gt; ¡Concierto especial en Luján! &lt;U+26EA&gt;&lt;U+FE0F&gt; El Coro Polifónico Nacional de Ciegos y la Banda Si&quot;| __truncated__ ...
 ##  $ favorited    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ favoriteCount: num  0 3 2 3 4 5 9 5 4 4 ...
-##  $ replyToSN    : logi  NA NA NA NA NA NA ...
-##  $ created      : POSIXct, format: &quot;2018-12-07 20:15:06&quot; &quot;2018-12-07 19:28:40&quot; ...
+##  $ favoriteCount: num  3 2 22 7 4 5 18 2 1 0 ...
+##  $ replyToSN    : chr  NA NA NA NA ...
+##  $ created      : POSIXct, format: &quot;2018-12-11 13:25:04&quot; &quot;2018-12-11 12:15:05&quot; ...
 ##  $ truncated    : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
-##  $ replyToSID   : logi  NA NA NA NA NA NA ...
-##  $ id           : chr  &quot;1071136036217110529&quot; &quot;1071124350810624001&quot; &quot;1071122193130684416&quot; &quot;1071104593172541440&quot; ...
-##  $ replyToUID   : logi  NA NA NA NA NA NA ...
+##  $ replyToSID   : chr  NA NA NA NA ...
+##  $ id           : chr  &quot;1072482400830136320&quot; &quot;1072464788201058305&quot; &quot;1072454765328650240&quot; &quot;1072262204953636864&quot; ...
+##  $ replyToUID   : chr  NA NA NA NA ...
 ##  $ statusSource : chr  &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; ...
 ##  $ screenName   : chr  &quot;CulturaNacionAR&quot; &quot;CulturaNacionAR&quot; &quot;CulturaNacionAR&quot; &quot;CulturaNacionAR&quot; ...
-##  $ retweetCount : num  0 2 0 5 0 2 5 4 3 3 ...
+##  $ retweetCount : num  2 2 12 3 2 2 7 2 2 1 ...
 ##  $ isRetweet    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
 ##  $ retweeted    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ longitude    : chr  NA NA NA NA ...
-##  $ latitude     : chr  NA NA NA NA ...</code></pre>
+##  $ longitude    : logi  NA NA NA NA NA NA ...
+##  $ latitude     : logi  NA NA NA NA NA NA ...</code></pre>
 </div>
 <div id="ahora-dicen-que" class="section level1">
 <h1>Ahora dicen que…</h1>
@@ -434,12 +434,12 @@ head(cons_cult_wordcloud)</code></pre>
 <pre><code>## # A tibble: 6 x 2
 ##   word                freq
 ##   &lt;chr&gt;              &lt;int&gt;
-## 1 culturanacionar      186
-## 2 consumosculturales   114
-## 3 argentina             51
-## 4 encuesta              49
-## 5 ccdelaciencia         43
-## 6 debate                40</code></pre>
+## 1 culturanacionar      204
+## 2 consumosculturales   108
+## 3 encuesta              57
+## 4 argentina             40
+## 5 hoy                   33
+## 6 nacional              33</code></pre>
 <p>Podemos ver que “culturanacionar” (el Twitter oficial de la Secretaría) y “consumosculturales” (el propio hashtag en cuestión) aparecen al tope de la lista. Sólo para reflejar mejor el resto de los resultados, lo voy a eliminar al preparar el gráfico.</p>
 <p>Llegado ese momento, soy plenamente conciente de que usé una manera poco ortodoxa de preparar el código (creo que es el equivalente a tener una pésima caligrafía, lo cual en mi caso también es cierto) pero fue la forma en la que mejor logré que se visualicen los resultados. Voy a crear el wordcloud como un objeto y a través de webshot, “sacarle una foto” al resultado. El delay que se observa en el código es porque la función muchas veces se toma su tiempo hasta desplegar todos los elementos que contiene el gráfico, por lo que elijo decirle que se tome 15 segundos hasta que tome la captura. ¿Cómo queda todo esto?</p>
 <pre class="r"><code>hw &lt;- wordcloud2(cons_cult_wordcloud[3:505,], size = 0.5, gridSize = 8)
@@ -473,7 +473,7 @@ webshot::webshot(&quot;1.html&quot;, &quot;1.png&quot;, vwidth = 1024, vheight =
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/12/test-relaciones/" data-tooltip="Test de Relaciones Violentas: se encienden las alarmas">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
@@ -559,7 +559,7 @@ webshot::webshot(&quot;1.html&quot;, &quot;1.png&quot;, vwidth = 1024, vheight =
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--disabled">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/12/test-relaciones/" data-tooltip="Test de Relaciones Violentas: se encienden las alarmas">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
@@ -700,6 +700,24 @@ webshot::webshot(&quot;1.html&quot;, &quot;1.png&quot;, vwidth = 1024, vheight =
           <div class="media">
             
             <div class="media-body">
+              <a class="link-unstyled" href="/2018/12/test-relaciones/">
+                <h3 class="media-heading">Test de Relaciones Violentas: se encienden las alarmas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
               <a class="link-unstyled" href="/2018/12/maquina-scrapear/">
                 <h3 class="media-heading">La máquina de scrapear: Twitter</h3>
               </a>
@@ -798,7 +816,7 @@ Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La 
                   Jan 1, 0001
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">wordcloud2{"x":{"word":["argentina","encuesta","ccdelaciencia","debate","nacional","jornada","hoy","mujeres","realizó","entender","cultural","sincalic","acerca","ahora","pienso","gente","culturales","música","resultados","presentamos","viernes","mujeresenlacultura","ve","consumo","historias","instagram","laburo","medio","nuevo","podcast","quedo","cuerpo","dónde","muere","próximo","representan","tiempo","toda","va","van","atención","futuro","hacia","leen","mayor","presentación","redes","tema","debaten","existe","financiamiento","miles","parte","personas","proporción","teatro","jóvenes","saben","según","varones","análisis","bueno","comienza","comunidad","consumos","cosa","desmitificar","dice","domingo","gran","lectores","libros","menos","netflix","país","temporada","ven","activa","conocé","contará","dimensión","empezaron","hombres","información","larga","leo","leyendo","libro","nota","participación","poca","portal","portales","sistema","viene","adultos","aporta","asociarse","aspectos","bajaba","baratas","cada","cambiarla","canciones","cargos","cine","conocer","construyendo","cuánta","cuántos","cuestión","darle","datos","deciden","día","diarios","directivos","encuentro","entradas","escuchocongo","estadística","extendido","formas","generamos","herramienta","importante","informarnos","inscribite","jerárquicos","mano","matando","mmuguruza","mostró","nace","niñxs","nuevas","obligacion","ocupan","ocurre","ofrecer","papel","pensamos","pregunta","prejuicio","reírte","sabés","sector","sentirse","sinca","sino","smartphones","transforma","uso","abre","alguna","boom","cama","charla","chicos","colectivo","cosas","culpa","desafío","despierta","empleo","encontrás","encontré","encontró","enter","estructuras","financi","financiar","grandes","hice","ho","indus","mañana","marcas","mariela_reiman","mesa","nombre","nunca","ocupaciones","pa","pasando","pensar","problema","puedan","qu","sectores","series","tener","tiempos","trabajo","valga","valor","web","analizar","apue","audiencia","buena","cabo","cambios","captar","compra","creo","cruz","cuentan","decisiones","dialogar","distintos","encues","especialistas","esperamos","forma","godoy","hor","idea","industria","llevando","llevara","lógi","nego","negocio","nichos","oferta","participar","producción","protagonistas","pudo","radio","realizada","reconvertirse","segmentación","similar","tiende","transformación","acercate","buen","comunitarios","consecuencia","contenidos","contexto","cree","demanda","derechos","desconectados","diseñar","embargo","equipo","espacios","generalizada","género","gigante","gracias","hora","invitarme","mesas","minorías","minutos","moderar","mundo","nuevos","obrar","participan","politicas","resultan","sebakatz","sentido","sirvan","social","solo","alberto","amendezb","arrancar","avengersendgame","c7lyhskyam","cambiar","cc","centroculturaldelaciencia","charlas","compite","congo","costos","crecimiento","cznlvqnppp","deba","director","ej","elena","enterate","escuchamos","escuchan","específico","evento","expone","flacsoargentina","generación","gobierno","gqia","imagen","infantil","lamelga","luis","maría","mientras","miramos","mismo","modelo","murió","museoroca","negocios","notipositivas","nsclauzero","ocup","organizada","permitieron","pescador","pipo","play","públic","quevedo","radios","recomendacionesiccd","reino","repertorio","seguimos","simplificados","sueño","tele","walsh","wattpad","acostumbrados","afirmamos","afuera","agua","antigua","años","aprender","armó","atenció","audiencias","auspiciadas","b3kqrcmxm7","b9sgob2hwi","ba","bajó","basura","brutalidades","bsa45vgton","buenviernes","buscan","ca","camb","canales","capítulo","cargan","cautivas","censura","censurar","centrocultur","cifras","cisfn9pzii","co","confundidos","consu","consumoscul","correc","corriente","cozqo35ouc","cpn5wnk2so","crisis","cu","cuantas","cubrir","cult","cultu","cultur","cultura","culturale","d7imdsezzy","desarmarlos","desconocemos","destruye","devenir","digitales","dijo","dinosaurios","dón","dormir","dos","duej9vpzip","dxyhlvaaqb","editorial","empieza","empleados","empy6mvxnt","enc","encont","equi","escuela","española","evolucionan","facilidades","fcbsw8zxnu","fgycvrrksp","fhbwgnmoge","fina","fuddx2wudm","fut","gqiakhizrr","gramelgar","hablar","hjsxhcnfbo","hqtva8ypni","in","indcultuntref","influencers","itezavzufv","jóven","judaskwygu","kccabellovotes","kgika3wenv","kglkxcwqom","kguhjaiskp","kk1alknw6q","krcbhacqdj","lectura","leer","li","llevan","lnsad1euzl","luego","main","manera","materia","medios","mercancía","mito","mujer","muñecotes","navidad","nbeczuwvo6","ofert","ofrec","ojwgfja2ct","p1uljzztpn","par","periodistas","preguntamos","preparando","presentó","primaria","pu7binaoy4","púb","pueblo","puede","qb8eudifxo","qechpygkpf","quedar","reportepub","revolución","rompe","rosa","salvar","scjccxe6e2","sentarnos","shelovescabeeyo","simbólica","sincal","sn63ks8qm8","sociales","street","tecnologia","tehcbqovv7","temyrtg8do","terminan","tradicionales","u8ycjfnmwx","ukeidd2mrl","uo4dbuhvgf","varón","vby0uuaaal","vec","ver","vgqhvekvxw","vh5dbrbmlr","vladimir","wbtwaedsfx","weuawlimee","whuxmado1x","wn2ohgcmij","xoapqnsvf4","xq","y6dxwrch2c","yj5z3m3fiw","ynhxhvgljb","yuazp1nn9p","yz8m7sui7u","z226txh2qh","z8lsdwsb5w","zbvhfu2xyn","zj2sxeo8th"],"freq":[51,49,43,40,35,34,29,27,23,22,21,21,20,20,20,19,17,17,17,16,16,14,14,13,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,12,11,11,11,11,11,11,11,11,10,10,10,10,10,10,10,10,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.76470588235294,"backgroundColor":"white","gridSize":8,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n console.log(123);\n if(!iii){\n window.location.reload();\n iii = False;\n\n }\n }","data":null}]}}{"viewer":{"width":450,"height":350,"padding":0,"fill":true},"browser":{"width":960,"height":500,"padding":0,"fill":true}}</div>
+              <div class="media-content hide-xs font-merryweather">wordcloud2{"x":{"word":["encuesta","argentina","hoy","nacional","ccdelaciencia","ahora","mujeres","cultural","debate","realizó","sincalic","entender","jornada","música","cuerpo","culturales","gente","pienso","resultados","presentamos","consumo","tiempo","ve","atención","tema","viernes","debaten","personas","redes","leen","muere","mujeresenlacultura","futuro","historias","instagram","laburo","medio","miles","nuevo","podcast","quedo","toda","dónde","mayor","representan","va","van","existe","financiamiento","hacia","presentación","análisis","baratas","darle","encuentro","entradas","equipo","parte","proporción","reírte","teatro","aspectos","diarios","dimensión","gran","libro","papel","saben","según","varones","acerca","aporta","bueno","comienza","comunidad","cosa","datos","desmitificar","dice","domingo","especialistas","estadística","herramienta","ho","importante","información","jóvenes","lectores","libros","menos","netflix","ocurre","país","realizada","sectores","sinca","sistema","temporada","ven","activa","analizar","bajaba","cambiarla","cambios","canciones","cine","compra","conocé","construyendo","contará","cuántos","decisiones","dialogar","distintos","empezaron","encontrás","formas","hombres","idea","indus","larga","leo","leyendo","matando","nace","nichos","nota","nuevas","participación","poca","portal","portales","pregunta","prejuicio","producción","protagonistas","sino","transforma","viene","abre","alguna","asociarse","cada","cama","cargos","chicos","consumos","cuánta","cuestión","culpa","deciden","despierta","día","directivos","encontró","escuchocongo","extendido","generamos","inscribite","jerárquicos","mano","mmuguruza","mostró","ocupan","ofrecer","pensamos","problema","qu","sabés","sector","sentirse","smartphones","tener","tiempos","trabajo","uso","valga","valor","adultos","boom","charla","colectivo","conocer","cosas","desafío","empleo","encontré","enter","estructuras","financi","financiar","forma","grandes","hice","hor","industria","informarnos","llevando","lógi","mañana","marcas","maría","mesa","niñxs","nombre","nunca","obligacion","ocupaciones","pa","pasando","pensar","pudo","puedan","reconvertirse","series","transformación","web","apue","audiencia","buen","buena","cabo","captar","consecuencia","contexto","creo","cruz","cuentan","cultura","diseñar","encues","esperamos","godoy","gracias","hora","invitarme","llevara","mariela_reiman","mesas","moderar","nego","negocio","obrar","oferta","participar","politicas","radio","resultan","segmentación","sentido","similar","sirvan","tiende","acercate","argentinos","ayer","buscar","cambiar","casi","comunitarios","consumimos","contaron","contenidos","cree","deba","demanda","derechos","desconectados","embargo","empiezan","espacios","figueras","generalizada","género","gigante","identificación","libre","lugares","martinpiro","microteatroba","miniserie","minorías","minutos","modo","mundo","nsclauzero","nuevos","participan","partir","perdido","públic","público","realizador","sebakatz","social","solo","alberto","amendezb","andresgribnicow","arrancar","avengersendgame","c7lyhskyam","cc","centroculturaldelaciencia","charlas","compite","congo","costos","crecimiento","cznlvqnppp","director","ej","elena","encontr","enterate","escuchamos","escuchan","específico","expone","flacsoargentina","fragmentada","gobierno","gqia","imagen","infantil","lamelga","luis","marturua","mientras","miramos","mismo","modelo","murió","museoroca","negocios","notipositivas","ocup","ofert","organizada","permitieron","pescador","pipo","play","quevedo","radios","reino","repertorio","seguimos","simplificados","sostuvo","sueño","tele","walsh","wattpad","acostumbrados","afirmamos","agua","antigua","años","aprender","armó","atenció","audiencias","auspiciadas","b9sgob2hwi","ba","bajó","basura","brutalidades","bsa45vgton","buenviernes","buscan","bxilnzdxkp","ca","camb","canales","capítulo","cargan","cautivas","censura","censurar","centrocultur","cifras","cisfn9pzii","co","confundidos","consu","consumoscul","consumoscult","correc","corriente","cozqo35ouc","cpn5wnk2so","crisis","ct5gby9psj","cu","cuantas","cubrir","cultu","cultur","d7imdsezzy","desarmarlos","desconocemos","destruye","devenir","digitales","dijo","dón","dormir","dos","duej9vpzip","dxyhlvaaqb","editorial","empleados","empy6mvxnt","enc","encont","equi","escuela","española","ex9knxay3e","facilidades","fcbsw8zxnu","fgycvrrksp","fhbwgnmoge","fina","fuddx2wudm","fut","gejce6dcay","generación","gqiakhizrr","gramelgar","hablar","hjsxhcnfbo","hqtva8ypni","in","influencers","jóven","judaskwygu","kccabellovotes","kgika3wenv","kglkxcwqom","kguhjaiskp","kk1alknw6q","krcbhacqdj","lectura","leer","li","llevan","lnsad1euzl","luego","main","manera","materia","medios","mercancía","mito","mujer","muñecotes","navidad","nbeczuwvo6","ofrec","ojwgfja2ct","p1uljzztpn","par","periodistas","preguntamos","preparando","presentamo","presentó","primaria","pu7binaoy4","púb","pueblo","puede","qb8eudifxo","qechpygkpf","reportepub","revolución","rompe","rosa","salvar","scjccxe6e2","sentarnos","shelovescabeeyo","simbólica","sincal","sn63ks8qm8","sociales","street","tecnologia","tehcbqovv7","temyrtg8do","tradicionales","u8ycjfnmwx","ukeidd2mrl","uo4dbuhvgf","varón","vby0uuaaal","vec","ver","vgqhvekvxw","vh5dbrbmlr"],"freq":[57,40,33,33,31,27,27,26,26,26,24,22,22,22,20,20,20,20,19,18,17,17,17,16,16,16,15,15,15,14,14,14,13,13,13,13,13,13,13,13,13,13,12,12,12,12,12,11,11,11,11,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.57894736842105,"backgroundColor":"white","gridSize":8,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n console.log(123);\n if(!iii){\n window.location.reload();\n iii = False;\n\n }\n }","data":null}]}}{"viewer":{"width":450,"height":350,"padding":0,"fill":true},"browser":{"width":960,"height":500,"padding":0,"fill":true}}</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -811,7 +829,7 @@ Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La 
          data-message-zero="no se encontraron artículos"
          data-message-one="1 artículo encontrado"
          data-message-other="{n} artículos encontrados">
-         6 posts found
+         7 posts found
       </p>
     </div>
   </div>

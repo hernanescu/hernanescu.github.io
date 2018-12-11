@@ -6,10 +6,20 @@
     <description>Recent content in Sf on #atR://Hernán Escudero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-es</language>
-    <lastBuildDate>Tue, 20 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/sf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test de Relaciones Violentas: se encienden las alarmas</title>
+      <link>/2018/12/test-relaciones/</link>
+      <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/12/test-relaciones/</guid>
+      <description>Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.</description>
+    </item>
     
     <item>
       <title>La línea de pobreza en el segundo trimestre: analizando la EPH</title>
