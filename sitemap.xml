@@ -3,147 +3,156 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2018/12/test-relaciones/</loc>
+    <loc>https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/</loc>
+    <lastmod>2018-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hernanescu.github.io/2018/12/test-relaciones/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/12/maquina-scrapear/</loc>
+    <loc>https://hernanescu.github.io/2018/12/maquina-scrapear/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/11/boleto-estudiantil/</loc>
+    <loc>https://hernanescu.github.io/2018/11/boleto-estudiantil/</loc>
     <lastmod>2018-11-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/11/bano-seco/</loc>
+    <loc>https://hernanescu.github.io/2018/11/bano-seco/</loc>
     <lastmod>2018-11-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/11/eph-pobreza/</loc>
+    <loc>https://hernanescu.github.io/2018/11/eph-pobreza/</loc>
     <lastmod>2018-11-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2018/11/mirada-erogacion-obras-publicas/</loc>
+    <loc>https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/</loc>
     <lastmod>2018-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/1/01/</loc>
+    <loc>https://hernanescu.github.io/1/01/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://hernanescu.github.io/1/01/</loc>
+  </url>
+  
+  <url>
+    <loc>https://hernanescu.github.io/</loc>
+    <lastmod>2018-12-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hernanescu.github.io/archives/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hernanescu.github.io/tags/ba-data/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/archives/</loc>
+    <loc>https://hernanescu.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/ba-data/</loc>
-    <lastmod>2018-12-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/eph/</loc>
+    <loc>https://hernanescu.github.io/tags/eph/</loc>
     <lastmod>2018-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/ggplot2/</loc>
+    <loc>https://hernanescu.github.io/categories/ggplot2/</loc>
     <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/ggthemes/</loc>
+    <loc>https://hernanescu.github.io/categories/ggthemes/</loc>
     <lastmod>2018-11-10T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/openxlsx/</loc>
+    <loc>https://hernanescu.github.io/categories/openxlsx/</loc>
     <lastmod>2018-11-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/portal-datos-argentina/</loc>
+    <loc>https://hernanescu.github.io/tags/portal-datos-argentina/</loc>
     <lastmod>2018-11-28T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://hernanescu.github.io/post/</loc>
+    <lastmod>2018-12-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hernanescu.github.io/categories/sf/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/sf/</loc>
+    <loc>https://hernanescu.github.io/tags/</loc>
     <lastmod>2018-12-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-12-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/tidytext/</loc>
+    <loc>https://hernanescu.github.io/categories/tidytext/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/tidyverse/</loc>
-    <lastmod>2018-12-11T00:00:00+00:00</lastmod>
+    <loc>https://hernanescu.github.io/categories/tidyverse/</loc>
+    <lastmod>2018-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/tm/</loc>
+    <loc>https://hernanescu.github.io/categories/tm/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/treemap/</loc>
+    <loc>https://hernanescu.github.io/categories/treemap/</loc>
     <lastmod>2018-11-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/twitter/</loc>
-    <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+    <loc>https://hernanescu.github.io/tags/twitter/</loc>
+    <lastmod>2018-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/twitter/</loc>
-    <lastmod>2018-12-07T00:00:00+00:00</lastmod>
+    <loc>https://hernanescu.github.io/categories/twitter/</loc>
+    <lastmod>2018-12-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/wordcloud2/</loc>
+    <loc>https://hernanescu.github.io/categories/wordcloud2/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
