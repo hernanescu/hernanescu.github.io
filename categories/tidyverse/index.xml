@@ -2,71 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tidyverse on #atR://Hernán Escudero</title>
-    <link>/categories/tidyverse/</link>
+    <link>https://hernanescu.github.io/categories/tidyverse/</link>
     <description>Recent content in Tidyverse on #atR://Hernán Escudero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-es</language>
-    <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/tidyverse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hernanescu.github.io/categories/tidyverse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Mirá como nos ponemos: una mirada a la twittósfera</title>
+      <link>https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/</guid>
+      <description>Es claro que el movimiento de mujeres llegó para quedarse (y en buena hora). En estos últimos días, la denuncia de la actriz Thelma Fardín generó una oleada más que necesaria donde muchas mujeres se sintieron lo suficientemente acompañadas y empoderadas para hacer lo propio con otros hombres que las han violentado o abusado. Como hombre, me genera una auténtica repulsión saber que hay congéneres capaces de hacer atrocidades semejantes y desde mi humilde lugar como sociólogo y analista no puedo hacer gran cosa salvo dar la batalla donde corresponde: deconstruir propias prácticas y micromachismos, así como también instar a otros hombres a que hagan lo propio.</description>
+    </item>
+    
+    <item>
       <title>Test de Relaciones Violentas: se encienden las alarmas</title>
-      <link>/2018/12/test-relaciones/</link>
+      <link>https://hernanescu.github.io/2018/12/test-relaciones/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/test-relaciones/</guid>
+      <guid>https://hernanescu.github.io/2018/12/test-relaciones/</guid>
       <description>Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
 El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.</description>
     </item>
     
     <item>
       <title>La máquina de scrapear: Twitter</title>
-      <link>/2018/12/maquina-scrapear/</link>
+      <link>https://hernanescu.github.io/2018/12/maquina-scrapear/</link>
       <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/12/maquina-scrapear/</guid>
+      <guid>https://hernanescu.github.io/2018/12/maquina-scrapear/</guid>
       <description>Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.
 Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia.</description>
     </item>
     
     <item>
       <title>Uso del Boleto Estudiantil en la Ciudad de Buenos Aires</title>
-      <link>/2018/11/boleto-estudiantil/</link>
+      <link>https://hernanescu.github.io/2018/11/boleto-estudiantil/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/11/boleto-estudiantil/</guid>
+      <guid>https://hernanescu.github.io/2018/11/boleto-estudiantil/</guid>
       <description>Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
 Manos a la obraArrancamos como siempre con cargar las librerías y la base.</description>
     </item>
     
     <item>
       <title>Formas de saneamiento en los aglomerados de la EPH: dos formas de ver una misma problemática</title>
-      <link>/2018/11/bano-seco/</link>
+      <link>https://hernanescu.github.io/2018/11/bano-seco/</link>
       <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/11/bano-seco/</guid>
+      <guid>https://hernanescu.github.io/2018/11/bano-seco/</guid>
       <description>Siempre me pareció simpático el paquete treemap: es súper interesante para representar proporciones de distintos segmentos y sub-segmentos de una forma muy clara e interesante. En este punto, vale decir que por mucho tiempo trabajé en investigación y desarrollo de políticas para un hábitat sustentable, principalmente en dos puntos: calefacción y saneamiento.
 Eso fue lo que me inspiró a tomar la EPH para buscar algo que siempre había querido saber y no había podido: cómo se reparte el uso de las alternativas de saneamiento a nivel general en el país.</description>
     </item>
     
     <item>
       <title>La línea de pobreza en el segundo trimestre: analizando la EPH</title>
-      <link>/2018/11/eph-pobreza/</link>
+      <link>https://hernanescu.github.io/2018/11/eph-pobreza/</link>
       <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/11/eph-pobreza/</guid>
+      <guid>https://hernanescu.github.io/2018/11/eph-pobreza/</guid>
       <description>Hace unas semanas tuve la suerte de poder asistir a un curso organizado por INDEC-CEPED, brindado por auténticos referentes en all things R: Natsumi Shokida, Diego Kozlowski y Guido Weksler. Ahí se trabjó la aplicación de R para el análisis de la Encuesta Permanente de Hogares (EPH), una de las herramientas más valiosas que tiene el Instituto.
 Esta herramienta releva información de 31 aglomerados del país de manera trimestral y es fundamental para observar cómo evolucionan indicadores de pobreza, trabajo y hábitat de una manera mucho más periódica que el censo.</description>
     </item>
     
     <item>
       <title>Una mirada a la erogación en obras públicas</title>
-      <link>/2018/11/mirada-erogacion-obras-publicas/</link>
+      <link>https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/</link>
       <pubDate>Sat, 10 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/2018/11/mirada-erogacion-obras-publicas/</guid>
+      <guid>https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/</guid>
       <description>El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
 Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.</description>
     </item>

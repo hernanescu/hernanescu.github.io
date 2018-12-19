@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on #atR://Hernán Escudero</title>
-    <link>/tags/</link>
+    <link>https://hernanescu.github.io/tags/</link>
     <description>Recent content in Tags on #atR://Hernán Escudero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-es</language>
     <lastBuildDate>Tue, 11 Dec 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hernanescu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ba Data</title>
-      <link>/tags/ba-data/</link>
+      <link>https://hernanescu.github.io/tags/ba-data/</link>
       <pubDate>Tue, 11 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/ba-data/</guid>
+      <guid>https://hernanescu.github.io/tags/ba-data/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eph</title>
-      <link>/tags/eph/</link>
+      <link>https://hernanescu.github.io/tags/eph/</link>
       <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/eph/</guid>
+      <guid>https://hernanescu.github.io/tags/eph/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Portal Datos Argentina</title>
-      <link>/tags/portal-datos-argentina/</link>
+      <link>https://hernanescu.github.io/tags/portal-datos-argentina/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/portal-datos-argentina/</guid>
+      <guid>https://hernanescu.github.io/tags/portal-datos-argentina/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Twitter</title>
-      <link>/tags/twitter/</link>
-      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      <link>https://hernanescu.github.io/tags/twitter/</link>
+      <pubDate>Wed, 19 Dec 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/twitter/</guid>
+      <guid>https://hernanescu.github.io/tags/twitter/</guid>
       <description></description>
     </item>
     
