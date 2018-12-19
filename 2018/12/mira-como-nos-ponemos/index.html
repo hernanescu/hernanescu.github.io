@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="Hernán Escudero">
+<meta name="keywords" content="">
+<meta name="description" content="Es claro que el movimiento de mujeres llegó para quedarse (y en buena hora). En estos últimos días, la denuncia de la actriz Thelma Fardín generó una oleada más que necesaria donde muchas mujeres se sintieron lo suficientemente acompañadas y empoderadas para hacer lo propio con otros hombres que las han violentado o abusado. Como hombre, me genera una auténtica repulsión saber que hay congéneres capaces de hacer atrocidades semejantes y desde mi humilde lugar como sociólogo y analista no puedo hacer gran cosa salvo dar la batalla donde corresponde: deconstruir propias prácticas y micromachismos, así como también instar a otros hombres a que hagan lo propio.">
+
+
+<meta property="og:description" content="Es claro que el movimiento de mujeres llegó para quedarse (y en buena hora). En estos últimos días, la denuncia de la actriz Thelma Fardín generó una oleada más que necesaria donde muchas mujeres se sintieron lo suficientemente acompañadas y empoderadas para hacer lo propio con otros hombres que las han violentado o abusado. Como hombre, me genera una auténtica repulsión saber que hay congéneres capaces de hacer atrocidades semejantes y desde mi humilde lugar como sociólogo y analista no puedo hacer gran cosa salvo dar la batalla donde corresponde: deconstruir propias prácticas y micromachismos, así como también instar a otros hombres a que hagan lo propio.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mirá como nos ponemos: una mirada a la twittósfera">
+<meta name="twitter:title" content="Mirá como nos ponemos: una mirada a la twittósfera">
+<meta property="og:url" content="https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+<meta property="twitter:url" content="https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+<meta property="og:site_name" content="#atR://Hernán Escudero">
+<meta property="og:description" content="Es claro que el movimiento de mujeres llegó para quedarse (y en buena hora). En estos últimos días, la denuncia de la actriz Thelma Fardín generó una oleada más que necesaria donde muchas mujeres se sintieron lo suficientemente acompañadas y empoderadas para hacer lo propio con otros hombres que las han violentado o abusado. Como hombre, me genera una auténtica repulsión saber que hay congéneres capaces de hacer atrocidades semejantes y desde mi humilde lugar como sociólogo y analista no puedo hacer gran cosa salvo dar la batalla donde corresponde: deconstruir propias prácticas y micromachismos, así como también instar a otros hombres a que hagan lo propio.">
+<meta name="twitter:description" content="Es claro que el movimiento de mujeres llegó para quedarse (y en buena hora). En estos últimos días, la denuncia de la actriz Thelma Fardín generó una oleada más que necesaria donde muchas mujeres se sintieron lo suficientemente acompañadas y empoderadas para hacer lo propio con otros hombres que las han violentado o abusado. Como hombre, me genera una auténtica repulsión saber que hay congéneres capaces de hacer atrocidades semejantes y desde mi humilde lugar como sociólogo y analista no puedo hacer gran cosa salvo dar la batalla donde corresponde: deconstruir propias prácticas y micromachismos, así como también instar a otros hombres a que hagan lo propio.">
+<meta property="og:locale" content="es-es">
+
+  
+    <meta property="article:published_time" content="2018-12-19T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-12-19T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="tidyverse">
+    
+      <meta property="article:section" content="twitteR">
+    
+  
+  
+    
+      <meta property="article:tag" content="Twitter">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://hernanescu.github.io/img/foto.jpg">
+  <meta property="twitter:image" content="https://hernanescu.github.io/img/foto.jpg">
+
+
+    <title>Mirá como nos ponemos: una mirada a la twittósfera</title>
+
+    <link rel="icon" href="https://hernanescu.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://hernanescu.github.io/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://hernanescu.github.io/">#atR://Hernán Escudero</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://hernanescu.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://hernanescu.github.io/img/foto.jpg" alt="Foto de autor" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://hernanescu.github.io/#about">
+          <img class="sidebar-profile-picture" src="https://hernanescu.github.io/img/foto.jpg" alt="Foto de autor" />
+        </a>
+        <h4 class="sidebar-profile-name">Hernán Escudero</h4>
+        
+          <h5 class="sidebar-profile-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hernanescu.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Inicio</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hernanescu.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categorías</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hernanescu.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Etiquetas</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hernanescu.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archivos</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hernanescu.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">Acerca de</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.linkedin.com/in/hernanescudero/" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-linkedin"></i>
+      
+      <span class="sidebar-button-desc">LinkedIn</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hernanescu.github.io/">
+    
+      
+      
+      <span class="sidebar-button-desc"></span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://hernanescu.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Mirá como nos ponemos: una mirada a la twittósfera
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-12-19T00:00:00Z">
+        
+  Diciembre 19, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>en</span>
+    
+      <a class="category-link" href="https://hernanescu.github.io/categories/tidyverse">tidyverse</a>, 
+    
+      <a class="category-link" href="https://hernanescu.github.io/categories/twitter">twitteR</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+
+<p>Es claro que el movimiento de mujeres llegó para quedarse (y en buena hora). En estos últimos días, la denuncia de la actriz Thelma Fardín generó una oleada más que necesaria donde muchas mujeres se sintieron lo suficientemente acompañadas y empoderadas para hacer lo propio con otros hombres que las han violentado o abusado. Como hombre, me genera una auténtica repulsión saber que hay congéneres capaces de hacer atrocidades semejantes y desde mi humilde lugar como sociólogo y analista no puedo hacer gran cosa salvo dar la batalla donde corresponde: deconstruir propias prácticas y micromachismos, así como también instar a otros hombres a que hagan lo propio.</p>
+<p>Me pareció interesante hacer una lectura sobre lo que sucede en Twitter con esta oleada verde para ver qué es lo que se dice, y así, profundizar un poco lo estudiado en el post anterior (<a href="https://hernanescu.github.io/2018/12/maquina-scrapear/" class="uri">https://hernanescu.github.io/2018/12/maquina-scrapear/</a>) para ver qué es lo que devuelve la red social al momento de scrapear sus datos.</p>
+<div id="manos-a-la-obra" class="section level1">
+<h1>Manos a la obra</h1>
+<p>Arrancamos como siempre cargando librerías. En esta oportunidad van a ser unas cuantas, así que me parece un poco más ordenado cargar todas las que voy a usar (donde están <em>tidyverse</em>, <em>twitteR</em>, <em>tidytext</em> y las clásicas de gráficos) y cuando utilice alguna un poco más específica mencionarla ahí mismo.</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## -- Attaching packages ------------------------------------------------- tidyverse 1.2.1 --</code></pre>
+<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.1     v stringr 1.3.1
+## v readr   1.1.1     v forcats 0.3.0</code></pre>
+<pre><code>## -- Conflicts ---------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(twitteR)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;twitteR&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
+## 
+##     id, location</code></pre>
+<pre class="r"><code>library(tidytext)
+library(tm)</code></pre>
+<pre><code>## Loading required package: NLP</code></pre>
+<pre><code>## 
+## Attaching package: &#39;NLP&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     annotate</code></pre>
+<pre class="r"><code>library(wordcloud2)
+library(webshot)
+library(htmlwidgets)
+library(wordcloud2)
+library(ggwordcloud)
+library(hrbrthemes)</code></pre>
+<pre><code>## NOTE: Either Arial Narrow or Roboto Condensed fonts are *required* to use these themes.</code></pre>
+<pre><code>##       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and</code></pre>
+<pre><code>##       if Arial Narrow is not on your system, please see http://bit.ly/arialnarrow</code></pre>
+<pre class="r"><code>library(ggthemes)
+library(forcats)</code></pre>
+<p>Al igual que en el post pasado, todos los datos de la cuenta de Twitter son personales y privados, por lo que este paso sigue quedando oculto.</p>
+<p>Ahora toca cargar las funciones de búsqueda. Aunque sólo voy a usar <em>tw_search</em>, dejo la de los timelines también por si alguien está leyendo esto por primera vez. En el post anterior de scrapeo está mejor explicado cómo las construí, pero son bastante sencillas, como se aprecia a simple vista.</p>
+<pre class="r"><code># Función 1: tw_search 0.3 ----------------------------------------------------
+
+tw_search &lt;- function(x, cant){
+  terminos &lt;- deparse(substitute(x)) 
+  terminos_h &lt;- paste0(&quot;#&quot;, terminos) 
+  json &lt;- searchTwitter(terminos_h, n=cant)
+  base &lt;- twListToDF(json) 
+  assign(x=terminos, value = base, pos=1) 
+}
+
+# Función 2: tw_search_timelines 0.1 --------------------------------------
+tw_search_timelines &lt;- function(x, cant) {
+  terminos &lt;- deparse(substitute(x))
+  json &lt;- userTimeline(terminos, n=cant) 
+  base &lt;- twListToDF(json)
+  assign(x=terminos, value = base, pos=1)
+}</code></pre>
+<p>Una muy linda herramienta que encontré con un gran aporte de los colegas analistas de la comunidad R en Baires (<a href="https://renbaires.github.io/" class="uri">https://renbaires.github.io/</a>) es un léxico realiado de manera nativa en castellano para la clasificación de ciertas palabras en términos de positivas y negativas. Son más de 2800 palabras, clasificadas del 1 al 3, donde 1 es negativo y 3 es positivo. Quien quiera conocer más sobra esta investigación, le dejo el link: <a href="http://habla.dc.uba.ar/gravano/sdal.php" class="uri">http://habla.dc.uba.ar/gravano/sdal.php</a>.</p>
+<p>Así que una vez cargado ese diccionario, vamos a hacer la búsqueda de #miracomonosponemos, seleccionando unos 5000 tweets. Con cada post sigo tensando un poco más la cuerda a ver hasta dónde me permite buscar: la vez pasada había hecho casi 2000 en una sola búsqueda, así que ¡veamos si nos permite!</p>
+<pre class="r"><code>sdal &lt;- read.csv(&#39;https://hernanescu.github.io/data/SDAL.csv&#39;)
+tw_search(miracomonosponemos, 5000)</code></pre>
+<p>¡Perfecto! Tenemos una buena base para trabajar. La primera pregunta que se me viene es: estos 5000 tweets, ¿cuánto tiempo representa?</p>
+<pre class="r"><code>miracomonosponemos %&gt;% 
+  arrange(created) %&gt;%
+  select(created) %&gt;% 
+  filter(row_number()==1 | row_number()==5000)</code></pre>
+<pre><code>##               created
+## 1 2018-12-19 04:21:16
+## 2 2018-12-19 20:36:58</code></pre>
+<p>En una temática tan presente como esta, era esperable: tenemos una fotografía que captura sólo 18 horas de movimiento. No está mal, pero acá ya aprendimos una lección: si se quiere analizar un fenómeno desde su nacimiento, lo que hay que hacer es estar sumamente atento e ir corriendo búsquedas de forma periódica y guardar los resultados para procesarlos.</p>
+<p>Lo que quiero hacer es ver los tweets más populares para ver qué fue lo que más resonó: se me ocurre que una buena forma de estudiarlo es ver los más retweeteados.</p>
+<pre class="r"><code>miracomonosponemos %&gt;% 
+  arrange(desc(retweetCount)) %&gt;% 
+  select(screenName, text) %&gt;% 
+  head()</code></pre>
+<pre><code>##      screenName
+## 1       lokapsi
+## 2      LuSolis7
+## 3  CarlaPardo__
+## 4       mbinet_
+## 5 Byron_Rosales
+## 6      IvannaZL
+##                                                                                                                                            text
+## 1  RT @MartuCattoni: Hoy me subí al colectivo, estaba sola. Una parada despues se suben un par de personas. Una de ellas, una señora de al red…
+## 2  RT @MartuCattoni: Hoy me subí al colectivo, estaba sola. Una parada despues se suben un par de personas. Una de ellas, una señora de al red…
+## 3  RT @MartuCattoni: Hoy me subí al colectivo, estaba sola. Una parada despues se suben un par de personas. Una de ellas, una señora de al red…
+## 4                                                                            RT @soythelmafardin: #MiraComoNosPonemos \nhttps://t.co/SROsqj8DWk
+## 5 RT @magalitajes: #MiraComoNosPonemos\nLa mierda de Darthes no es un caso aislado, está avalado por un sistema que encubre, defiende y perpet…
+## 6 RT @magalitajes: #MiraComoNosPonemos\nLa mierda de Darthes no es un caso aislado, está avalado por un sistema que encubre, defiende y perpet…</code></pre>
+<p>Acá podemos ver que entre lo que nos devuelve Twitter hay muchos repetidos, que son los más populares. Hagamos entonces un subset, tomando un elemento por conteo de retweets, de forma tal de quedarnos con un solo elemento.</p>
+<pre class="r"><code>mira_unique &lt;- miracomonosponemos %&gt;% 
+  subset(!duplicated(text))
+
+mira_unique %&gt;% 
+  arrange(desc(retweetCount)) %&gt;% 
+  head()</code></pre>
+<pre><code>##                                                                                                                                             text
+## 1   RT @MartuCattoni: Hoy me subí al colectivo, estaba sola. Una parada despues se suben un par de personas. Una de ellas, una señora de al red…
+## 2                                                                             RT @soythelmafardin: #MiraComoNosPonemos \nhttps://t.co/SROsqj8DWk
+## 3  RT @magalitajes: #MiraComoNosPonemos\nLa mierda de Darthes no es un caso aislado, está avalado por un sistema que encubre, defiende y perpet…
+## 4   RT @natijota: Ni por borracha, ni por andar con poca ropa, ni por “buscona”, ni “por puta”. Si no hay un explícito “sí”, ES NO. Si es menor…
+## 5                                                                                    RT @riverocalu: #Miracomonosponemos https://t.co/Jtuibl5Awy
+## 6 RT @malefilmica: #MiraComoNosPonemos\n\nhoy me levanté a las 10 como todas las mañanas, le mandé los buenos días a mi novio y me puse a ver v…
+##   favorited favoriteCount replyToSN             created truncated
+## 1     FALSE             0      &lt;NA&gt; 2018-12-19 18:25:18     FALSE
+## 2     FALSE             0      &lt;NA&gt; 2018-12-19 16:00:05     FALSE
+## 3     FALSE             0      &lt;NA&gt; 2018-12-19 15:42:37     FALSE
+## 4     FALSE             0      &lt;NA&gt; 2018-12-19 20:05:00     FALSE
+## 5     FALSE             0      &lt;NA&gt; 2018-12-19 17:06:41     FALSE
+## 6     FALSE             0      &lt;NA&gt; 2018-12-19 20:34:14     FALSE
+##   replyToSID                  id replyToUID
+## 1       &lt;NA&gt; 1075457058621788160       &lt;NA&gt;
+## 2       &lt;NA&gt; 1075420512501841920       &lt;NA&gt;
+## 3       &lt;NA&gt; 1075416117504548870       &lt;NA&gt;
+## 4       &lt;NA&gt; 1075482150600892416       &lt;NA&gt;
+## 5       &lt;NA&gt; 1075437276019286016       &lt;NA&gt;
+## 6       &lt;NA&gt; 1075489507925995524       &lt;NA&gt;
+##                                                                           statusSource
+## 1   &lt;a href=&quot;http://twitter.com/download/iphone&quot; rel=&quot;nofollow&quot;&gt;Twitter for iPhone&lt;/a&gt;
+## 2                   &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
+## 3 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+## 4 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+## 5 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+## 6 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+##      screenName retweetCount isRetweet retweeted longitude latitude
+## 1       lokapsi        22736      TRUE     FALSE        NA       NA
+## 2       mbinet_        18983      TRUE     FALSE        NA       NA
+## 3 Byron_Rosales        18175      TRUE     FALSE        NA       NA
+## 4 de_micaelisto        14436      TRUE     FALSE        NA       NA
+## 5  isa_medina47        13222      TRUE     FALSE        NA       NA
+## 6 Lucas10805931        12765      TRUE     FALSE        NA       NA</code></pre>
+<p>Aparecen figuras públicas como Nati Jota y Calu Rivero. También podemos ver algunas un poco más “anónimas”, como la usuaria malefilmica, que hizo un relato de ficción absolutamente estremecedor. Para trabajar con los wordclouds y el lexicón, necesitamos que esté todo en minúsculas, así que dejemos eso preparado para después.</p>
+<pre class="r"><code>mira_unique &lt;- mira_unique %&gt;%
+  arrange(desc(retweetCount)) %&gt;% 
+  mutate(text=tolower(text))
+
+head(mira_unique)</code></pre>
+<pre><code>##                                                                                                                                             text
+## 1   rt @martucattoni: hoy me subí al colectivo, estaba sola. una parada despues se suben un par de personas. una de ellas, una señora de al red…
+## 2                                                                             rt @soythelmafardin: #miracomonosponemos \nhttps://t.co/srosqj8dwk
+## 3  rt @magalitajes: #miracomonosponemos\nla mierda de darthes no es un caso aislado, está avalado por un sistema que encubre, defiende y perpet…
+## 4   rt @natijota: ni por borracha, ni por andar con poca ropa, ni por “buscona”, ni “por puta”. si no hay un explícito “sí”, es no. si es menor…
+## 5                                                                                    rt @riverocalu: #miracomonosponemos https://t.co/jtuibl5awy
+## 6 rt @malefilmica: #miracomonosponemos\n\nhoy me levanté a las 10 como todas las mañanas, le mandé los buenos días a mi novio y me puse a ver v…
+##   favorited favoriteCount replyToSN             created truncated
+## 1     FALSE             0      &lt;NA&gt; 2018-12-19 18:25:18     FALSE
+## 2     FALSE             0      &lt;NA&gt; 2018-12-19 16:00:05     FALSE
+## 3     FALSE             0      &lt;NA&gt; 2018-12-19 15:42:37     FALSE
+## 4     FALSE             0      &lt;NA&gt; 2018-12-19 20:05:00     FALSE
+## 5     FALSE             0      &lt;NA&gt; 2018-12-19 17:06:41     FALSE
+## 6     FALSE             0      &lt;NA&gt; 2018-12-19 20:34:14     FALSE
+##   replyToSID                  id replyToUID
+## 1       &lt;NA&gt; 1075457058621788160       &lt;NA&gt;
+## 2       &lt;NA&gt; 1075420512501841920       &lt;NA&gt;
+## 3       &lt;NA&gt; 1075416117504548870       &lt;NA&gt;
+## 4       &lt;NA&gt; 1075482150600892416       &lt;NA&gt;
+## 5       &lt;NA&gt; 1075437276019286016       &lt;NA&gt;
+## 6       &lt;NA&gt; 1075489507925995524       &lt;NA&gt;
+##                                                                           statusSource
+## 1   &lt;a href=&quot;http://twitter.com/download/iphone&quot; rel=&quot;nofollow&quot;&gt;Twitter for iPhone&lt;/a&gt;
+## 2                   &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
+## 3 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+## 4 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+## 5 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+## 6 &lt;a href=&quot;http://twitter.com/download/android&quot; rel=&quot;nofollow&quot;&gt;Twitter for Android&lt;/a&gt;
+##      screenName retweetCount isRetweet retweeted longitude latitude
+## 1       lokapsi        22736      TRUE     FALSE        NA       NA
+## 2       mbinet_        18983      TRUE     FALSE        NA       NA
+## 3 Byron_Rosales        18175      TRUE     FALSE        NA       NA
+## 4 de_micaelisto        14436      TRUE     FALSE        NA       NA
+## 5  isa_medina47        13222      TRUE     FALSE        NA       NA
+## 6 Lucas10805931        12765      TRUE     FALSE        NA       NA</code></pre>
+<p>Volviendo por un minuto a los usuarios más populares y los anónimos: ¿habrá algún tweet que haya generado mucho eco en el período analizado?</p>
+<pre class="r"><code>miracomonosponemos %&gt;% 
+  filter(isRetweet==FALSE) %&gt;% 
+  filter(retweeted==TRUE) %&gt;% 
+  arrange(desc(retweetCount)) %&gt;%
+  select(screenName, text, retweetCount, favoriteCount) %&gt;% 
+  head()</code></pre>
+<pre><code>## [1] screenName    text          retweetCount  favoriteCount
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<p>Vemos que no: ningún tweet que no sea retweet fue a su vez retweeteado (parece un trabalenguas, ¿verdad?).</p>
+<p>¿Y qué pasa con los favoritos? Vamos a ver aquellos que se generaron en este período que no sean retweets pero que hayan sido los más marcados como favoritos.</p>
+<pre class="r"><code>miracomonosponemos %&gt;% 
+  filter(isRetweet==FALSE) %&gt;% 
+  arrange(desc(favoriteCount)) %&gt;% 
+  select(screenName, text, retweetCount, favoriteCount) %&gt;% 
+  head()</code></pre>
+<pre><code>##      screenName
+## 1   AgustinLaje
+## 2  actrices_arg
+## 3       NanNFC2
+## 4      exitoina
+## 5 LaraMinervino
+## 6  actrices_arg
+##                                                                                                                                                                                          text
+## 1                                                 Sigo esperando sin éxito que @vikidonda salga a decir #MiraComoNosPonemos repudiando el texto en el cual su marido… https://t.co/Hus5RA4dH6
+## 2                                                 Un Estado que ante el aumento de llamados pidiendo ayuda despide, desfinancia y sobreexplota a sus trabajadorxs de… https://t.co/LdfTMcMniG
+## 3 Thelma - Cuando tenía 16 años tuve sexo con Darthés &lt;U+0001F61C&gt;\nCalu - Me jodes!? &lt;U+0001F632&gt;\n-No, de verdad &lt;U+0001F60D&gt;\n-Pero eso es violación!&lt;U+0001F631&gt;… https://t.co/ZpMmS7bq26
+## 4                                                #MiraComoNosPonemos Geraldine Neumann @gegeneumann y su marido acusaron a Ariel Rodríguez Palacios @ArielRoPalacios… https://t.co/6bTLahLpmC
+## 5                                                                                                                                                 #Miracomonosponemos https://t.co/avGu8yNmmP
+## 6                                                Ésto dice nuestra compañera @zuleicaes sobre las amenazas que está recibiendo. La abrazamos, apoyamos y reafirmamos… https://t.co/tWyzFUDo5S
+##   retweetCount favoriteCount
+## 1         1212          2348
+## 2          129           270
+## 3           59           172
+## 4           67            79
+## 5           97            72
+## 6           21            59</code></pre>
+<p>Aparecen Agustín Laje (un auténtico profeta del odio machista de la derecha joven), la cuenta de Actrices Argentinas y otros usuarios. Es interesante lo que se puede observar con los datos que brinda esta red social y un par de líneas de código.</p>
+<p>Pero sigamos adelante: vamos a separar estos tweets en palabras y a fusionar esa base con el lexicón SDAL. En el medio, modificamos el lexicón para que “palabra” se llame “word”, así después podemos graficar con <em>wordcloud</em>. Una vez que tenemos eso, veamos qué sucede.</p>
+<pre class="r"><code>mira_word &lt;- mira_unique %&gt;%
+  mutate(text=str_remove_all(text, remove_reg)) %&gt;%
+  unnest_tokens(Palabra, text) %&gt;%
+  count(Palabra, sort=TRUE) %&gt;%
+  filter(!Palabra%in%stopwords(&#39;es&#39;)) %&gt;%
+  filter(!Palabra%in%fillers) %&gt;%
+  filter(str_detect(Palabra, &quot;^[a-zA-z]|^#|^@&quot;)) %&gt;%
+  ungroup() %&gt;%
+  arrange(desc(n)) %&gt;% 
+  mutate(word=Palabra,
+         freq=n) %&gt;% 
+  select(word, freq)
+
+sdal_word &lt;- sdal %&gt;% 
+  rename(&quot;word&quot;=palabra)
+
+mira_sdal &lt;- left_join(mira_word, sdal_word, by=&quot;word&quot;)</code></pre>
+<pre><code>## Warning: Column `word` joining character vector and factor, coercing into
+## character vector</code></pre>
+<pre class="r"><code>head(mira_sdal)</code></pre>
+<pre><code>## # A tibble: 6 x 9
+##   word   freq media_agrado media_activacion media_imaginabi~ sd_agrado
+##   &lt;chr&gt; &lt;int&gt;        &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;     &lt;dbl&gt;
+## 1 mira~   494           NA               NA               NA        NA
+## 2 noes~    62           NA               NA               NA        NA
+## 3 muje~    51           NA               NA               NA        NA
+## 4 hoy      47           NA               NA               NA        NA
+## 5 metoo    46           NA               NA               NA        NA
+## 6 ahora    43           NA               NA               NA        NA
+## # ... with 3 more variables: sd_activacion &lt;dbl&gt;, sd_imaginabilidad &lt;dbl&gt;,
+## #   tipo &lt;fct&gt;</code></pre>
+<p>Por lo pronto, vemos que el hashtag en cuestión es el término que más aparece, seguido de otros como noesno, metoo y niunamenos. Las columnas de agrado, activación e imaginabilidad están mejor descriptas en el trabajo, pero son bastante autoexplicativas: remiten a las sensaciones y emociones que esas palabras despiertan. Como mucho de lo que aparece son hashtags u otro tipo de construcciones, en esas columnas tenemos los tan temidos NA (pero que en este momento no nos preocupan).</p>
+</div>
+<div id="palabras-necesarias" class="section level1">
+<h1>Palabras necesarias</h1>
+<p>Vamos a ver entonces el wordcloud general, eliminando el primer término (que es el hashtag que estamos analizando).</p>
+<pre class="r"><code>hw &lt;- wordcloud2(mira_sdal[2:500,], size = 0.5, gridSize = 8)
+saveWidget(hw, &quot;mira_wc.html&quot;, selfcontained = F)
+webshot::webshot(&quot;mira_wc.html&quot;, &quot;mira_wc.png&quot;, vwidth = 1024, vheight = 860, delay = 15)</code></pre>
+<p><img src="https://hernanescu.github.io/post/2018-12-19-mira-como-nos-ponemos_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Vemos que aparecen varios usuarios. Se destacan Thelma Fardín, Marcelo Tinelli (quien ahora en su programa está teniendo un vuelco feminista después de años de cortarle la pollera a las mujeres con una tijera) o la diputada Victoria Donda (cuyo marido, Pablo Marchetti, está siendo blanco de todo tipo de críticas por un relato ficcional de incesto y pedofilia que francamente revuelve el estómago). También aparece el hashtag pero escrito de otras formas: con o sin tildes. Otra peculiaridad del castellano que en este momento nos juega levemente en contra.</p>
+<p>Acá viene lo interesante del lexicón SDAL: veamos qué sucede con aquellos términos que sí cuentan con un valor asignado en cuanto a su agrado. Las palabras en rojo son las que se consideran más negativas, y en verde las más positivas: el tamaño está dado por la cantidad de veces que aparece.</p>
+<pre class="r"><code>mira_sdal %&gt;% 
+  filter(!is.na(media_agrado)) %&gt;% 
+  ggplot(., aes(label=word, size=freq, color=media_agrado))+
+    geom_text_wordcloud_area(rm_outside = TRUE)+
+    scale_colour_gradient(low=&quot;#c90000&quot;, high=&quot;#009A44&quot;)+
+    scale_size_area(max_size=10)+
+    theme_minimal()</code></pre>
+<p><img src="https://hernanescu.github.io/post/2018-12-19-mira-como-nos-ponemos_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Es muy fuerte ver la presencia de la palabra miedo de una forma tan marcada. La otra palabra muy mencionada es mujer, que según la construcción de este lexicón, tiene una calificación eminentemente positiva. Se observan algunas repeticiones (como “ser”), por una sencilla razón: puede ser un sustantivo o un verbo, y ambas tienen puntajes diferentes. En parelelo, puntualmente por la forma de expresarnos que tenemos como argentinos, hacemos un alto uso de la ironía, lo que hace que muchas veces las palabras positivas aparezcan en un uso negativo. Es difícil calificar al idioma, pero ahí está su riqueza y belleza.</p>
+<p>Para que haya una mayor claridad, hagamos unos gráficos de tipo <em>lollipop</em> para complementar la lectura. Primero, veamos cuáles son los 20 términos más mencionados, independientemente de su clasificación.</p>
+<p>Vuelvo por un instante a lo técnico: hace su aparición la librería <em>forcats</em>, que lo que hace es forzar a la base a tomar un determinado orden. En este caso, lo que quiero hacer es que queden ordenadas por cantidad de menciones, dado que el default no es demasiado claro y queda desparejo.</p>
+<pre class="r"><code>mira_sdal %&gt;% 
+  arrange(desc(freq)) %&gt;%
+  mutate(word=forcats::fct_inorder(word)) %&gt;% 
+  .[2:21,] %&gt;%
+  ggplot(., aes(x=word, y=freq))+
+  geom_segment(aes(x=word, xend=word, y=0, yend=freq), color=&quot;grey&quot;)+
+  geom_point(size=3, color=&quot;#009A44&quot;)+
+  coord_flip()+
+  theme_economist()+
+  theme(
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.y = element_blank(),
+      legend.position=&quot;none&quot;) +
+    xlab(&quot;&quot;) +
+    ylab(&quot;Frecuencia&quot;)</code></pre>
+<p><img src="https://hernanescu.github.io/post/2018-12-19-mira-como-nos-ponemos_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Este gráfico es básicamente una reconstrucción del top de palabras, pero un poco más claro: aparecen los hashtags populares, así como también algunas palabras como “ahora”, “hoy” o “años”.</p>
+<p>Por último, vamos a complementar el <em>wordcloud</em> por palabras calificadas según emociones con otros dos <em>lollipops</em>: ordenaremos la base por las medias de agrado y veremos cuántas veces aparecen las palabras más agradables y las más desagradables.</p>
+<pre class="r"><code>mira_sdal %&gt;% 
+  filter(!is.na(media_agrado)) %&gt;%
+  arrange(desc(media_agrado)) %&gt;%
+  .[1:20,] %&gt;% 
+  mutate(word=forcats::fct_inorder(word))%&gt;%
+  ggplot(., aes(x=word, y=freq))+
+  geom_segment(aes(x=word, xend=word, y=0, yend=freq), color=&quot;grey&quot;)+
+  geom_point(size=3, color=&quot;#009A44&quot;)+
+  coord_flip()+
+  theme_economist()+
+  theme(
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.y = element_blank(),
+      legend.position=&quot;none&quot;) +
+    xlab(&quot;&quot;) +
+    ylab(&quot;Frecuencia&quot;)+
+  labs(title=&quot;Conteo de palabras: Positivas&quot;)</code></pre>
+<p><img src="https://hernanescu.github.io/post/2018-12-19-mira-como-nos-ponemos_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<pre class="r"><code>mira_sdal %&gt;% 
+  filter(!is.na(media_agrado)) %&gt;%
+  arrange(media_agrado) %&gt;%
+  .[1:20,] %&gt;% 
+  mutate(word=forcats::fct_inorder(word))%&gt;%
+  ggplot(., aes(x=word, y=freq))+
+  geom_segment(aes(x=word, xend=word, y=0, yend=freq), color=&quot;grey&quot;)+
+  geom_point(size=3, color=&quot;#c90000&quot;)+
+  coord_flip()+
+  theme_economist()+
+  theme(
+      panel.grid.minor.y = element_blank(),
+      panel.grid.major.y = element_blank(),
+      legend.position=&quot;none&quot;) +
+    xlab(&quot;&quot;) +
+    ylab(&quot;Frecuencia&quot;)+
+  labs(title=&quot;Conteo de palabras: Negativas&quot;)</code></pre>
+<p><img src="https://hernanescu.github.io/post/2018-12-19-mira-como-nos-ponemos_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>En cuanto a las positivas, aquí aparece de nuevo la cuestión de lo difícil de calificar del lenguaje: por ejemplo, en un contexto como este, me inclino a suponer que “colegio” no fue usada en una forma positiva. “Miedo” es una de las palabras con mayor peso en cuanto a su media de agrado, y apareció más de 20 veces, lo cual no es poco. En la comparación entre ambas, podemos encontrar que las palabras más desagradables aparecieron más veces que las palabras más agradables, lo cual es entendible.</p>
+</div>
+<div id="una-oleada-necesaria" class="section level1">
+<h1>Una oleada necesaria</h1>
+<p>A modo de cierre, no quería dejar de reiterar mi más sincero apoyo a todas las mujeres que se animan a denunciar situaciones de extrema vulnerabilidad que la violencia machista les ha hecho vivir. Aquí se ve muy claro el valor de este movimiento, que las hace sentirse acompañadas y valientes para sacar a la luz estos sucesos extremadamente oscuros. Es muy fuerte lo que se está viviendo como sociedad, y si bien es necesario que estos casos se den a conocer (y más aún es menester que este sistema patriarcal se caiga a pedazos), no deja de ser una sensación agridulce en tanto es la evidencia de una violencia que siempre existió pero no estaba problematizada.</p>
+<p>El patriarcado se va a caer, porque las mujeres que luchan lo van a tirar abajo. Ojalá ese día sea pronto.</p>
+</div>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">ETIQUETADO EN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://hernanescu.github.io/tags/twitter/">Twitter</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/12/test-relaciones/" data-tooltip="Test de Relaciones Violentas: se encienden las alarmas">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 Hernán Escudero. Todos los derechos reservados
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/12/test-relaciones/" data-tooltip="Test de Relaciones Violentas: se encienden las alarmas">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhernanescu.github.io%2F2018%2F12%2Fmira-como-nos-ponemos%2F">
+          <i class="fa fa-facebook-official"></i><span>Compartir en Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhernanescu.github.io%2F2018%2F12%2Fmira-como-nos-ponemos%2F">
+          <i class="fa fa-twitter"></i><span>Compartir en Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fhernanescu.github.io%2F2018%2F12%2Fmira-como-nos-ponemos%2F">
+          <i class="fa fa-google-plus"></i><span>Compartir en Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://hernanescu.github.io/img/foto.jpg" alt="Foto de autor" />
+    
+    <h4 id="about-card-name">Hernán Escudero</h4>
+    
+      <div id="about-card-bio">Data Analyst // Sociólogo experto en políticas sociales y desarrollos sustentables // Periodista científico</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Del Big Data al desarrollo local endógeno: todo es una cuestión de enfoque.
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Buenos Aires, Argentina
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Buscar" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no se encontraron artículos</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/">
+                <h3 class="media-heading">Mirá como nos ponemos: una mirada a la twittósfera</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Es claro que el movimiento de mujeres llegó para quedarse (y en buena hora). En estos últimos días, la denuncia de la actriz Thelma Fardín generó una oleada más que necesaria donde muchas mujeres se sintieron lo suficientemente acompañadas y empoderadas para hacer lo propio con otros hombres que las han violentado o abusado. Como hombre, me genera una auténtica repulsión saber que hay congéneres capaces de hacer atrocidades semejantes y desde mi humilde lugar como sociólogo y analista no puedo hacer gran cosa salvo dar la batalla donde corresponde: deconstruir propias prácticas y micromachismos, así como también instar a otros hombres a que hagan lo propio.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/2018/12/test-relaciones/">
+                <h3 class="media-heading">Test de Relaciones Violentas: se encienden las alarmas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Entre las iniciativas del Gobierno de la Ciudad de Buenos Aires se encuentra el Test de Alerta sobre un Noviazgo Violento. Como bien explican en la presentación del dataset, la violencia de género no es sólo agresiones físicas y sexuales: la cotidianidad en las relaciones muchas veces encierra otra clase de violencia, un poco más sutil, pero no por ello menos peligrosa.
+El test consta de 15 preguntas donde se busca identificar situaciones de la vida cotidiana donde pueda expresarse esta problemática: si la pareja revisa los mensajes del celular, si prohibe el uso de una vestimenta, si insulta.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/2018/12/maquina-scrapear/">
+                <h3 class="media-heading">La máquina de scrapear: Twitter</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.
+Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/2018/11/boleto-estudiantil/">
+                <h3 class="media-heading">Uso del Boleto Estudiantil en la Ciudad de Buenos Aires</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Encontré un dataset en el Portal Datos Argentina (https://datos.gob.ar) que me permitió sacarme una duda que siempre había tenido desde mis años de estudiante: cuántas personas utilizan el boleto estudiantil en la Ciudad de Buenos Aires. En el dataset están includas más de 43.000 observaciones según año, tipo de pasaje, línea y cantidad de viajes realizados.
+Manos a la obraArrancamos como siempre con cargar las librerías y la base.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/2018/11/bano-seco/">
+                <h3 class="media-heading">Formas de saneamiento en los aglomerados de la EPH: dos formas de ver una misma problemática</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Siempre me pareció simpático el paquete treemap: es súper interesante para representar proporciones de distintos segmentos y sub-segmentos de una forma muy clara e interesante. En este punto, vale decir que por mucho tiempo trabajé en investigación y desarrollo de políticas para un hábitat sustentable, principalmente en dos puntos: calefacción y saneamiento.
+Eso fue lo que me inspiró a tomar la EPH para buscar algo que siempre había querido saber y no había podido: cómo se reparte el uso de las alternativas de saneamiento a nivel general en el país.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/2018/11/eph-pobreza/">
+                <h3 class="media-heading">La línea de pobreza en el segundo trimestre: analizando la EPH</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Hace unas semanas tuve la suerte de poder asistir a un curso organizado por INDEC-CEPED, brindado por auténticos referentes en all things R: Natsumi Shokida, Diego Kozlowski y Guido Weksler. Ahí se trabjó la aplicación de R para el análisis de la Encuesta Permanente de Hogares (EPH), una de las herramientas más valiosas que tiene el Instituto.
+Esta herramienta releva información de 31 aglomerados del país de manera trimestral y es fundamental para observar cómo evolucionan indicadores de pobreza, trabajo y hábitat de una manera mucho más periódica que el censo.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+                <h3 class="media-heading">Una mirada a la erogación en obras públicas</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/1/01/">
+                <h3 class="media-heading"></h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">wordcloud2{"x":{"word":["cuerpo","personas","encuesta","atención","baratas","buscar","casi","darle","empiezan","encuentro","entradas","identificación","lugares","miles","partir","perdido","público","reírte","tema","actor","argentina","argentinos","charla","cine","consumimos","consumo","cultura","director","equipo","habló","martinpiro","modo","previo","realizó","sincalic","ahora","asociarse","cada","carolinaduek1","ccd","ccdelaciencia","chicos","compra","comunidad","culpa","cultural","debate","deciden","decisiones","día","encontr","encontrás","escuchá","escuchocongo","financi","formas","fragmentada","generamos","gran","marturua","nichos","nuevas","parte","prejuicio","presentación","presentamos","redes","sentirse","sostuvo","tener","testimonio","apue","aspectos","buen","cha","chad1uelvy","colectivo","consumoscult","ct5gby9psj","culturales","deba","desafío","diarios","entender","ex9knxay3e","financiamiento","financiar","gejce6dcay","gracias","grandes","historias","ho","hoy","instagram","invitarme","laburo","leen","marcas","medio","mesas","moderar","música","nsclauzero","nuevo","ofert","oferta","papel","pensamos","pensar","pienso","podcast","presentamo","puedan","quedo","trabajo","ve","x3dnwj4k38",null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"freq":[8,6,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":null,"backgroundColor":"white","gridSize":8,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n console.log(123);\n if(!iii){\n window.location.reload();\n iii = False;\n\n }\n }","data":null}]}}{"viewer":{"width":450,"height":350,"padding":0,"fill":true},"browser":{"width":960,"height":500,"padding":0,"fill":true}}</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://hernanescu.github.io/1/01/">
+                <h3 class="media-heading"></h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Jan 1, 0001
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">wordcloud2{"x":{"word":["noesno","mujeres","hoy","metoo","ahora","denuncia","niunamenos","mirácómonosponemos","thelma","abuso","actrices_arg","ser","ser","argentina","años","mujer","basta","actrices","marido","todas","vikidonda","violencia","colectivo","miracomonosavivamos","mirácomonosponemos","miedo","juan","nonoscallamosmas","soythelmafardin","darthes","hace","sevaacaer","va","violadores","buenmiercoles","cada","denuncias","después","gracias","siempre","violación","darthés","día","nunca","tener","acoso","callamos","decir","dice","género","movimiento","sexual","tipo","vozciudadana3","bien","cómo","días","gente","grisici","justicia","mas","metooargentina","quiero","video","argentinas","creo","denuncian","hablar","mirá","pibas","thelmafardin","vez","aborto","abusos","acá","así","calle","favor","feminista","persona","solo","solo","van","ver","denunció","fardin","fuerza","impunidad","leymicaela","mira","nadie","patriarcado","salir","sociedad","vamos","vida","actriz","ariel","asnicar","brenda","che","dicen","donda","historia","hizo","marchetti","medios","palabras","primera","puede","respecto","silencio","tan","ayuda","casa","chicas","cultura","da","geraldine","hacer","hermana","hombres","in","luego","metoo⁠","miren","momento","neumann","nota","novio","país","palacios","propia","relato","roferrerilustra","vbluesciudadano","vos","voy","agustinlaje","amiga","asco","buenos","chica","debe","dijo","escribió","felizmiercoles","hacen","juntas","laura","macho","mañana","meetoo","nacional","noche","parece","patriarcal","piba","poder","poder","ponemos","protocolo","rodríguez","sólo","argentine","bastante","caer","callar","campaña","cargo","causa","claro","claro","colectiva","compañera","cosas","cuento","derecho","derecho","ex","feminismo","foto","frente","frente","fuerte","fuerte","ganas","hacia","hdp","hombre","iba","importante","ir","jornada","juandarthes","laliespos","legal","lucha","machitos","madre","manera","mano","mierda","mundo","necesitamos","ninguna","pablo","pasa","paso","política","productor","productor","pueden","red__accion","senador","sexo","sola","sos","tema","tiempo","tomar","une","verdad","vergüenza","violador","vivir","voz","xq","yositecreo","youtube","abusada","abusador","acosadas","actor","año","apoyo","après","artística","ca","cambiar","cámpora","casos","colère","cualquier","cuenta","cuervotinelli","delito","delitos","dia","difundir","dos","enfermo","escracho","escuchando","falsas","fardín","feo","funcionario","genteonline","haber","hablamos","hacerlo","haciendo","hashtag","instigación","jorge","kirchner","llamado","machista","mal","marchettipedófilo","nabokov","niunamasniunamenos","noticia","nouvelle","novuelvenmas","ojalá","palabra","pasó","personas","pidiendo","podes","publico","queremos","quieren","re","realidad","recibí","redes","respuesta","saben","saber","saber","seguir","según","sigo","sindicato","situaciones","telefe","testimonio","toda","todxs","unimos","valientes","vas","vemos","víctimas","violada","abortolegal","abrazamos","abusaba","abusadores","abusar","abusosenlacampora","acabó","acusaron","ahí","almachoescracho","amigas","aquí","asi","ayer","basura","berazategui","bolivia","brendaasnicar","bueno","cae","calu","caso","cocinero","cok24gefqs","conductor","contar","creerle","culpa","dan","definitivamente","degenerado","dejo","dentro","despide","di","digo","dios","diputada","eltreceoficial","empezó","escracharlo","escuche","espero","estan","existe","experiencia","felizmiércoles","féministe","ficción","fraude","fuego","gobierno","hablando","hacemos","hagan","hija","hijas","hijo","hilo","hipocresía","hipócritas","hola","izquierda","leer","levanté","libre","línea","llegar","loqueesconunaescontodas","lugar","marino","menos","miles","mina","muchas","nicaragua","non","ojos","padres","parte","pasando","pasaron","pase","patito","plan","podemos","pone","pones","porqué","público","público","punto","pura","puta","qe","qu","quizás","recién","river","rodrigo","rosario","sale","showmatch","tal","texto","tipos","toca","valentía","víctima","viene","violaron","zurdas","aborteras","abusadas","abusosexual","acción","acercó","acuerdan","acusación","acusaciones","acusado","af82980208","afirma","alguien","altoescandalook","amor","andar","animará","animen","argentino","arielropalacios","artificial","asamblea","aún","belulombardiii","buen","buscando","cambio","catamarca","centro","cerro","chiques","cierto","clase","co","coip","comentarios","comparto","cómplices","comprado","comunicación","comunista","conciencia2015","conjunto","conoces","consulta","contó","cortaporlozano","cosa","courrierinter","cualquiera","cuándo","cuba","cuentas","cuidado","culpables","cultural","cura","dans","darthesjuan1","decidir","defiende","denunciar","detrás","diciendo","difundan","digan","dije","doble","dónde","dormir","ecuador","eguillor","encima","entrevista","equipo","escrache","escrito","escuchen","escuela","esperar"],"freq":[62,51,47,46,43,37,37,35,32,30,30,29,29,28,27,27,26,25,25,25,25,22,21,21,21,20,18,18,18,17,17,17,17,17,16,16,16,16,16,16,16,15,15,15,15,14,14,14,14,14,14,14,14,14,13,13,13,13,13,13,13,13,13,13,12,12,12,12,12,12,12,12,11,11,11,11,11,11,11,11,11,11,11,11,10,10,10,10,10,10,10,10,10,10,10,10,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3],"fontFamily":"Segoe UI","fontWeight":"bold","color":"random-dark","minSize":0,"weightFactor":1.45161290322581,"backgroundColor":"white","gridSize":8,"minRotation":-0.785398163397448,"maxRotation":0.785398163397448,"shuffle":true,"rotateRatio":0.4,"shape":"circle","ellipticity":0.65,"figBase64":null,"hover":null},"evals":[],"jsHooks":{"render":[{"code":"function(el,x){\n console.log(123);\n if(!iii){\n window.location.reload();\n iii = False;\n\n }\n }","data":null}]}}{"viewer":{"width":450,"height":350,"padding":0,"fill":true},"browser":{"width":960,"height":500,"padding":0,"fill":true}}</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no se encontraron artículos"
+         data-message-one="1 artículo encontrado"
+         data-message-other="{n} artículos encontrados">
+         9 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://hernanescu.github.io/images/fondo.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://hernanescu.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/hernanescu.github.io\/2018\/12\/mira-como-nos-ponemos\/';
+          
+            this.page.identifier = '\/2018\/12\/mira-como-nos-ponemos\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'hugo-tranquilpeak-theme';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
