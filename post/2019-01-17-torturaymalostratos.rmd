@@ -9,7 +9,7 @@ tags: ["Procuración Penitenciaria de la Nación"]
 
 Hace unas semanas me encontré con el portal de la Procuración Penitenciaria de la Nación (https://http://datos.ppn.gov.ar) y encontré que tienen muchos datasets interesantes. Mucho se habla sobre las condiciones en las cárceles y la vida que llevan los internos, pero hasta la fecha no me había tomado el tiempo (y tampoco tenía los datos) como para ver cómo es la situación.
 
-Aprovechando este dataset, lo que más me interesa estudiar es los casos de tortura y malos tratos registrados. Cabe mencionar que lamentablemente los datos comprenden desde 2009 hasta mediados de 2018: en próximas notas voy a hacer un análisis un poco más extendido en el tiempo, pero en esta oportunidad, como para empezar a entrar en tema, voy a mirar sólo lo sucedido el año pasado.
+Aprovechando este dataset, lo que más me interesa es estudiar los casos de tortura y malos tratos registrados. Cabe mencionar que lamentablemente los datos comprenden desde 2009 hasta mediados de 2018: en próximas notas voy a hacer un análisis un poco más extendido en el tiempo, pero en esta oportunidad, como para empezar a entrar en tema, voy a mirar sólo lo sucedido el año pasado.
 
 ##Manos a la obra
 Cargamos las librerías esenciales para este tipo de manipulación: la confiable Tidyverse y ggthemes para tener gráficos un poco más agradables.
@@ -20,7 +20,7 @@ library(ggthemes)
 library(forcats)
 ```
 
-Si bien las declaraciones respecto al vínculo entre inmigración y delincuencia e inseguridad por parte de la Ministra de Seguridad, Patricia Bullrich, ya han sido lo suficientemente desmentidas, voy a hacer mi propio aporte: veamos cómo se reparten estos casos de violaciones a los derechos humanos elementales de los presidiarios según edad y nacionalidad.
+Veamos cómo se reparten estos casos de violaciones a los derechos humanos elementales de los presidiarios según edad y nacionalidad.
 
 ```{r}
 base_ppn <- read.csv("~/Big Data/datasets/datasets justicia/base-de-datos-tymt-2009-jun2018.csv", sep=";")
