@@ -6,10 +6,20 @@
     <description>Recent content in Posts on #atR://Hernán Escudero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-es</language>
-    <lastBuildDate>Wed, 19 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hernanescu.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Torturas y malos tratos en la prisión</title>
+      <link>https://hernanescu.github.io/2019/01/torturaymalostratos/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hernanescu.github.io/2019/01/torturaymalostratos/</guid>
+      <description>Hace unas semanas me encontré con el portal de la Procuración Penitenciaria de la Nación (https://http://datos.ppn.gov.ar) y encontré que tienen muchos datasets interesantes. Mucho se habla sobre las condiciones en las cárceles y la vida que llevan los internos, pero hasta la fecha no me había tomado el tiempo (y tampoco tenía los datos) como para ver cómo es la situación.
+Aprovechando este dataset, lo que más me interesa estudiar es los casos de tortura y malos tratos registrados.</description>
+    </item>
     
     <item>
       <title>Mirá como nos ponemos: una mirada a la twittósfera</title>

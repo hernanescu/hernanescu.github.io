@@ -1,0 +1,107 @@
+---
+title: "Torturas y malos tratos en la prisión"
+author: ~
+date: '2019-01-17'
+slug: torturaymalostratos
+categories: ["tidyverse"]
+tags: ["Procuración Penitenciaria de la Nación"]
+---
+
+Hace unas semanas me encontré con el portal de la Procuración Penitenciaria de la Nación (https://http://datos.ppn.gov.ar) y encontré que tienen muchos datasets interesantes. Mucho se habla sobre las condiciones en las cárceles y la vida que llevan los internos, pero hasta la fecha no me había tomado el tiempo (y tampoco tenía los datos) como para ver cómo es la situación.
+
+Aprovechando este dataset, lo que más me interesa estudiar es los casos de tortura y malos tratos registrados. Cabe mencionar que lamentablemente los datos comprenden desde 2009 hasta mediados de 2018: en próximas notas voy a hacer un análisis un poco más extendido en el tiempo, pero en esta oportunidad, como para empezar a entrar en tema, voy a mirar sólo lo sucedido el año pasado.
+
+##Manos a la obra
+Cargamos las librerías esenciales para este tipo de manipulación: la confiable Tidyverse y ggthemes para tener gráficos un poco más agradables.
+
+```{r}
+library(tidyverse)
+library(ggthemes)
+library(forcats)
+```
+
+Si bien las declaraciones respecto al vínculo entre inmigración y delincuencia e inseguridad por parte de la Ministra de Seguridad, Patricia Bullrich, ya han sido lo suficientemente desmentidas, voy a hacer mi propio aporte: veamos cómo se reparten estos casos de violaciones a los derechos humanos elementales de los presidiarios según edad y nacionalidad.
+
+```{r}
+base_ppn <- read.csv("~/Big Data/datasets/datasets justicia/base-de-datos-tymt-2009-jun2018.csv", sep=";")
+base_ppn <- base_ppn %>% 
+  mutate(AÑO_HECHO=as.factor(AÑO_HECHO)) %>% 
+  filter(AÑO_HECHO=="2018")
+
+ggplot()+
+  geom_col(data=base_ppn %>% 
+             group_by(RANGO_ETARIO, NACIONALIDAD) %>%
+             summarise(conteo=n()), 
+           aes(x=RANGO_ETARIO, y=conteo, fill=NACIONALIDAD))+
+  labs(x="Rango etario",
+       y="Casos",
+       title="Casos de tortura y malos tratos según rango etario y nacionalidad",
+       subtitle="Enero a junio de 2018",
+       caption="Datos: Procuración Penitenciaria de la Nación, datos.ppn.gov.ar")+
+  scale_fill_viridis_d(option="C", name="Nacionalidad")+
+  theme_minimal()
+```
+
+En primera instancia, cabe mencionar que estamos hablando de 275 observaciones: es decir, en sólo seis meses transcurridos, 275 personas fueron sometidas a diversas situaciones de extrema vulnerabilidad. Podemos ver claramente que la muy amplia mayoría son argentinos, y que los mayores casos de violencia se dan en los internos de entre 25 y 34 años.
+
+Es posible que pensar en la "violencia", así de modo abstracto, nos impida conectar con esta problemática tan extrema. ¿De qué se trata entonces?
+
+```{r}
+base_ppn %>% 
+  gather(tipo_violencia, ejercida, 51:63) %>% 
+  group_by(tipo_violencia) %>% 
+  summarise(n=sum(ejercida=="SI")) %>% 
+  ggplot(.)+
+  geom_col(aes(x=reorder(tipo_violencia, n), y=n), fill="#800000", color="black")+
+  coord_flip()+
+  labs(x="Tipo de violencia",
+       y="Casos",
+       title="Tipos de tortura y malos tratos recibidos",
+       subtitle="Enero a junio de 2018",
+       caption="Datos: Procuración Penitenciaria de la Nación, datos.ppn.gov.ar")+
+  theme_minimal()
+```
+
+Los datos son bastante elocuentes, pero hay algo que debe ser considerado: estos son sólo los casos denunciados. No es ilógico suponer que los números en realidad son mucho más altos de los que aquí se muestran. Hay un par de categorías que son bastante evidentes, pero otras no: "pata pata", por ejemplo, es la práctica de golpear a los internos en las plantas de los pies. Además, "plaf plaf", es darle golpes a los oídos con las palmas de las manos. En cuanto a quiénes ejercen esa violencia, la respuesta no resulta sorprendente:
+
+```{r}
+base_ppn %>% 
+  gather(quien_ejerce, rol, 28:34) %>% 
+  group_by(quien_ejerce) %>% 
+  summarise(n=sum(rol=="SI")) %>% 
+  ggplot(.)+
+  geom_col(aes(x=reorder(quien_ejerce, n), y=n), fill="#800000", color="black")+
+  coord_flip()+
+  labs(x="Agresores",
+       y="Casos",
+       title="Ejercicio de violencia sobre presidiarios",
+       subtitle="Enero a junio de 2018",
+       caption="Datos: Procuración Penitenciaria de la Nación, datos.ppn.gov.ar")+
+  theme_minimal()
+```
+
+Como podemos ver, los agentes del cuerpo de requisas son los principales agresores. Sin ninguna clase de duda, hace falta avanzar mucho más en la profesionalización de este rol, a punto tal, que en el propio libro de Procedimientos de Registro Personal y Requisa en Cárceles Federales (disponible en https://ppn.gov.ar/files/109/New-category/309/Procedimientos-de-Registro-Personal-y-Requisa-en-Carceles-Federales.pdf) se reconoce que es una práctica cuanto menos irregular. "Se advierte entonces de sus palabras [NdR: los propios agentes] que si bien esos procedimientos se conocen como 'rutinarios' u 'ordinarios', la previsibilidad no es una de sus características salientes (...). En las manifestaciones de los agentes penitenciarios está presente la idea de que, si bien deberían llevarse a cabo procedimientos de requisa en forma periódica en la totalidad de los espacios de alojamiento, lo que predomina es la improvisación y el 'vamos viendo', guiándose los agentes principalmente por dos criterios: la cantidad de personal disponible en función de la clasificación del pabellón, y la información brindada por las autoridades de los módulos o los 'rumores' o dichos de algunos presos" (PPN, 2017:60-61).
+
+Para cerrar esta introducción a la temática, veamos si existe alguna diferencia por género:
+
+```{r}
+ggplot()+
+  geom_col(data=base_ppn %>% 
+             group_by(RANGO_ETARIO, GÉNERO) %>%
+             summarise(conteo=n()), 
+           aes(x=RANGO_ETARIO, y=conteo, fill=GÉNERO))+
+  labs(x="Rango etario",
+       y="Casos",
+       title="Casos de tortura y malos tratos según rango etario y género",
+       subtitle="Enero a junio de 2018",
+       caption="Datos: Procuración Penitenciaria de la Nación, datos.ppn.gov.ar")+
+  scale_fill_viridis_d(direction=-1, option="D", name="Género")+
+  theme_minimal()
+```
+
+Cabe aclarar que esta es la clasificación por género que se realiza en el dataset, no propia. Al no disponer de información sobre la población carcelaria total no es posible afirmar cuántos presidiarios corresponden a cada género de la población total. Sin embargo, al menos en lo que refiere a este dataset puntual, es evidente que la violencia es ejercida mayoritariamente hacia los hombres.
+
+##La justicia, esa gran deuda
+Estamos asistiendo a un rebrote de la derecha más conservadora, tanto a nivel nacional como internacional. Esta clase de estudios son fundamentales para analizar la situación de las personas que están adentro de las cárceles, en un contexto en el que hay un discurso peligroso que busca que los derechos humanos no sean universales y sean aplicados sólo a algunos.
+
+Se supone, al menos en teoría, que el paradigma vigente considera que la privación de la libertad haría que un individuo "reconsidere" sus transgresiones a la ley y pueda reinsertarse en la sociedad. Queda pendiente una gran revisión a lo que en verdad sucede en el momento en que alguien sale de prisión e intenta retomar una vida "normal", pero eso queda por fuera del alcance de este estudio. No soy experto en esta temática, pero la búsqueda de la justicia y unas condiciones de vida digna son motores elementales para cualquier científico social.

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Procuración Penitenciaria De La Nación on #atR://Hernán Escudero</title>
+    <link>https://hernanescu.github.io/tags/procuraci%C3%B3n-penitenciaria-de-la-naci%C3%B3n/</link>
+    <description>Recent content in Procuración Penitenciaria De La Nación on #atR://Hernán Escudero</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>es-es</language>
+    <lastBuildDate>Thu, 17 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://hernanescu.github.io/tags/procuraci%C3%B3n-penitenciaria-de-la-naci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Torturas y malos tratos en la prisión</title>
+      <link>https://hernanescu.github.io/2019/01/torturaymalostratos/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hernanescu.github.io/2019/01/torturaymalostratos/</guid>
+      <description>Hace unas semanas me encontré con el portal de la Procuración Penitenciaria de la Nación (https://http://datos.ppn.gov.ar) y encontré que tienen muchos datasets interesantes. Mucho se habla sobre las condiciones en las cárceles y la vida que llevan los internos, pero hasta la fecha no me había tomado el tiempo (y tampoco tenía los datos) como para ver cómo es la situación.
+Aprovechando este dataset, lo que más me interesa estudiar es los casos de tortura y malos tratos registrados.</description>
+    </item>
+    
+  </channel>
+</rss>

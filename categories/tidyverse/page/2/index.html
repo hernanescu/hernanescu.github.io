@@ -8,49 +8,19 @@
 <meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Hernán Escudero">
 <meta name="keywords" content="">
-<meta name="description" content="Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.
-Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia.">
+<meta name="description" content="#atR://Blog de Hernán Escudero">
 
 
-<meta property="og:description" content="Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.
-Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="La máquina de scrapear: Twitter">
-<meta name="twitter:title" content="La máquina de scrapear: Twitter">
-<meta property="og:url" content="https://hernanescu.github.io/2018/12/maquina-scrapear/">
-<meta property="twitter:url" content="https://hernanescu.github.io/2018/12/maquina-scrapear/">
+<meta property="og:description" content="#atR://Blog de Hernán Escudero">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tidyverse">
+<meta name="twitter:title" content="Tidyverse">
+<meta property="og:url" content="https://hernanescu.github.io/categories/tidyverse/">
+<meta property="twitter:url" content="https://hernanescu.github.io/categories/tidyverse/">
 <meta property="og:site_name" content="#atR://Hernán Escudero">
-<meta property="og:description" content="Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.
-Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia.">
-<meta name="twitter:description" content="Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.
-Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia.">
+<meta property="og:description" content="#atR://Blog de Hernán Escudero">
+<meta name="twitter:description" content="#atR://Blog de Hernán Escudero">
 <meta property="og:locale" content="es-es">
-
-  
-    <meta property="article:published_time" content="2018-12-07T00:00:00">
-  
-  
-    <meta property="article:modified_time" content="2018-12-07T00:00:00">
-  
-  
-  
-    
-      <meta property="article:section" content="tidyverse">
-    
-      <meta property="article:section" content="twitteR">
-    
-      <meta property="article:section" content="wordcloud2">
-    
-      <meta property="article:section" content="tidytext">
-    
-      <meta property="article:section" content="tm">
-    
-  
-  
-    
-      <meta property="article:tag" content="Twitter">
-    
-  
 
 
 <meta name="twitter:card" content="summary">
@@ -69,14 +39,16 @@ Al empezar a estudiar R y lo que es big data, lo primero que pensé es que serí
   <meta property="twitter:image" content="https://hernanescu.github.io/img/foto.jpg">
 
 
-    <title>La máquina de scrapear: Twitter</title>
+    <title>Tidyverse</title>
 
     <link rel="icon" href="https://hernanescu.github.io/favicon.png">
     
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://hernanescu.github.io/categories/tidyverse/index.xml">
+    
 
     
 
-    <link rel="canonical" href="https://hernanescu.github.io/2018/12/maquina-scrapear/">
+    <link rel="canonical" href="https://hernanescu.github.io/categories/tidyverse/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -96,7 +68,7 @@ Al empezar a estudiar R y lo que es big data, lo primero que pensé es que serí
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="4">
+      <header id="header" data-behavior="1">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
     <a class="header-title-link" href="https://hernanescu.github.io/">#atR://Hernán Escudero</a>
@@ -116,7 +88,7 @@ Al empezar a estudiar R y lo que es big data, lo primero que pensé es que serí
   
 </header>
 
-      <nav id="sidebar" data-behavior="4">
+      <nav id="sidebar" data-behavior="1">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -225,26 +197,44 @@ Al empezar a estudiar R y lo que es big data, lo primero que pensé es que serí
 </nav>
 
       
+        
 
-      <div id="main" data-behavior="4"
+      
+      <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-          
-          
-            <div class="post-header main-content-wrap text-left">
+        
+          <section class="postShorten-group main-content-wrap">
+            
+            
+              
   
-    <h1 class="post-title" itemprop="headline">
-      La máquina de scrapear: Twitter
-    </h1>
+    
+      
+        
+      
+    
   
+
+
   
+
+<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+          Una mirada a la erogación en obras públicas
+        </a>
+      </h1>
+      
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-12-07T00:00:00Z">
+      <time itemprop="datePublished" datetime="2018-11-10T00:00:00Z">
         
-  Diciembre 7, 2018
+  Noviembre 10, 2018
 
       </time>
     
@@ -255,295 +245,53 @@ Al empezar a estudiar R y lo que es big data, lo primero que pensé es que serí
     
       <a class="category-link" href="https://hernanescu.github.io/categories/tidyverse">tidyverse</a>, 
     
-      <a class="category-link" href="https://hernanescu.github.io/categories/twitter">twitteR</a>, 
+      <a class="category-link" href="https://hernanescu.github.io/categories/sf">sf</a>, 
     
-      <a class="category-link" href="https://hernanescu.github.io/categories/wordcloud2">wordcloud2</a>, 
+      <a class="category-link" href="https://hernanescu.github.io/categories/ggplot2">ggplot2</a>, 
     
-      <a class="category-link" href="https://hernanescu.github.io/categories/tidytext">tidytext</a>, 
-    
-      <a class="category-link" href="https://hernanescu.github.io/categories/tm">tm</a>
+      <a class="category-link" href="https://hernanescu.github.io/categories/ggthemes">ggthemes</a>
     
   
 
   </div>
 
-</div>
-          
-          <div class="post-content markdown" itemprop="articleBody">
-            <div class="main-content-wrap">
-              
-
-
-<p>Una de las cosas más fascinantes de esta clase de herramientas es usarlas para organizar información que existe de manera “pública” (ya veremos por qué las comillas). Usando internet y las redes sociales dejamos un auténtico reguero de información que de tan abundante y compleja que es, resulta por momentos inabordable.</p>
-<p>Al empezar a estudiar R y lo que es big data, lo primero que pensé es que sería interesante (y por qué no, divertido) poder usar esta herramienta para relevar información de Twitter, la red social de opinión por excelencia. Así que me construí un par de funciones y experimentos para poder explorar la <em>twittósfera</em>.</p>
-<div id="manos-a-la-obra" class="section level1">
-<h1>Manos a la obra</h1>
-<p>Voy a detenerme un minuto en las librerías. Además de la clásica tidyverse, voy a usar twitteR para el relevamiento de información: este paquete tiene una construcción de funciones que me pareció cómoda para armar el setup necesario. Para usar Twitter desde una API, el requerimiento es hacerse una cuenta de developer de la red social (el proceso entero lleva menos de un día) y configurar una serie de keys y tokens (que son privados) para que twitteR los tome como parámetros y realizar las búsquedas y requerimientos.</p>
-<p>Tidytext sirve para desgranar vectores en palabras y tm ayuda en el filtrado. Por último, wordcloud2, webshot y htmlwidgets las vamos a usar para el gráfico.</p>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## -- Attaching packages ------------------------------------------------- tidyverse 1.2.1 --</code></pre>
-<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
-## v tibble  1.4.2     v dplyr   0.7.6
-## v tidyr   0.8.1     v stringr 1.3.1
-## v readr   1.1.1     v forcats 0.3.0</code></pre>
-<pre><code>## -- Conflicts ---------------------------------------------------- tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(twitteR)</code></pre>
-<pre><code>## 
-## Attaching package: &#39;twitteR&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:dplyr&#39;:
-## 
-##     id, location</code></pre>
-<pre class="r"><code>library(tidytext)
-library(tm)</code></pre>
-<pre><code>## Loading required package: NLP</code></pre>
-<pre><code>## 
-## Attaching package: &#39;NLP&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
-## 
-##     annotate</code></pre>
-<pre class="r"><code>library(proustr)
-library(wordcloud2)
-library(webshot)
-library(htmlwidgets)</code></pre>
-<p>Ahora sigue cargar los datos que da Twitter para setear en las búsquedas de twitteR (¡parece reiterativo, lo sé!), así que este paso que va a quedar oculto por razones de seguridad ;). Cabe destacar que el mismo twitteR (paquete) es muy claro en las instrucciones a seguir para setear esos parámetros. En el medio, aprovecho a crear dos vectores (<em>fillers</em> y <em>remove_reg</em>) que vamos a usar después: son listados de palabras a filtrar al momento de hacer la limpieza de la base de datos: pronombres, vocales sueltas, artículos y esa clase de elementos. El primero es uno que construí yo a través de la propia experiencia y el otro está sugerido en el brillante Tidy Text Mining (<a href="https://www.tidytextmining.com/" class="uri">https://www.tidytextmining.com/</a>).</p>
-</div>
-<div id="manos-a-la-obra-1" class="section level1">
-<h1>Manos a la obra</h1>
-<p>Armé dos funciones distintas. <em>tw_search</em> entra en el buscador de Twitter y según el input que se le ponga, construye el hashtag y busqueda una cantidad determinada de resultados. Por otro lado, <em>tw_search_timelines</em> hace lo mismo extrae la cantidad que se le pide de tweets de una determinada cuenta. Lo que hace la función es sistematizar el paso de convertirlo de .json (la forma en la que Twitter te devuelve los datos) a un dataframe manipulable por R y dejar todo ya preparado para trabajar.</p>
-<pre class="r"><code># Función 1: tw_search 0.3 ----------------------------------------------------
-
-tw_search &lt;- function(x, cant){
-  terminos &lt;- deparse(substitute(x)) #extraer el nombre de la X
-  terminos_h &lt;- paste0(&quot;#&quot;, terminos) #se pega el hashtag
-  json &lt;- searchTwitter(terminos_h, n=cant) #búsqueda del hashtag y la cantidad
-  base &lt;- twListToDF(json) #se convierte el json a una lista
-  assign(x=terminos, value = base, pos=1) #asigna el nombre de X y lo mando al entorno
-}
-
-# Función 2: tw_search_timelines 0.1 --------------------------------------
-tw_search_timelines &lt;- function(x, cant) {#es el mismo principio que la anterior
-  terminos &lt;- deparse(substitute(x))
-  json &lt;- userTimeline(terminos, n=cant) #la función apropiada
-  base &lt;- twListToDF(json)
-  assign(x=terminos, value = base, pos=1)
-}</code></pre>
-<p>¿Se acuerdan que en el principio decía que había unas comillas en cuán “pública” es la información? La cuestión es que Twitter tiene varias restricciones: desde cuán atrás podés remontarte hasta la cantidad de búsquedas que le podés pedir en un lapso determinado. Así y todo, para sacar una foto del momento resulta muy apropiada.</p>
-<p>Al momento de escritura del post, el Sistema de Información Cultural de la Argentina daba a conocer su Encuesta de Consumo Cultural: “Mujeres en la cultura. Notas para el análisis del acceso y la participación cultural en el consumo y el mercado de trabajo”. Aprovechando que la cuenta oficial estaba realizando una cobertura con el #ConsumosCulturales, vamos a usarlo para mostrar cómo funcionan las búsquedas.</p>
-<pre class="r"><code>tw_search(ConsumosCulturales, 1500)</code></pre>
-<pre><code>## Warning in doRppAPICall(&quot;search/tweets&quot;, n, params = params,
-## retryOnRateLimit = retryOnRateLimit, : 1500 tweets were requested but the
-## API can only return 28</code></pre>
-<pre class="r"><code>str(ConsumosCulturales)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    28 obs. of  16 variables:
-##  $ text         : chr  &quot;RT @CulturaNacionAR: \&quot;Si no me pienso como medio nuevo me quedo sin laburo. Hay que entender el podcast, las h&quot;| __truncated__ &quot;RT @CulturaNacionAR: Escuchá el testimonio de @CarolinaDuek1 sobre el debate de #ConsumosCulturales en el @ccde&quot;| __truncated__ &quot;RT @CulturaNacionAR: El actor y director de cine @martinpiro habló sobre los #ConsumosCulturales en Argentina p&quot;| __truncated__ &quot;Escuchá el testimonio de @CarolinaDuek1 sobre el debate de #ConsumosCulturales en el @ccdelaciencia &lt;U+0001F447&quot;| __truncated__ ...
-##  $ favorited    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ favoriteCount: num  0 0 0 2 0 9 0 0 0 0 ...
-##  $ replyToSN    : chr  NA NA NA &quot;CulturaNacionAR&quot; ...
-##  $ created      : POSIXct, format: &quot;2018-12-15 13:32:36&quot; &quot;2018-12-14 23:10:50&quot; ...
-##  $ truncated    : logi  FALSE FALSE FALSE FALSE FALSE TRUE ...
-##  $ replyToSID   : chr  NA NA NA &quot;1073643865633161216&quot; ...
-##  $ id           : chr  &quot;1073933848910725120&quot; &quot;1073716975422107648&quot; &quot;1073716680537358341&quot; &quot;1073643871324790785&quot; ...
-##  $ replyToUID   : chr  NA NA NA &quot;216106179&quot; ...
-##  $ statusSource : chr  &quot;&lt;a href=\&quot;http://twitter.com/download/iphone\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for iPhone&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter for Android&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;http://twitter.com\&quot; rel=\&quot;nofollow\&quot;&gt;Twitter Web Client&lt;/a&gt;&quot; ...
-##  $ screenName   : chr  &quot;elosofan&quot; &quot;alejadelia7&quot; &quot;alejadelia7&quot; &quot;CulturaNacionAR&quot; ...
-##  $ retweetCount : num  13 1 2 1 2 2 7 5 7 3 ...
-##  $ isRetweet    : logi  TRUE TRUE TRUE FALSE TRUE FALSE ...
-##  $ retweeted    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ longitude    : logi  NA NA NA NA NA NA ...
-##  $ latitude     : logi  NA NA NA NA NA NA ...</code></pre>
-<p>Acá podemos echar un vistazo a lo que tenemos, ya sea el contenido del texto o unas cuantas variables más: quién publicó qué, si son retweets, si fueron marcados como favoritos, etc. Desde acá se puede hacer todo tipo de filtros, por ejemplo:</p>
-<pre class="r"><code>ConsumosCulturales %&gt;% 
-  filter(screenName==&quot;CulturaNacionAR&quot;) %&gt;% 
-  head()</code></pre>
-<pre><code>##                                                                                                                                           text
-## 1     Escuchá el testimonio de @CarolinaDuek1 sobre el debate de #ConsumosCulturales en el @ccdelaciencia &lt;U+0001F447&gt; https://t.co/ChAD1UeLVY
-## 2   El actor y director de cine @martinpiro habló sobre los #ConsumosCulturales en Argentina previo a la charla en el… https://t.co/8rhFk662mu
-## 3 &quot;Ahora hay nichos de miles de personas en las redes. Los #ConsumosCulturales, las decisiones de compra, de atención… https://t.co/Ex9kNxay3E
-## 4 “El público de 12 a 17 está casi perdido, pero a partir de los 17 ya empiezan a buscar lugares de identificación. L… https://t.co/8OccGd3tyc
-## 5 “El tema del encuentro cuerpo a cuerpo y reírte con el otro, no hay con que darle. Son entradas baratas, te encontr… https://t.co/1HD0stu1Ml
-## 6 “El tema del encuentro cuerpo a cuerpo y reírte con el otro, no hay con que darle. Son entradas baratas, te encontr… https://t.co/x3DnWj4k38
-##   favorited favoriteCount       replyToSN             created truncated
-## 1     FALSE             2 CulturaNacionAR 2018-12-14 18:20:20     FALSE
-## 2     FALSE             9            &lt;NA&gt; 2018-12-14 16:07:17      TRUE
-## 3     FALSE             2 CulturaNacionAR 2018-12-10 20:46:04      TRUE
-## 4     FALSE             4 CulturaNacionAR 2018-12-10 20:10:23      TRUE
-## 5     FALSE             0 CulturaNacionAR 2018-12-10 20:06:00      TRUE
-## 6     FALSE             0 CulturaNacionAR 2018-12-10 20:04:42      TRUE
-##            replyToSID                  id replyToUID
-## 1 1073643865633161216 1073643871324790785  216106179
-## 2                &lt;NA&gt; 1073610384374984704       &lt;NA&gt;
-## 3 1072222013329211392 1072230991174033408  216106179
-## 4 1072220911883948032 1072222013329211392  216106179
-## 5 1072220583042125824 1072220911883948032  216106179
-## 6 1072220148654882816 1072220583042125824  216106179
-##                                                         statusSource
-## 1 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
-## 2 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
-## 3 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
-## 4 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
-## 5 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
-## 6 &lt;a href=&quot;http://twitter.com&quot; rel=&quot;nofollow&quot;&gt;Twitter Web Client&lt;/a&gt;
-##        screenName retweetCount isRetweet retweeted longitude latitude
-## 1 CulturaNacionAR            1     FALSE     FALSE        NA       NA
-## 2 CulturaNacionAR            2     FALSE     FALSE        NA       NA
-## 3 CulturaNacionAR            1     FALSE     FALSE        NA       NA
-## 4 CulturaNacionAR            3     FALSE     FALSE        NA       NA
-## 5 CulturaNacionAR            1     FALSE     FALSE        NA       NA
-## 6 CulturaNacionAR            1     FALSE     FALSE        NA       NA</code></pre>
-<p>Sabiendo cuál es el nombre de la cuenta de la Secretaría de Cultura, podemos buscar cuáles salieron de su cuenta… o podemos ver qué encontramos directamente en su timeline:</p>
-<pre class="r"><code>tw_search_timelines(CulturaNacionAR, 1000)
-str(CulturaNacionAR)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    256 obs. of  16 variables:
-##  $ text         : chr  &quot;Hasta el 12 de enero de 2019 tenés tiempo de visitar la exposición \&quot;Contraste simultáneo\&quot;, un punto de encuen&quot;| __truncated__ &quot;&lt;U+0001F57A&gt; Todos los viernes de #diciembre, a las 21 h, te esperamos en la @Manzana_Luces para bailar tango y&quot;| __truncated__ &quot;¡Alfonsín por Alfonsín! Hasta el 31/12, acercate al museo de @CasaRosada a recorrer una muestra íntima que pres&quot;| __truncated__ &quot;&lt;U+0001F335&gt; Durante el mes de #diciembre acercate al @museoterry a conocer \&quot;Transmutación\&quot;, la exhibición de&quot;| __truncated__ ...
-##  $ favorited    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ favoriteCount: num  2 3 15 1 3 3 2 8 2 3 ...
-##  $ replyToSN    : chr  NA NA NA NA ...
-##  $ created      : POSIXct, format: &quot;2018-12-19 20:10:09&quot; &quot;2018-12-19 19:15:08&quot; ...
-##  $ truncated    : logi  TRUE TRUE TRUE TRUE TRUE TRUE ...
-##  $ replyToSID   : chr  NA NA NA NA ...
-##  $ id           : chr  &quot;1075483444287819776&quot; &quot;1075469601851490304&quot; &quot;1075454499811196929&quot; &quot;1075440653448941569&quot; ...
-##  $ replyToUID   : chr  NA NA NA NA ...
-##  $ statusSource : chr  &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; &quot;&lt;a href=\&quot;https://www.hootsuite.com\&quot; rel=\&quot;nofollow\&quot;&gt;Hootsuite Inc.&lt;/a&gt;&quot; ...
-##  $ screenName   : chr  &quot;CulturaNacionAR&quot; &quot;CulturaNacionAR&quot; &quot;CulturaNacionAR&quot; &quot;CulturaNacionAR&quot; ...
-##  $ retweetCount : num  0 2 7 2 4 2 3 3 1 1 ...
-##  $ isRetweet    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ retweeted    : logi  FALSE FALSE FALSE FALSE FALSE FALSE ...
-##  $ longitude    : logi  NA NA NA NA NA NA ...
-##  $ latitude     : logi  NA NA NA NA NA NA ...</code></pre>
-</div>
-<div id="ahora-dicen-que" class="section level1">
-<h1>Ahora dicen que…</h1>
-<p>Vamos a agarrar la base del #ConsumosCulturales y preparémonos para hacer un <em>wordcloud</em>, una nube de palabras que nos permita ver qué fue lo que más se dijo en los tweets al respecto. El paquete <em>wordcloud2</em> nos exige tener una columna llamada <em>word</em> y otra <em>freq</em>, donde tome las palabras a utilizar y cuántas veces aparecen. Hay formas también de setearle variables a colores, pero por hoy quedémonos con esta versión.</p>
-<p>Lo que tenemos que hacer es deconstruir esa variable “text” en todas las palabras que contienen y de ahí filtrar las palabras de relleno. Acá entran en juego esos vectores qeu creamos al inicio, así como también las <em>stopwords</em> del paquete <em>tm</em> y un pequeño truco para que tome sólo lo que puede empezar con una letra, un # o una @. De ahí lo que sigue es cambiarle los nombres a las variables que necesitamos y quedarnos sólo con ellas.</p>
-<pre class="r"><code>cons_cult_wordcloud &lt;- ConsumosCulturales %&gt;%
-  mutate(text=str_remove_all(text, remove_reg)) %&gt;%
-  unnest_tokens(Palabra, text) %&gt;%
-  count(Palabra, sort=TRUE) %&gt;%
-  filter(!Palabra%in%stopwords(&#39;es&#39;)) %&gt;%
-  filter(!Palabra%in%fillers) %&gt;%
-  filter(str_detect(Palabra, &quot;^[a-zA-z]|^#|^@&quot;)) %&gt;%
-  ungroup() %&gt;%
-  arrange(desc(n)) %&gt;% 
-  mutate(word=Palabra,
-         freq=n) %&gt;% 
-  select(word, freq)
-
-head(cons_cult_wordcloud)</code></pre>
-<pre><code>## # A tibble: 6 x 2
-##   word                freq
-##   &lt;chr&gt;              &lt;int&gt;
-## 1 culturanacionar       19
-## 2 consumosculturales     8
-## 3 cuerpo                 8
-## 4 personas               6
-## 5 encuesta               5
-## 6 atención               4</code></pre>
-<p>Podemos ver que “culturanacionar” (el Twitter oficial de la Secretaría) y “consumosculturales” (el propio hashtag en cuestión) aparecen al tope de la lista. Sólo para reflejar mejor el resto de los resultados, lo voy a eliminar al preparar el gráfico.</p>
-<p>Llegado ese momento, soy plenamente conciente de que usé una manera poco ortodoxa de preparar el código (creo que es el equivalente a tener una pésima caligrafía, lo cual en mi caso también es cierto) pero fue la forma en la que mejor logré que se visualicen los resultados. Voy a crear el wordcloud como un objeto y a través de webshot, “sacarle una foto” al resultado. El delay que se observa en el código es porque la función muchas veces se toma su tiempo hasta desplegar todos los elementos que contiene el gráfico, por lo que elijo decirle que se tome 15 segundos hasta que tome la captura. ¿Cómo queda todo esto?</p>
-<pre class="r"><code>hw &lt;- wordcloud2(cons_cult_wordcloud[3:505,], size = 0.5, gridSize = 8)
-saveWidget(hw, &quot;1.html&quot;, selfcontained = F)
-webshot::webshot(&quot;1.html&quot;, &quot;1.png&quot;, vwidth = 1024, vheight = 860, delay = 15)</code></pre>
-<p><img src="https://hernanescu.github.io/post/2018-12-06-scrapeo_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>El resultado es muy atractivo y bastante claro: de un vistazo rápido podemos ver las palabras más utilizadas en Twitter para hablar de un tema determinado. En próximos posteos vamos a poner en práctica <em>la scrapera</em>, como la llamo cariñosamente, para ir viendo otra clase de análisis.</p>
-</div>
-
-              
-            </div>
-          </div>
-          <div id="post-footer" class="post-footer main-content-wrap">
-            
-              
-                
-                
-                  <div class="post-footer-tags">
-                    <span class="text-color-light text-small">ETIQUETADO EN</span><br/>
-                    
-  <a class="tag tag--primary tag--small" href="https://hernanescu.github.io/tags/twitter/">Twitter</a>
-
-                  </div>
-                
-              
-            
-            <div class="post-actions-wrap">
+    </div>
+    <div class="postShorten-excerpt" itemprop="articleBody">
+      
+        El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
+Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.
+      
+      <p>
+        <a href="https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/" class="postShorten-excerpt_link link">Seguir leyendo</a>
+        
+      </p>
+    </div>
+  </div>
   
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/12/test-relaciones/" data-tooltip="Test de Relaciones Violentas: se encienden las alarmas">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/11/boleto-estudiantil/" data-tooltip="Uso del Boleto Estudiantil en la Ciudad de Buenos Aires">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
+</article>
+
+            
+            
+  <div class="pagination-bar">
+    <ul class="pagination">
       
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
         
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2018/12/maquina-scrapear/">
-              <i class="fa fa-facebook-official"></i>
+          <li class="pagination-prev">
+            <a class="btn btn--default btn--small" href="https://hernanescu.github.io/categories/tidyverse/">
+              <i class="fa fa-angle-left text-base icon-mr"></i>
+              <span>ARTÍCULOS RECIENTES</span>
             </a>
           </li>
         
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2018/12/maquina-scrapear/">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2018/12/maquina-scrapear/">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
         
       
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
-      
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
+      <li class="pagination-number">página 2 de 2</li>
     </ul>
-  
-</div>
+  </div>
 
-            
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
-            
-          </div>
-        </article>
+
+          </section>
+        
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 Hernán Escudero. Todos los derechos reservados
@@ -551,102 +299,6 @@ webshot::webshot(&quot;1.html&quot;, &quot;1.png&quot;, vwidth = 1024, vheight =
 </footer>
 
       </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
-        <div class="post-actions-wrap">
-  
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/12/test-relaciones/" data-tooltip="Test de Relaciones Violentas: se encienden las alarmas">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/11/boleto-estudiantil/" data-tooltip="Uso del Boleto Estudiantil en la Ciudad de Buenos Aires">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2018/12/maquina-scrapear/">
-              <i class="fa fa-facebook-official"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2018/12/maquina-scrapear/">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2018/12/maquina-scrapear/">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        
-      
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
-      
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
-    </ul>
-  
-</div>
-
-      </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhernanescu.github.io%2F2018%2F12%2Fmaquina-scrapear%2F">
-          <i class="fa fa-facebook-official"></i><span>Compartir en Facebook</span>
-        </a>
-      </li>
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhernanescu.github.io%2F2018%2F12%2Fmaquina-scrapear%2F">
-          <i class="fa fa-twitter"></i><span>Compartir en Twitter</span>
-        </a>
-      </li>
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fhernanescu.github.io%2F2018%2F12%2Fmaquina-scrapear%2F">
-          <i class="fa fa-google-plus"></i><span>Compartir en Google&#43;</span>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -931,32 +583,6 @@ $(document).ready(function() {
 });
 </script>
 
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/hernanescu.github.io\/2018\/12\/maquina-scrapear\/';
-          
-            this.page.identifier = '\/2018\/12\/maquina-scrapear\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'hugo-tranquilpeak-theme';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 
