@@ -6,10 +6,20 @@
     <description>Recent content in Tidyverse on #atR://Hernán Escudero</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>es-es</language>
-    <lastBuildDate>Thu, 17 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 22 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://hernanescu.github.io/categories/tidyverse/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Scraping de medios: clipping con código</title>
+      <link>https://hernanescu.github.io/2019/01/scraping-media/</link>
+      <pubDate>Tue, 22 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://hernanescu.github.io/2019/01/scraping-media/</guid>
+      <description>Parte de mi rutina cotidiana involucra hacer un recorrido por distintos medios para ponerme al día de todos los últimos acontecimientos. Pero como hay tanto por leer y por hacer, decidí hacerme la tarea un poco más amena, y de paso, sentar las bases para futuras y mejores investigaciones sobre el rol de los medios y la generación de un sentido común.
+Muchos de los medios nacionales e internacionales cuentan en su haber con el protocolo RSS, que permite tener un acceso estandarizado a cierto tipo de contenido online: de este modo, con una app o un agregador, potencialmente se puede acceder a todo el contenido de un simple vistazo.</description>
+    </item>
     
     <item>
       <title>Torturas y malos tratos en la prisión</title>

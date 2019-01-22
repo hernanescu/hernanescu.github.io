@@ -8,45 +8,43 @@
 <meta name="generator" content="Hugo 0.52 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="Hernán Escudero">
 <meta name="keywords" content="">
-<meta name="description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
-Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
+<meta name="description" content="Parte de mi rutina cotidiana involucra hacer un recorrido por distintos medios para ponerme al día de todos los últimos acontecimientos. Pero como hay tanto por leer y por hacer, decidí hacerme la tarea un poco más amena, y de paso, sentar las bases para futuras y mejores investigaciones sobre el rol de los medios y la generación de un sentido común.
+Muchos de los medios nacionales e internacionales cuentan en su haber con el protocolo RSS, que permite tener un acceso estandarizado a cierto tipo de contenido online: de este modo, con una app o un agregador, potencialmente se puede acceder a todo el contenido de un simple vistazo.">
 
 
-<meta property="og:description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
-Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
+<meta property="og:description" content="Parte de mi rutina cotidiana involucra hacer un recorrido por distintos medios para ponerme al día de todos los últimos acontecimientos. Pero como hay tanto por leer y por hacer, decidí hacerme la tarea un poco más amena, y de paso, sentar las bases para futuras y mejores investigaciones sobre el rol de los medios y la generación de un sentido común.
+Muchos de los medios nacionales e internacionales cuentan en su haber con el protocolo RSS, que permite tener un acceso estandarizado a cierto tipo de contenido online: de este modo, con una app o un agregador, potencialmente se puede acceder a todo el contenido de un simple vistazo.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Una mirada a la erogación en obras públicas">
-<meta name="twitter:title" content="Una mirada a la erogación en obras públicas">
-<meta property="og:url" content="https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
-<meta property="twitter:url" content="https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+<meta property="og:title" content="Scraping de medios: clipping con código">
+<meta name="twitter:title" content="Scraping de medios: clipping con código">
+<meta property="og:url" content="https://hernanescu.github.io/2019/01/scraping-media/">
+<meta property="twitter:url" content="https://hernanescu.github.io/2019/01/scraping-media/">
 <meta property="og:site_name" content="#atR://Hernán Escudero">
-<meta property="og:description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
-Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
-<meta name="twitter:description" content="El portal Buenos Aires Open Data (https://data.buenosaires.gob.ar) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.
-Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora ggplot2.">
+<meta property="og:description" content="Parte de mi rutina cotidiana involucra hacer un recorrido por distintos medios para ponerme al día de todos los últimos acontecimientos. Pero como hay tanto por leer y por hacer, decidí hacerme la tarea un poco más amena, y de paso, sentar las bases para futuras y mejores investigaciones sobre el rol de los medios y la generación de un sentido común.
+Muchos de los medios nacionales e internacionales cuentan en su haber con el protocolo RSS, que permite tener un acceso estandarizado a cierto tipo de contenido online: de este modo, con una app o un agregador, potencialmente se puede acceder a todo el contenido de un simple vistazo.">
+<meta name="twitter:description" content="Parte de mi rutina cotidiana involucra hacer un recorrido por distintos medios para ponerme al día de todos los últimos acontecimientos. Pero como hay tanto por leer y por hacer, decidí hacerme la tarea un poco más amena, y de paso, sentar las bases para futuras y mejores investigaciones sobre el rol de los medios y la generación de un sentido común.
+Muchos de los medios nacionales e internacionales cuentan en su haber con el protocolo RSS, que permite tener un acceso estandarizado a cierto tipo de contenido online: de este modo, con una app o un agregador, potencialmente se puede acceder a todo el contenido de un simple vistazo.">
 <meta property="og:locale" content="es-es">
 
   
-    <meta property="article:published_time" content="2018-11-10T00:00:00">
+    <meta property="article:published_time" content="2019-01-22T00:00:00">
   
   
-    <meta property="article:modified_time" content="2018-11-10T00:00:00">
+    <meta property="article:modified_time" content="2019-01-22T00:00:00">
   
   
   
     
       <meta property="article:section" content="tidyverse">
     
-      <meta property="article:section" content="sf">
+      <meta property="article:section" content="tidyRSS">
     
       <meta property="article:section" content="ggplot2">
     
-      <meta property="article:section" content="ggthemes">
-    
   
   
     
-      <meta property="article:tag" content="BA Data">
+      <meta property="article:tag" content="Scraping">
     
   
 
@@ -67,14 +65,14 @@ Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La 
   <meta property="twitter:image" content="https://hernanescu.github.io/img/foto.jpg">
 
 
-    <title>Una mirada a la erogación en obras públicas</title>
+    <title>Scraping de medios: clipping con código</title>
 
     <link rel="icon" href="https://hernanescu.github.io/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+    <link rel="canonical" href="https://hernanescu.github.io/2019/01/scraping-media/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -234,15 +232,15 @@ Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La 
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Una mirada a la erogación en obras públicas
+      Scraping de medios: clipping con código
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-11-10T00:00:00Z">
+      <time itemprop="datePublished" datetime="2019-01-22T00:00:00Z">
         
-  Noviembre 10, 2018
+  Enero 22, 2019
 
       </time>
     
@@ -253,11 +251,9 @@ Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La 
     
       <a class="category-link" href="https://hernanescu.github.io/categories/tidyverse">tidyverse</a>, 
     
-      <a class="category-link" href="https://hernanescu.github.io/categories/sf">sf</a>, 
+      <a class="category-link" href="https://hernanescu.github.io/categories/tidyrss">tidyRSS</a>, 
     
-      <a class="category-link" href="https://hernanescu.github.io/categories/ggplot2">ggplot2</a>, 
-    
-      <a class="category-link" href="https://hernanescu.github.io/categories/ggthemes">ggthemes</a>
+      <a class="category-link" href="https://hernanescu.github.io/categories/ggplot2">ggplot2</a>
     
   
 
@@ -270,10 +266,18 @@ Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La 
               
 
 
-<p>El portal Buenos Aires Open Data (<a href="https://data.buenosaires.gob.ar" class="uri">https://data.buenosaires.gob.ar</a>) tiene un montón de datasets súper interesantes y divertidos para experimentar. En esta ocasión, ví que está disponible uno en el que se relevan las obras públicas a lo largo del año, y decidí ver dónde se concentra la mayor parte de lo erogado.</p>
-<div id="manos-a-la-obra" class="section level1">
-<h1>Manos a la obra</h1>
-<p>Para empezar, cargo las librerías <em>tidyverse</em>, <em>sf</em> y <em>ggthemes</em>. La primera es la navaja suiza con la que se manipulan bases de datos y se visualizan, dado que incorpora <em>ggplot2</em>. Con el paquete SF tomo la base de los radios censales de la Ciudad Autónoma de Buenos Aires, usando el .geojson alojado en la página de Antonio Vázquez Brust (<a href="https://bitsandbricks.github.io/" class="uri">https://bitsandbricks.github.io/</a>).</p>
+<p>Parte de mi rutina cotidiana involucra hacer un recorrido por distintos medios para ponerme al día de todos los últimos acontecimientos. Pero como hay tanto por leer y por hacer, decidí hacerme la tarea un poco más amena, y de paso, sentar las bases para futuras y mejores investigaciones sobre el rol de los medios y la generación de un sentido común.</p>
+<p>Muchos de los medios nacionales e internacionales cuentan en su haber con el protocolo RSS, que permite tener un acceso estandarizado a cierto tipo de contenido online: de este modo, con una app o un agregador, potencialmente se puede acceder a todo el contenido de un simple vistazo. Por eso decidí construirme una serie de funciones que hoy voy a compartir con ustedes para acceder a toda esta información y poder procesarla luego.</p>
+<div id="en-los-hombros-de-los-gigantes" class="section level2">
+<h2>En los hombros de los gigantes</h2>
+<p>Para esta tarea, me crucé con un paquete increíblemente sencillo llamado <em>tidyRSS</em>, cuya función es levantar los RSS en un formato listo para trabajar.</p>
+<p>Quiero hacer una pequeña digresión antes de pasar al código y gráficos. Una de las cosas que me parecen maravillosas de la comunidad de R es la predisposición de todxs lxs involucradxs a compartir el conocimiento (es en parte lo que me motivó a hacer este blog) y a ayudar al prójimo, siempre que esté al alcance de las posibilidades.</p>
+<p>Menciono esto porque me encontré con un error 403 intentando levantar Página/12, que quiere decir que no tengo permisos para acceder. Al ser un diario, supuse que no debería suceder, con lo que le escribí al autor del paquete, el investigador Robert Myles McDonnell. Me respondió a las escasas horas y se puso él mismo manos a la obra para intentar resolver el problema, pero no hubo caso. No habré podido solucionar ese problema, pero por lo menos me quedé tranquilo de que si ni el mismo creador del paquete podía acceder, al menos lo había intentado todo. Así que quiero dejar un gran agradecimiento para él, y una recomendación a todos los colegas a que se pasen por su sitio web (<a href="https://robertmyles.github.io/" class="uri">https://robertmyles.github.io/</a>) a revisar su trabajo.</p>
+<p>Ahora sí, ¡a trabajar!</p>
+</div>
+<div id="manos-a-la-obra" class="section level2">
+<h2>Manos a la obra</h2>
+<p>Vamos a cargar <em>tidyverse</em>, la ya mencionada <em>tidyRSS</em> y los dos paquetes de referencia para análisis de palabras: <em>tm</em> y <em>tidytext</em>.</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>## -- Attaching packages ------------------------------------------------- tidyverse 1.2.1 --</code></pre>
 <pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
@@ -283,112 +287,247 @@ Manos a la obraPara empezar, cargo las librerías tidyverse, sf y ggthemes. La 
 <pre><code>## -- Conflicts ---------------------------------------------------- tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(sf)</code></pre>
-<pre><code>## Linking to GEOS 3.6.1, GDAL 2.2.3, proj.4 4.9.3</code></pre>
-<pre class="r"><code>library(ggthemes)
-radios &lt;- st_read(&quot;https://bitsandbricks.github.io/data/CABA_rc.geojson&quot;)</code></pre>
-<pre><code>## Reading layer `CABA_rc&#39; from data source `https://bitsandbricks.github.io/data/CABA_rc.geojson&#39; using driver `GeoJSON&#39;
-## Simple feature collection with 3554 features and 8 fields
-## geometry type:  MULTIPOLYGON
-## dimension:      XY
-## bbox:           xmin: -58.53092 ymin: -34.70574 xmax: -58.33455 ymax: -34.528
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
-<p>Como lo que estoy buscando es una organización por comunas y no por radios censales, hay que hacer un pequeño reordenamiento:</p>
-<pre class="r"><code>comunas &lt;- radios %&gt;% 
-  group_by(COMUNA) %&gt;% 
-  summarise(poblacion=sum(POBLACION),
-            viviendas=sum(VIVIENDAS),
-            hogares=sum(HOGARES),
-            hogares_nbi=sum(HOGARES_NBI),
-            area_km2=sum(AREA_KM2))</code></pre>
-<p>Ahora toca levantar la base y hacer una agrupación para totalizar el monto de los contratos.</p>
-<pre class="r"><code>obras &lt;- read.delim(&quot;~/Big Data/datasets/observatorio-de-obras-urbanas.csv&quot;, encoding = &quot;UTF-8&quot;)
-obrasencomuna &lt;- obras %&gt;% 
-  mutate(monto_contrato=as.numeric(as.character(monto_contrato))) %&gt;% 
-  filter(monto_contrato!=&quot;NA&quot;) %&gt;% 
-  group_by(comuna) %&gt;% 
-  summarise(monto=sum(monto_contrato))</code></pre>
-<pre><code>## Warning in evalq(as.numeric(as.character(monto_contrato)), &lt;environment&gt;):
-## NAs introducidos por coerción</code></pre>
-<p>Como siempre, gran parte del trabajo consiste en ordenar los datos para que queden de una forma manipulable: que las variables coincidan en mayúsculas y minúsculas y que las necesarias sean tomadas como un factor y no como una variable categórica. Una vez que eso está listo, podemos combinar ambas tablas por su elemento común Entonces:</p>
-<pre class="r"><code>comunas_2 &lt;- comunas %&gt;% 
-  mutate(comuna=COMUNA) %&gt;% 
-  select(-COMUNA)
-obrasencomuna &lt;- obrasencomuna %&gt;% 
-  mutate(comuna=as.factor(comuna))
-base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
-<pre><code>## Joining, by = &quot;comuna&quot;</code></pre>
-<pre><code>## Warning: Column `comuna` joining factors with different levels, coercing to
-## character vector</code></pre>
-<pre class="r"><code>head(base_final)</code></pre>
-<pre><code>## Simple feature collection with 6 features and 7 fields
-## geometry type:  POLYGON
-## dimension:      XY
-## bbox:           xmin: -58.53092 ymin: -34.64626 xmax: -58.33925 ymax: -34.528
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs
-## # A tibble: 6 x 8
-##   poblacion viviendas hogares hogares_nbi area_km2 comuna   monto
-##       &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;
-## 1    205886    131382   84468       13429     17.8 1      1.35e10
-## 2    166022     71664   61453        2149     12.6 10     6.22e 8
-## 3    189832     84734   71460        1444     14.1 11     4.38e 8
-## 4    200116     93502   78547        1335     15.6 12     8.26e 8
-## 5    230767    129482  100257        1879     14.4 13     2.46e 9
-## 6    226534    141710  103167        2425     16.0 14     4.47e 8
-## # ... with 1 more variable: geometry &lt;POLYGON [Â°]&gt;</code></pre>
-<p>Ahora que tengo la base lista, es momento de graficar. Acá se me ocurrió también incorporar el trazado de la línea de subtes de la ciudad al esquema porque me imaginaba que iba a arrojar datos interesantes.</p>
-<pre class="r"><code>subte_lineas &lt;- st_read(&quot;http://bitsandbricks.github.io/data/subte_lineas.geojson&quot;)</code></pre>
-<pre><code>## Reading layer `subte_lineas&#39; from data source `http://bitsandbricks.github.io/data/subte_lineas.geojson&#39; using driver `GeoJSON&#39;
-## Simple feature collection with 80 features and 2 fields
-## geometry type:  MULTILINESTRING
-## dimension:      XY
-## bbox:           xmin: -58.48639 ymin: -34.64331 xmax: -58.36993 ymax: -34.55564
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
-<pre class="r"><code>subte_estaciones &lt;- st_read(&quot;http://bitsandbricks.github.io/data/subte_estaciones.geojson&quot;)</code></pre>
-<pre><code>## Reading layer `subte_estaciones&#39; from data source `http://bitsandbricks.github.io/data/subte_estaciones.geojson&#39; using driver `GeoJSON&#39;
-## Simple feature collection with 86 features and 3 fields
-## geometry type:  POINT
-## dimension:      XY
-## bbox:           xmin: -58.48639 ymin: -34.64331 xmax: -58.36993 ymax: -34.55564
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
-<pre class="r"><code>ggplot()+geom_sf(data=base_final, aes(fill=monto))+
-  scale_fill_viridis_c(direction=-1, option = &quot;A&quot;, name=&quot;Millones de pesos&quot;, breaks=c(174215685, 3513493136, 6852770588, 10192048039, 13531325491), labels=c(&quot;174&quot;, &quot;3.500&quot;, &quot;6.800&quot;,&quot;10.000&quot;, &quot;13.500&quot;))+
-  geom_sf(data = subte_lineas, color=&quot;red&quot;)+
-  geom_sf(data = subte_estaciones, color=&quot;grey&quot;)+
-  labs(title=&quot;Erogación en obra pública por Comunas en la Ciudad de Buenos Aires&quot;,
-       subtitle=&quot;Año 2018&quot;,
-       caption=&quot;Fuente: Portal Buenos Aires Data, data.buenosaires.gob.ar&quot;)</code></pre>
-<p><img src="https://hernanescu.github.io/post/2018-12-04-obras-publicas_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Como se observa en este gráfico, aún hay muchísimo que hacer en materia de descentralización para que las obras públicas lleguen a toda la ciudad. Hay una gran concentración en la zona más céntrica, así como también un presupuesto relativamente alto en la zona sur. Mucho también tiene que ver con la ejecución de las obras para los Juegos Olímpicos de la Juventud 2018.</p>
+<pre class="r"><code>library(tidyRSS)
+library(tidytext)
+library(tm)</code></pre>
+<pre><code>## Loading required package: NLP</code></pre>
+<pre><code>## 
+## Attaching package: &#39;NLP&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:ggplot2&#39;:
+## 
+##     annotate</code></pre>
+<p>En esta oportunidad voy a trabajar con La Nación, a modo de ejemplo. La realidad es que el procedimiento es esencialmente el mismo para cualquier diario, así que mirando cómo armé este pueden hacerlo con cualquier otro medio.</p>
+<p>Revisando los medios (o directamente googleando el nombre y RSS) van a poder encontrar dónde se alojan los RSS y cómo son los links en cada canal. En el caso de La Nación, todo está en <a href="https://servicios.lanacion.com.ar/herramientas/rss/ayuda" class="uri">https://servicios.lanacion.com.ar/herramientas/rss/ayuda</a>.</p>
+<p>Lo que me propuse hacer es construir una tabla con una serie de datos: título, bajada, url, entre otros. De ahí, usando el lexicón SDAL que ya había utilizado en mi post del análisis de #miracomonosponemos (<a href="https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/" class="uri">https://hernanescu.github.io/2018/12/mira-como-nos-ponemos/</a>), separar cada noticia por palabra y cruzarlo con el lexicón, para así obtener una medida muy estimativa de si es positiva o negativa. Con el diario del lunes (y después de unas cuantas horas de codeo), considero que es aún bastante impreciso como calificación de la noticia, pero decidí dejarlo de todos modos. Es un tema que me interesa y en el que quiero seguir trabajando.</p>
+<p>La función es un tanto larga, pero la voy a ir detallando para que sea claro y quienes quieran puedan replicar con otros casos (y modificar a su gusto). Veamos entonces de qué se trata:</p>
+<pre class="r"><code>scrap_ln &lt;- function(){
+#1. Cargo el lexicón adentro de la función para hacer el cruce
+  sdal &lt;- read.csv(&#39;https://hernanescu.github.io/data/SDAL.csv&#39;)
+
+#2. Levanto los feeds, agregándole a cada uno la columna &quot;section&quot; con su origen
+
+  ln_ultimas &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/origen=2&#39;) %&gt;%
+    mutate(section=&quot;Últimas Noticias&quot;)
+
+  ln_politica &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=30&#39;) %&gt;%
+    mutate(section=&quot;Política&quot;)
+
+  ln_economia &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=272&#39;) %&gt;%
+    mutate(section=&quot;Economía&quot;)
+
+  ln_deportes &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=131&#39;) %&gt;%
+    mutate(section=&quot;Deportes&quot;)
+
+  ln_sociedad &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=7772&#39;) %&gt;%
+    mutate(section=&quot;Sociedad&quot;)
+
+  ln_opinion &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=28&#39;) %&gt;%
+    mutate(section=&quot;Opinión&quot;)
+
+  ln_espectaculos &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=120&#39;) %&gt;%
+    mutate(section=&quot;Espectáculos&quot;)
+
+  ln_mundo &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=7&#39;) %&gt;%
+    mutate(section=&quot;El Mundo&quot;)
+
+  ln_revista &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=494&#39;) %&gt;%
+    mutate(section=&quot;Revista La Nación&quot;)
+
+  ln_comex &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=347&#39;) %&gt;%
+    mutate(section=&quot;Suplemento Comercio Exterior&quot;)
+
+  ln_tech &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=432&#39;) %&gt;%
+    mutate(section=&quot;Suplemento Tecnología&quot;)
+
+  ln_campo &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=337&#39;) %&gt;%
+    mutate(section=&quot;Suplemento El Campo&quot;)
+
+  ln_moda &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=1312&#39;) %&gt;%
+    mutate(section=&quot;Suplemento Moda y Belleza&quot;)
+
+  ln_comunidad &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=1344&#39;) %&gt;%
+    mutate(section=&quot;Suplemento Comunidad&quot;)
+
+  ln_adn &lt;- tidyfeed(&#39;http://contenidos.lanacion.com.ar/herramientas/rss/categoria_id=6734&#39;) %&gt;%
+    mutate(section=&quot;adnCultura&quot;)
+
+#3. Armo una base que contiene todo el diario
+  
+  ln_full &lt;- rbind(ln_ultimas, ln_politica, ln_economia, ln_deportes,
+                   ln_sociedad, ln_opinion, ln_espectaculos, ln_mundo, ln_revista,
+                   ln_comex, ln_tech, ln_campo, ln_moda, ln_comunidad, ln_adn)
+
+#4. Agrego una columna vacía donde luego va a ir el puntaje de cada noticia
+  
+  ln_full$score &lt;- 0 
+
+#5. Loop que deshace cada noticia en palabras y las puntúa
+  
+  for (i in 1:nrow(ln_full)) {
+
+    news.i &lt;- ln_full[i,]
+
+    word_news.i &lt;- news.i %&gt;%
+      select(item_title, item_content) %&gt;%
+      gather(col_orig, texto, 1:2)%&gt;%
+      unnest_tokens(input=texto, output=palabra) %&gt;%
+      count(palabra) %&gt;%
+      filter(!palabra%in%stopwords(&#39;es&#39;)) %&gt;%
+      left_join(., sdal, by=&quot;palabra&quot;) %&gt;%
+      filter(!is.na(media_agrado)) %&gt;%
+      mutate(score=n*media_agrado)
+
+    mean.i &lt;- sum(word_news.i$score)/sum(word_news.i$n)
+
+    ln_full$score[i] &lt;- mean.i
+
+  }
+
+#6. Evaluación de cada noticia según su puntaje y wrangling general
+    
+  ln_full &lt;- ln_full %&gt;% 
+    mutate(rating=case_when(score&gt;1 &amp; score&lt;=1.75 ~ &quot;Negativa&quot;,
+                            score&gt;1.75 &amp; score&lt;=2.25 ~ &quot;Neutral&quot;,
+                            score&gt;2.25 &amp; score &lt;=3 ~&quot;Positiva&quot;)) %&gt;%
+    rename(&quot;title&quot;=item_title,
+           &quot;description&quot;=item_content,
+           &quot;URL&quot;=item_link,
+           &quot;fecha&quot;=item_date_updated) %&gt;%
+    mutate(site=&quot;La Nación&quot;) %&gt;%
+    select(site, section, title, description, score, rating, fecha, URL)
+
+#7. Asignar el resultado para poder trabajarlo
+  assign(&quot;la_nacion&quot;, value=ln_full, pos =1)
+
+}</code></pre>
+<p>¡Ya tenemos nuestra función! Veamos de qué se trata:</p>
+<pre class="r"><code>scrap_ln()
+head(la_nacion)</code></pre>
+<pre><code>## # A tibble: 6 x 8
+##   site   section  title description score rating fecha               URL  
+##   &lt;chr&gt;  &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;chr&gt;  &lt;dttm&gt;              &lt;chr&gt;
+## 1 La Na~ Últimas~ Arge~ La Argenti~  2.48 Posit~ 2019-01-22 11:03:00 http~
+## 2 La Na~ Últimas~ Cómo~ El avión q~  2.21 Neutr~ 2019-01-22 10:58:00 http~
+## 3 La Na~ Últimas~ Quié~ Emiliano S~  2.31 Posit~ 2019-01-22 10:27:00 http~
+## 4 La Na~ Últimas~ Desa~ NANTES.- E~  2.27 Posit~ 2019-01-22 09:46:00 http~
+## 5 La Na~ Últimas~ La A~ La Adminis~  2.07 Neutr~ 2019-01-22 07:11:00 http~
+## 6 La Na~ Últimas~ Cuál~ ¿Cuánto ga~  2.17 Neutr~ 2019-01-22 05:54:00 http~</code></pre>
+<p>Podemos ver que tenemos todo lo necesario para arrancar la mañana informado (al menos superficialmente) y sin tener que abrir la página en sí. Nada mal, pero, ¿qué más podemos hacer con esto?</p>
 </div>
-<div id="profundizando" class="section level1">
-<h1>Profundizando</h1>
-<p>Esta imagen la había posteado originalmente en mi LinkedIn. Ahí alguien la vio (es impresionante como estas cosas llegan a ojos de profesionales que uno no conoce) y me hizo una pregunta técnica y otra de visión general: qué tipos de obras eran y por qué yo creía que descentralizar es importante. Así que me puse manos a la obra: primero, reorganizando la base original en función del tipo de erogación y luego graficando.</p>
-<pre class="r"><code>erogacion_tipo &lt;- obras %&gt;% 
-  mutate(monto_contrato=as.numeric(as.character(monto_contrato))) %&gt;% 
-  filter(monto_contrato!=&quot;NA&quot;) %&gt;% 
-  group_by(tipo) %&gt;% 
-  summarise(monto=sum(monto_contrato))</code></pre>
-<pre><code>## Warning in evalq(as.numeric(as.character(monto_contrato)), &lt;environment&gt;):
-## NAs introducidos por coerción</code></pre>
-<pre class="r"><code>ggplot(data=erogacion_tipo, aes(x=tipo, weight=monto, fill=tipo))+ 
-  geom_bar()+
-  labs(title=&quot;Erogación en obra pública según tipo en la Ciudad de Buenos Aires&quot;,
-       subtitle=&quot;Año 2018&quot;,
-       caption=&quot;Fuente: Portal Buenos Aires Data, data.buenosaires.gob.ar&quot;,
-       x=&quot;Tipo de obra&quot;,
-       y=&quot;Monto erogado en millones de pesos&quot;,
-       fill=&quot;Tipo&quot;)+
-  scale_y_continuous(breaks=c(5000000000, 10000000000, 15000000000),
-                      labels=c(&quot;5000&quot;, &quot;10.000&quot;, &quot;15.000&quot;))+
-  scale_fill_gdocs()</code></pre>
-<p><img src="https://hernanescu.github.io/post/2018-12-04-obras-publicas_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>Este gráfico reafirma -a mi criterio- aún más la importancia de descentralizar. Como se puede observar, la amplia mayoría de los gastos están vinculados a Transporte, gastos que representan prácticamente la suma de Vivienda, Escuelas y Salud. En este punto, también es importante considerar que la inversión en las obras para los JJ.OO sumaron más de 3.600 millones de pesos.</p>
-<p>Si complementamos este gráfico con el primero, podemos inferir que la gran parte de la obra pública está destinada principalmente a facilitar la movilidad entre algunos puntos neurálgicos de acceso a la Capital. Hay mucho que puede hacerse aún, observando estos datos, para mejorar la inversión y ayudar a mejorar la calidad de vida de todos los porteñxs.</p>
+<div id="en-el-diario-no-hablaban-de-ti" class="section level2">
+<h2>En el diario no hablaban de tí</h2>
+<p>Tenemos esta data pre-procesada y sería una pena desperdiciarla. Así que juguemos un poco más: veamos una función para desarmar todo en palabras y así poder contar los términos más usados (y comparar con otros medios). <em>scrap_word</em>, como la bauticé en un rapto de creatividad, toma dos argumentos: la base de datos del medio y la sección que querramos analizar.</p>
+<p>Un par de aclaraciones importantes: el primer argumento, por cómo está construida la función, toma la base pre-procesada respetando los nombres que yo le puse, con lo que si deciden cambiarle algo tengan cuidado y reemplacen todo lo que haga falta. En ese mismo sentido, el argumento que toma la sección tiene que respetar los nombres que yo asigné anteriormente. Si ese segundo argumento no se especifica, la función toma toda la base de datos, lo cual es ideal para hacer una lectura general, así como también procesar medios que no tengan secciones especificadas en su RSS (Infobae, te miro a vos).</p>
+<pre class="r"><code>scrap_word &lt;- function(media, section_m){
+  if(missing(section_m)) {
+
+    media_name &lt;- media$site[1] #extraemos el nombre del sitio
+    section_name &lt;- &quot;Sitio&quot; #esta es la parte que no especifica sección
+
+    media_words &lt;- media %&gt;%
+      gather(., key=noticias, value=palabras, 3:4) %&gt;%
+      unnest_tokens(input = palabras, output=word) %&gt;%
+      count(word) %&gt;%
+      arrange(desc(n)) %&gt;%
+      filter(!word%in%stopwords(&#39;es&#39;))
+
+    media_words$site &lt;- media_name
+    media_words$section &lt;- section_name
+
+    db_name &lt;- paste0(media_name, sep=&quot;_&quot;, section_name)
+
+    assign(x=db_name, value = media_words, pos=1)
+
+  }
+
+  else {
+    media_name &lt;- media$site[1] #extraer nombre del medio
+    section_name &lt;- deparse(substitute(section_m)) #extraer sección del medio
+
+    media_words &lt;- media %&gt;%
+      gather(., key=noticias, value=palabras, 3:4) %&gt;%
+      filter(section==section_name) %&gt;%
+      unnest_tokens(input = palabras, output=word) %&gt;%
+      count(word) %&gt;%
+      arrange(desc(n)) %&gt;%
+      filter(!word%in%stopwords(&#39;es&#39;))
+
+    media_words$site &lt;- media_name
+    media_words$section &lt;- section_name
+
+    db_name &lt;- paste0(media_name, sep=&quot;_&quot;, section_name)
+
+    assign(x=db_name, value = media_words, pos=1)
+
+  }
+}</code></pre>
+<p>Veamos primero cómo funciona sin especificar una sección:</p>
+<pre class="r"><code>scrap_word(la_nacion)
+head(`La Nación_Sitio`)</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##   word          n site      section
+##   &lt;chr&gt;     &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;  
+## 1 años         37 La Nación Sitio  
+## 2 cómo         27 La Nación Sitio  
+## 3 argentina    26 La Nación Sitio  
+## 4 dos          25 La Nación Sitio  
+## 5 gobierno     25 La Nación Sitio  
+## 6 mundo        23 La Nación Sitio</code></pre>
+<p>Y al especificar:</p>
+<pre class="r"><code>scrap_word(la_nacion, Política)
+head(`La Nación_Política`)</code></pre>
+<pre><code>## # A tibble: 6 x 4
+##   word           n site      section 
+##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;   
+## 1 macri         17 La Nación Política
+## 2 dominio       16 La Nación Política
+## 3 extinción     16 La Nación Política
+## 4 mauricio      13 La Nación Política
+## 5 decreto        9 La Nación Política
+## 6 presidente     8 La Nación Política</code></pre>
+<p>Llegado a este punto, lo último que falta hacer es graficar. Pero como descubrí que me gusta tener funciones para todo (¿a quién no?), construí una especifica para usar con estas bases. Lo que hace es captar automáticamente el sitio y la sección de origen (para eso están las columnas en las bases separadas por palabras, además de dejar todo preparado para hacer cruces) y asignarlo como argumentos que se le pasan al gráfico. Lo mismo sucede con la cantidad máxima que deben tener los ejes, que se toman directamente del n con el número más grande.</p>
+<pre class="r"><code>scrap_wordcount &lt;- function(database){
+
+  media_name &lt;- database$site[1]
+  section_name &lt;- database$section[1]
+  top_label &lt;- database$n[1]
+  axislabel &lt;- seq(top_label)
+
+  tit &lt;- paste(&quot;Conteo de palabras:&quot;, media_name)
+  sub &lt;- paste(&quot;Sección:&quot;, section_name)
+
+  database %&gt;%
+    arrange(desc(n)) %&gt;%
+    .[1:20,] %&gt;%
+    ggplot(., aes(x=word, y=n))+
+      geom_segment(aes(x=reorder(word, n), xend=word, y=0, yend=n), color=&quot;grey&quot;)+
+      geom_point(size=3, color=&quot;#d70d2f&quot;)+
+      coord_flip()+
+      theme_minimal()+
+      theme(
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.y = element_blank(),
+        legend.position=&quot;none&quot;) +
+      xlab(&quot;&quot;) +
+      ylab(&quot;Frecuencia&quot;)+
+      labs(title=tit,
+           subtitle=sub,
+           caption=Sys.Date())+
+      scale_y_continuous(breaks=axislabel)
+}
+scrap_wordcount(`La Nación_Política`)</code></pre>
+<p><img src="https://hernanescu.github.io/post/2019-01-21-scraping-media_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>En el margen inferior derecho agregué la fecha: es importante notar que es la fecha de sistema y no la de origen. En otras palabras, es la fecha de creación del gráfico y no de la publicación de la noticia.</p>
+<p>La gracia de estas funciones es que con literalmente tres comandos podemos tener un breve pantallazo de lo que más se dice en las secciones de los diarios:</p>
+<pre class="r"><code>scrap_ln() #levantamos el diario
+scrap_word(la_nacion, Economía) #descomponemos la sección en palabras
+scrap_wordcount(`La Nación_Economía`) #armamos el gráfico</code></pre>
+<p><img src="https://hernanescu.github.io/post/2019-01-21-scraping-media_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="un-toque-de-distincion-para-el-codeo-de-los-argentinos" class="section level2">
+<h2>Un toque de distinción para el codeo de los argentinos</h2>
+<p>En este post les presento estas herramientas que pueden ser muy útiles para analizar los medios de comunicación, cuyo rol en la formación de opinión pública es absolutamente crucial. En futuras entregas voy a analizar qué se dice en cada uno: palabras más importantes y más mencionadas, entre otros.</p>
+<p>La información es poder, la desinformación es ejercicio de poder.</p>
 </div>
 
               
@@ -402,7 +541,7 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">ETIQUETADO EN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://hernanescu.github.io/tags/ba-data/">BA Data</a>
+  <a class="tag tag--primary tag--small" href="https://hernanescu.github.io/tags/scraping/">Scraping</a>
 
                   </div>
                 
@@ -415,7 +554,7 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/11/eph-pobreza/" data-tooltip="La línea de pobreza en el segundo trimestre: analizando la EPH">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
@@ -423,7 +562,7 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/1/01/" data-tooltip="">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2019/01/torturaymalostratos/" data-tooltip="Torturas y malos tratos en la prisión">
               
                   <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
                   <i class="fa fa-angle-right"></i>
@@ -441,19 +580,19 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2019/01/scraping-media/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2019/01/scraping-media/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2019/01/scraping-media/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -501,7 +640,7 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2018/11/eph-pobreza/" data-tooltip="La línea de pobreza en el segundo trimestre: analizando la EPH">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">SIGUIENTE</span>
@@ -509,7 +648,7 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/1/01/" data-tooltip="">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://hernanescu.github.io/2019/01/torturaymalostratos/" data-tooltip="Torturas y malos tratos en la prisión">
               
                   <span class="hide-xs hide-sm text-small icon-mr">ANTERIOR</span>
                   <i class="fa fa-angle-right"></i>
@@ -527,19 +666,19 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hernanescu.github.io/2019/01/scraping-media/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hernanescu.github.io/2019/01/scraping-media/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2018/11/mirada-erogacion-obras-publicas/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://hernanescu.github.io/2019/01/scraping-media/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -569,19 +708,19 @@ base_final&lt;- left_join(comunas_2, obrasencomuna)</code></pre>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhernanescu.github.io%2F2018%2F11%2Fmirada-erogacion-obras-publicas%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhernanescu.github.io%2F2019%2F01%2Fscraping-media%2F">
           <i class="fa fa-facebook-official"></i><span>Compartir en Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhernanescu.github.io%2F2018%2F11%2Fmirada-erogacion-obras-publicas%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhernanescu.github.io%2F2019%2F01%2Fscraping-media%2F">
           <i class="fa fa-twitter"></i><span>Compartir en Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fhernanescu.github.io%2F2018%2F11%2Fmirada-erogacion-obras-publicas%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fhernanescu.github.io%2F2019%2F01%2Fscraping-media%2F">
           <i class="fa fa-google-plus"></i><span>Compartir en Google&#43;</span>
         </a>
       </li>
@@ -879,9 +1018,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/hernanescu.github.io\/2018\/11\/mirada-erogacion-obras-publicas\/';
+          this.page.url = 'https:\/\/hernanescu.github.io\/2019\/01\/scraping-media\/';
           
-            this.page.identifier = '\/2018\/11\/mirada-erogacion-obras-publicas\/'
+            this.page.identifier = '\/2019\/01\/scraping-media\/'
           
         };
         (function() {

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://hernanescu.github.io/2019/01/scraping-media/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://hernanescu.github.io/2019/01/torturaymalostratos/</loc>
     <lastmod>2019-01-17T00:00:00+00:00</lastmod>
   </url>
@@ -52,7 +57,7 @@
   
   <url>
     <loc>https://hernanescu.github.io/</loc>
-    <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -80,7 +85,7 @@
   
   <url>
     <loc>https://hernanescu.github.io/categories/ggplot2/</loc>
-    <lastmod>2018-11-20T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -104,13 +109,19 @@
   
   <url>
     <loc>https://hernanescu.github.io/post/</loc>
-    <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://hernanescu.github.io/tags/procuraci%C3%B3n-penitenciaria-de-la-naci%C3%B3n/</loc>
     <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hernanescu.github.io/tags/scraping/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -127,6 +138,12 @@
   </url>
   
   <url>
+    <loc>https://hernanescu.github.io/categories/tidyrss/</loc>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://hernanescu.github.io/categories/tidytext/</loc>
     <lastmod>2018-12-07T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -134,7 +151,7 @@
   
   <url>
     <loc>https://hernanescu.github.io/categories/tidyverse/</loc>
-    <lastmod>2019-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-01-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
